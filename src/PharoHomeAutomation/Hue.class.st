@@ -68,6 +68,14 @@ url := ('https://',self class ip,'/api/',self class key,'/groups') asUrl.
 ]
 
 { #category : #accessing }
+Hue >> gtInspectorHueIn: composite [
+	<gtInspectorPresentationOrder: -15>
+	"comment stating purpose of message"
+	composite custom: (HueWidget new).
+
+]
+
+{ #category : #accessing }
 Hue >> lights [
 | url |
 url := ('https://',self class ip,'/api/',self class key,'/lights') asUrl.
@@ -81,7 +89,7 @@ self group: 'salon' state: false.
 
 { #category : #accessing }
 Hue >> onSalon [
-self group: 'salon' state: false.
+self group: 'salon' state: true.
 ]
 
 { #category : #accessing }
