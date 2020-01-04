@@ -69,9 +69,10 @@ url := ('https://',self class ip,'/api/',self class key,'/groups') asUrl.
 
 { #category : #accessing }
 Hue >> gtInspectorHueIn: composite [
-	<gtInspectorPresentationOrder: -15>
+	<gtInspectorPresentationOrder: -10>
 	"comment stating purpose of message"
-	composite custom: (HueWidget new).
+	composite morph morph: (Smalltalk ui theme builder newButtonFor: 'hello' action: [ Transcript show: 'hello' ; cr ]  label: 'hello' help: 'hrllo' ).
+	"composite newButton ."
 
 ]
 
