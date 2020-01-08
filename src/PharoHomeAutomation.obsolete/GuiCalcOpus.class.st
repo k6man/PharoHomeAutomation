@@ -1,6 +1,6 @@
 "
 Graphique User Interface for OPUS Calculator
-
+GuiCalcOpus new openWithSpec 
 
 Please comment me using the following template inspired by Class Responsibility Collaborator (CRC) design:
 
@@ -26,5 +26,5 @@ Internal Representation and Key Implementation Points.
 Class {
 	#name : #GuiCalcOpus,
 	#superclass : #GuiCalcEngine,
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation.obsolete'
 }

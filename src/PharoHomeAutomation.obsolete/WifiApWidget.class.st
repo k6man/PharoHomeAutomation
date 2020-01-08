@@ -6,7 +6,7 @@ Class {
 		'buttonWifiOn',
 		'buttonWifiOff'
 	],
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation.obsolete'
 }
 
 { #category : #specs }

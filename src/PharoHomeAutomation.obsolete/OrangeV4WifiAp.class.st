@@ -28,7 +28,7 @@ Internal Representation and Key Implementation Points.
 Class {
 	#name : #OrangeV4WifiAp,
 	#superclass : #WifiAp,
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation.obsolete'
 }
 
 { #category : #initialize }

@@ -31,7 +31,7 @@ Class {
 		'buttonReboot',
 		'labelStatus'
 	],
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation.obsolete'
 }
 
 { #category : #specs }
