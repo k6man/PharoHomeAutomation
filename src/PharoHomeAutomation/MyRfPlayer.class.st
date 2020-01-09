@@ -1,5 +1,5 @@
 "
-rf := MyRfPlayer newOnPort: 'COM3'.
+rf := MyRfPlayer new.
 rf openPortal .
 rf closePortal .
 
@@ -30,13 +30,13 @@ Class {
 	#category : #PharoHomeAutomation
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #API }
 MyRfPlayer >> closePortal [
 	self somfyRts: true.
 	^self send: 'OFF A1 RTS QUALIFIER 1'.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #API }
 MyRfPlayer >> openPortal [
 	self somfyRts: true.
 	^self send: 'ON A1 RTS QUALIFIER 1'.
