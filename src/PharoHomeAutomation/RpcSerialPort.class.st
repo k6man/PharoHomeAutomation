@@ -25,3 +25,10 @@ RpcSerialPort >> call: aCmd [
 	].
 	^return.
 ]
+
+{ #category : #instructions }
+RpcSerialPort >> send: aCmd [
+	"send cmd"
+	^self nextPutAll: aCmd ; nextPutAll: Character cr asString.
+
+]

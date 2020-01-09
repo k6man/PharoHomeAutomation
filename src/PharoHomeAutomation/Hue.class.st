@@ -1,11 +1,13 @@
 "
 Hue new groups.
+Hue new lights.
 HueWidget new openWithSpec .
 Hue new salon: true.
 Hue new salon: false.
 Hue new group: 'salon' state: true.
 Hue new group: 'salon' state: false.
 Hue new onSalon.
+Hue new offSalon.
 
 
 Please comment me using the following template inspired by Class Responsibility Collaborator (CRC) design:

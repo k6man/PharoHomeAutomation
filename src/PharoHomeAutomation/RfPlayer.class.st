@@ -20,6 +20,13 @@ RfPlayer class >> newOnPort: comPortNumber [
 ]
 
 { #category : #accessing }
+RfPlayer >> call: aCmd [
+	"call cmd"
+	^serialport call: 'ZIA++1234 ',aCmd.
+
+]
+
+{ #category : #accessing }
 RfPlayer >> comPortNumber [
 	^ comPortNumber
 ]
@@ -53,6 +60,14 @@ serialport
 		  inputFlowControlType: 2;
 		  outputFlowControlType: 2;
         openPort: comPortNumber.
+
+]
+
+{ #category : #accessing }
+RfPlayer >> send: aCmd [
+	"send cmd"
+	^serialport send: 'ZIA++1234 ',aCmd.
+
 ]
 
 { #category : #accessing }
@@ -63,6 +78,18 @@ RfPlayer >> serialport [
 { #category : #accessing }
 RfPlayer >> serialport: anObject [
 	serialport := anObject
+]
+
+{ #category : #accessing }
+RfPlayer >> somfyRts: aStatus [
+	^aStatus
+	ifTrue: [ 
+		self send: 'FREQ L 433420'
+	]
+   ifFalse: [
+		self send: 'FREQ L 433920'
+	 ]
+	 
 ]
 
 { #category : #accessing }
