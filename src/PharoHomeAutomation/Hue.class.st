@@ -89,14 +89,14 @@ Hue class >> key: anObject [
 { #category : #accessing }
 Hue >> group: group state: state [
 | url |
-url := ('https://',self class ip,'/api/',self class key,'/groups/',group,'/action') asUrl.
+url := ('https://',Hue ip,'/api/',Hue key,'/groups/',group,'/action') asUrl.
 ^ ZnEasy put: url data: (ZnEntity json:'{"on":',state asString,'}') .
 ]
 
 { #category : #accessing }
 Hue >> groups [
 | url |
-url := ('https://',self class ip,'/api/',self class key,'/groups') asUrl.
+url := ('https://',Hue ip,'/api/',Hue key,'/groups') asUrl.
 ^ STONJSON fromString: (ZnEasy get: url) entity contents.
 ]
 
@@ -112,33 +112,6 @@ Hue >> gtInspectorHueIn: composite [
 { #category : #accessing }
 Hue >> lights [
 | url |
-url := ('https://',self class ip,'/api/',self class key,'/lights') asUrl.
+url := ('https://',Hue ip,'/api/',Hue key,'/lights') asUrl.
 ^ STONJSON fromString: (ZnEasy get: url) entity contents.
-]
-
-{ #category : #accessing }
-Hue >> offSalon [
-self group: 'salon' state: false.
-]
-
-{ #category : #accessing }
-Hue >> onSalon [
-self group: 'salon' state: true.
-]
-
-{ #category : #accessing }
-Hue >> salon [
-| url |
-url := ('https://',self class ip,'/api/',self class key,'/groups/salon') asUrl.
-^ STONJSON fromString: (ZnEasy get: url) entity contents.
-]
-
-{ #category : #accessing }
-Hue >> salon: state [
-^self group: 'salon' state: state.
-]
-
-{ #category : #accessing }
-Hue >> setting [
-	<systemsettings>
 ]
