@@ -2,13 +2,12 @@
 Hue new groups.
 Hue new lights.
 HueWidget new openWithSpec .
-Hue new salon: true.
-Hue new salon: false.
-Hue new group: 'salon' state: true.
-Hue new group: 'salon' state: false.
-Hue new onSalon.
-Hue new offSalon.
-
+Hue new group: '6' state: true. ""cuisine""
+Hue new group: '6' state: false.
+Hue new light: '5' state: true. ""cuisine""
+Hue new light: '5' state: 255. ""cuisine""
+Hue new light: '5' state: 50. ""cuisine""
+Hue new light: '5' state: false.
 
 Please comment me using the following template inspired by Class Responsibility Collaborator (CRC) design:
 
@@ -90,7 +89,10 @@ Hue class >> key: anObject [
 Hue >> group: group state: state [
 | url |
 url := ('https://',Hue ip,'/api/',Hue key,'/groups/',group,'/action') asUrl.
-^ ZnEasy put: url data: (ZnEntity json:'{"on":',state asString,'}') .
+
+^ ZnEasy put: url data: (state isNumber
+	ifTrue: [ (ZnEntity json:'{"bri":',state asString,'}') ]
+	ifFalse: [ (ZnEntity json:'{"on":',state asString,'}') ]). 
 ]
 
 { #category : #accessing }
@@ -107,6 +109,16 @@ Hue >> gtInspectorHueIn: composite [
 	composite morph morph: (Smalltalk ui theme builder newButtonFor: 'hello' action: [ Transcript show: 'hello' ; cr ]  label: 'hello' help: 'hrllo' ).
 	"composite newButton ."
 
+]
+
+{ #category : #accessing }
+Hue >> light: light state: state [
+| url |
+url := ('https://',Hue ip,'/api/',Hue key,'/lights/',light,'/state') asUrl.
+
+^ ZnEasy put: url data: (state isNumber
+	ifTrue: [ (ZnEntity json:'{"bri":',state asString,'}') ]
+	ifFalse: [ (ZnEntity json:'{"on":',state asString,'}') ]). 
 ]
 
 { #category : #accessing }
