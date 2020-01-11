@@ -32,12 +32,14 @@ Class {
 
 { #category : #API }
 MyRfPlayer >> closePortal [
+<script: 'MyRfPlayer new closePortal'>
 	self somfyRts: true.
 	^self send: 'OFF A1 RTS QUALIFIER 1'.
 ]
 
 { #category : #API }
 MyRfPlayer >> openPortal [
+<script: 'MyRfPlayer new openPortal'>
 	self somfyRts: true.
 	^self send: 'ON A1 RTS QUALIFIER 1'.
 ]
