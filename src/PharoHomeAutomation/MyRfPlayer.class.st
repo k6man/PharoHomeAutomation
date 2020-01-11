@@ -31,10 +31,38 @@ Class {
 }
 
 { #category : #API }
+MyRfPlayer >> AssocGate [
+<script: 'MyRfPlayer new AssocGate'>
+	self somfyRts: true.
+	^self send: 'ASSOC A2 RTS QUALIFIER 1'.
+]
+
+{ #category : #API }
+MyRfPlayer >> AssocPortal [
+<script: 'MyRfPlayer new AssocPortal'>
+	self somfyRts: true.
+	^self send: 'ASSOC A1 RTS QUALIFIER 1'.
+]
+
+{ #category : #API }
+MyRfPlayer >> closeGate [
+<script: 'MyRfPlayer new closeGate'>
+	self somfyRts: true.
+	^self send: 'OFF A2 RTS QUALIFIER 1'.
+]
+
+{ #category : #API }
 MyRfPlayer >> closePortal [
 <script: 'MyRfPlayer new closePortal'>
 	self somfyRts: true.
 	^self send: 'OFF A1 RTS QUALIFIER 1'.
+]
+
+{ #category : #API }
+MyRfPlayer >> openGate [
+<script: 'MyRfPlayer new openGate'>
+	self somfyRts: true.
+	^self send: 'ON A2 RTS QUALIFIER 1'.
 ]
 
 { #category : #API }
