@@ -33,17 +33,45 @@ Class {
 }
 
 { #category : #accessing }
+MyHue >> cuisine [
+<script: 'MyHue new cuisine inspect'>
+| url |
+url := ('https://',Hue ip,'/api/',Hue key,'/groups/6') asUrl.
+^ STONJSON fromString: (ZnEasy get: url) entity contents.
+]
+
+{ #category : #accessing }
+MyHue >> cuisine: state [
+^self group: '6' state: state.
+]
+
+{ #category : #accessing }
+MyHue >> offCuisine [
+<script: 'MyHue new offCuisine'>
+self group: '6' state: false.
+]
+
+{ #category : #accessing }
 MyHue >> offSalon [
+<script: 'MyHue new offSalon'>
 self group: '5' state: false.
 ]
 
 { #category : #accessing }
+MyHue >> onCuisine [
+<script: 'MyHue new onCuisine'>
+self group: '6' state: true.
+]
+
+{ #category : #accessing }
 MyHue >> onSalon [
+<script: 'MyHue new onSalon'>
 self group: '5' state: true.
 ]
 
 { #category : #accessing }
 MyHue >> salon [
+<script: 'MyHue new salon inspect'>
 | url |
 url := ('https://',Hue ip,'/api/',Hue key,'/groups/5') asUrl.
 ^ STONJSON fromString: (ZnEasy get: url) entity contents.
