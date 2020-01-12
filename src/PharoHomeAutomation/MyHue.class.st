@@ -42,6 +42,11 @@ url := ('https://',Hue ip,'/api/',Hue key,'/groups/6') asUrl.
 
 { #category : #accessing }
 MyHue >> cuisine: state [
+"
+MyHue new cuisine: 255
+MyHue new cuisine: true
+MyHue new cuisine: false
+"
 ^self group: '6' state: state.
 ]
 
@@ -79,5 +84,10 @@ url := ('https://',Hue ip,'/api/',Hue key,'/groups/5') asUrl.
 
 { #category : #accessing }
 MyHue >> salon: state [
+"
+MyHue new salon: 255
+MyHue new salon: true
+MyHue new salon: false
+"
 ^self group: '5' state: state.
 ]
