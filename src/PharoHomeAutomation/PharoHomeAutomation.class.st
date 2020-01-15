@@ -36,17 +36,25 @@ Class {
 	#instVars : [
 		'devices'
 	],
+	#classInstVars : [
+		'current'
+	],
 	#category : #PharoHomeAutomation
 }
 
-{ #category : #initialization }
-PharoHomeAutomation >> addDevice: aDev withName: aName [
-	devices at: aName put: aDev.
+{ #category : #accessing }
+PharoHomeAutomation class >> current [
+	^ current
+]
+
+{ #category : #accessing }
+PharoHomeAutomation class >> current: anObject [
+	current := anObject
 ]
 
 { #category : #initialization }
 PharoHomeAutomation >> initialize [ 
 	""
-	devices := Dictionary new.
+	self class current: self.
 
 ]

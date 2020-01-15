@@ -88,7 +88,7 @@ Hue class >> key: anObject [
 { #category : #accessing }
 Hue >> group: group state: state [
 | url |
-url := ('https://',Hue ip,'/api/',Hue key,'/groups/',group,'/action') asUrl.
+url := ('https://',Hue ip,'/api/',Hue key,'/groups/',group asString,'/action') asUrl.
 
 ^ ZnEasy put: url data: (state isNumber
 	ifTrue: [ (ZnEntity json:'{"bri":',state asString,'}') ]
@@ -115,7 +115,7 @@ Hue >> gtInspectorHueIn: composite [
 { #category : #accessing }
 Hue >> light: light state: state [
 | url |
-url := ('https://',Hue ip,'/api/',Hue key,'/lights/',light,'/state') asUrl.
+url := ('https://',Hue ip,'/api/',Hue key,'/lights/',light asString,'/state') asUrl.
 
 ^ ZnEasy put: url data: (state isNumber
 	ifTrue: [ (ZnEntity json:'{"bri":',state asString,'}') ]

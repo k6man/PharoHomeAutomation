@@ -3,10 +3,21 @@ Class {
 	#superclass : #Object,
 	#instVars : [
 		'name',
-		'location'
+		'location',
+		'interface'
 	],
 	#category : #PharoHomeAutomation
 }
+
+{ #category : #accessing }
+HomeAutomationDevice >> interface [
+	^ interface
+]
+
+{ #category : #accessing }
+HomeAutomationDevice >> interface: anObject [
+	interface := anObject
+]
 
 { #category : #accessing }
 HomeAutomationDevice >> location [
