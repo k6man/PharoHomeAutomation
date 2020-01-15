@@ -97,6 +97,7 @@ url := ('https://',Hue ip,'/api/',Hue key,'/groups/',group,'/action') asUrl.
 
 { #category : #accessing }
 Hue >> groups [
+<script: 'Hue new groups inspect'>
 | url |
 url := ('https://',Hue ip,'/api/',Hue key,'/groups') asUrl.
 ^ STONJSON fromString: (ZnEasy get: url) entity contents.
@@ -123,6 +124,7 @@ url := ('https://',Hue ip,'/api/',Hue key,'/lights/',light,'/state') asUrl.
 
 { #category : #accessing }
 Hue >> lights [
+<script: 'Hue new lights inspect'>
 | url |
 url := ('https://',Hue ip,'/api/',Hue key,'/lights') asUrl.
 ^ STONJSON fromString: (ZnEasy get: url) entity contents.

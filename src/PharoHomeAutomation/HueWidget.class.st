@@ -68,13 +68,14 @@ HueWidget >> buttonSalonOn [
 { #category : #initialization }
 HueWidget >> initializePresenter [
 	buttonSalonOn
-		action: [ hue onSalon ].
+		action: [ MyHue new onSalon ].
 	buttonSalonOff
-		action: [ hue offSalon ].
+		action: [ MyHue new offSalon ].
 ]
 
 { #category : #initialization }
 HueWidget >> initializeWidgets [
+<script: 'HueWidget new openWithSpec.'>
 	"widget instantiation and configuration"
 	hue := Hue new.
 	self
