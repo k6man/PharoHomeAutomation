@@ -106,10 +106,17 @@ url := ('https://',Hue ip,'/api/',Hue key,'/groups') asUrl.
 { #category : #accessing }
 Hue >> gtInspectorHueIn: composite [
 	<gtInspectorPresentationOrder: -10>
+	self flag: #TODO.
 	"comment stating purpose of message"
 	composite morph morph: (Smalltalk ui theme builder newButtonFor: 'hello' action: [ Transcript show: 'hello' ; cr ]  label: 'hello' help: 'hrllo' ).
 	"composite newButton ."
 
+]
+
+{ #category : #accessing }
+Hue >> idOfGroupNamed: aName [
+	self flag: #TODO.
+ ^self groups
 ]
 
 { #category : #accessing }
