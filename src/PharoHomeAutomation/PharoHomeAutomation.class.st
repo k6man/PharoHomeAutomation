@@ -45,6 +45,7 @@ Class {
 
 { #category : #accessing }
 PharoHomeAutomation class >> launch [
+<script>
 	"Start a new global instance, called WorldHomeAutomation"
 	^self new
 ]
@@ -58,7 +59,7 @@ PharoHomeAutomation >> announcer [
 
 { #category : #initialization }
 PharoHomeAutomation >> initialize [ 
-<script: 'PharoHomeAutomation new'>
+<script: 'PharoHomeAutomation launch'>
 	""
 	Smalltalk at: #WorldHomeAutomation put: self.
 
