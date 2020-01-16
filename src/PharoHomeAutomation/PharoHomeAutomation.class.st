@@ -1,8 +1,9 @@
 "
 Home Automation  Application:
-PharoHomeAutomation new openWithSpec.
+PharoHomeAutomation new.
 
-
+acces by global: 
+WorldHomeAutomation
 
 
 Please comment me using the following template inspired by Class Responsibility Collaborator (CRC) design:
@@ -36,25 +37,29 @@ Class {
 	#instVars : [
 		'devices'
 	],
-	#classInstVars : [
-		'current'
+	#classVars : [
+		'HomeAnnoucer'
 	],
 	#category : #PharoHomeAutomation
 }
 
 { #category : #accessing }
-PharoHomeAutomation class >> current [
-	^ current
+PharoHomeAutomation class >> launch [
+	"Start a new global instance, called WorldHomeAutomation"
+	^self new
 ]
 
-{ #category : #accessing }
-PharoHomeAutomation class >> current: anObject [
-	current := anObject
+{ #category : #initialization }
+PharoHomeAutomation >> announcer [
+	HomeAnnoucer ifNil: [ HomeAnnoucer := Announcer new ].
+	^ HomeAnnoucer
+
 ]
 
 { #category : #initialization }
 PharoHomeAutomation >> initialize [ 
+<script: 'PharoHomeAutomation new'>
 	""
-	self class current: self.
+	Smalltalk at: #WorldHomeAutomation put: self.
 
 ]
