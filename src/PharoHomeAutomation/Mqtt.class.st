@@ -1,6 +1,6 @@
 Class {
 	#name : #Mqtt,
-	#superclass : #MQTTClientInterface,
+	#superclass : #Object,
 	#classInstVars : [
 		'ip',
 		'key'
@@ -22,7 +22,7 @@ Mqtt class >> ip: anObject [
 { #category : #accessing }
 Mqtt class >> open [ 
 		"open a client on host from Mqtt setting"
-    ^self openOnHostName: (self ip) keepAlive: 300
+    "^self openOnHostName: (self ip) port: 1883 keepAlive: 300"
 ]
 
 { #category : #accessing }

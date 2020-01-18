@@ -6,20 +6,26 @@ Class {
 		'returnPrefix'
 	],
 	#classInstVars : [
+		'serialport',
+		'ip',
 		'port'
 	],
 	#category : #PharoHomeAutomation
 }
 
-{ #category : #'open/close' }
-RfPlayer class >> newOnPort: comPortNumber [
-	"comment stating purpose of message"
-^ self new comPortNumber: comPortNumber ; postInitialise ; yourself.
+{ #category : #accessing }
+RfPlayer class >> ip [
+	^ ip ifNil: [ip := '']
+]
+
+{ #category : #accessing }
+RfPlayer class >> ip: anObject [
+	ip := anObject
 ]
 
 { #category : #'open/close' }
 RfPlayer class >> port [
-	^ port ifNil: [port := 'COM3']
+	^ port ifNil: [port := '2003']
 ]
 
 { #category : #'open/close' }
@@ -27,21 +33,43 @@ RfPlayer class >> port: anObject [
 	port := anObject
 ]
 
+{ #category : #accessing }
+RfPlayer class >> serialport [
+	^ serialport ifNil: [serialport := 'COM3']
+]
+
+{ #category : #accessing }
+RfPlayer class >> serialport: anObject [
+	serialport := anObject
+]
+
 { #category : #'open/close' }
 RfPlayer class >> systemSettings: aBuilder [
 	<systemsettings>
 	(aBuilder group: #rfPlayer)
 		label: 'RFplayer';
-		description: 'All settings concerned RFplayer'.
-		
-	(aBuilder setting: #port) 
+		description: 'All settings concerned RFplayer'.	
+	(aBuilder setting: #serialport) 
 		label: 'RFplayer serial port';
 		description: 'Serial Port of your RFplayer';
+		setSelector: #serialport:;
+		getSelector: #serialport;
+		target: RfPlayer;
+		parent: #rfPlayer.
+	(aBuilder setting: #ip) 
+		label: 'RFplayer ip adress';
+		description: 'Ip adress of your RFplayer';
+		setSelector: #ip:;
+		getSelector: #ip;
+		target: RfPlayer;
+		parent: #rfPlayer.
+	(aBuilder setting: #port) 
+		label: 'RFplayer tcp port';
+		description: 'Tcp Port of your RFplayer';
 		setSelector: #port:;
 		getSelector: #port;
 		target: RfPlayer;
-		parent: #rfPlayer.
-		
+		parent: #rfPlayer.		
 ]
 
 { #category : #accessing }
@@ -78,15 +106,20 @@ serialport
 
 { #category : #accessing }
 RfPlayer >> openPort [
-^RfPlayerSerialPort new 
+^RfPlayer ip isEmpty ifFalse: [
+	RfPlayerSocketPort openConnectionToHostNamed: RfPlayer ip port: RfPlayer port asNumber.
+	 ] 
+ ifTrue: [
+	RfPlayerSerialPort new 
         baudRate: 115200;
         dataBits: 8;
         stopBitsType: 1;
         parityType: 0;
 		  inputFlowControlType: 2;
 		  outputFlowControlType: 2;
-        openPort: RfPlayer port;
+        openPort: RfPlayer serialport;
 		yourself.
+	 ] 
 ]
 
 { #category : #accessing }

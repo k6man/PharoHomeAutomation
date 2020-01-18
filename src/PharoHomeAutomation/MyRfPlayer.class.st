@@ -34,7 +34,7 @@ Class {
 MyRfPlayer >> AssocGate [
 <script: 'MyRfPlayer new AssocGate'>
 	self somfyRts: true.
-	^self send: 'ASSOC A2 RTS QUALIFIER 1'.
+	^self send: 'ASSOC A2 RTS QUALIFIER 0'.
 ]
 
 { #category : #API }
@@ -48,7 +48,7 @@ MyRfPlayer >> AssocPortal [
 MyRfPlayer >> closeGate [
 <script: 'MyRfPlayer new closeGate'>
 	self somfyRts: true.
-	^self send: 'OFF A2 RTS QUALIFIER 1'.
+	^self send: 'OFF A2 RTS QUALIFIER 0'.
 ]
 
 { #category : #API }
@@ -62,7 +62,7 @@ MyRfPlayer >> closePortal [
 MyRfPlayer >> openGate [
 <script: 'MyRfPlayer new openGate'>
 	self somfyRts: true.
-	^self send: 'ON A2 RTS QUALIFIER 1'.
+	^self send: 'ON A2 RTS QUALIFIER 0'.
 ]
 
 { #category : #API }
