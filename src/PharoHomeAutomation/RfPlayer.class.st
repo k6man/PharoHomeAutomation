@@ -12,40 +12,6 @@ Class {
 }
 
 { #category : #'open/close' }
-RfPlayer class >> RfPlayerSetting: aBuilder [
-	<systemsettings>
-		(aBuilder group: #rfPlayer)
-		label: 'RFplayer';
-		description: 'All settings concerned RFplayer'.
-		
-	(aBuilder setting: #port) 
-		label: 'RFplayer serial port';
-		description: 'Serial Port of your RFplayer';
-		setSelector: #port:;
-		getSelector: #port;
-		target: RfPlayer;
-		parent: #rfPlayer.
-		
-]
-
-{ #category : #'open/close' }
-RfPlayer class >> Setting: aBuilder [
-	<systemsettings>
-		(aBuilder group: #rfPlayer)
-		label: 'RFplayer';
-		description: 'All settings concerned RFplayer'.
-		
-	(aBuilder setting: #port) 
-		label: 'RFplayer serial port';
-		description: 'Serial Port of your RFplayer';
-		setSelector: #port:;
-		getSelector: #port;
-		target: RfPlayer;
-		parent: #rfPlayer.
-		
-]
-
-{ #category : #'open/close' }
 RfPlayer class >> newOnPort: comPortNumber [
 	"comment stating purpose of message"
 ^ self new comPortNumber: comPortNumber ; postInitialise ; yourself.
@@ -59,6 +25,23 @@ RfPlayer class >> port [
 { #category : #'open/close' }
 RfPlayer class >> port: anObject [
 	port := anObject
+]
+
+{ #category : #'open/close' }
+RfPlayer class >> systemSettings: aBuilder [
+	<systemsettings>
+	(aBuilder group: #rfPlayer)
+		label: 'RFplayer';
+		description: 'All settings concerned RFplayer'.
+		
+	(aBuilder setting: #port) 
+		label: 'RFplayer serial port';
+		description: 'Serial Port of your RFplayer';
+		setSelector: #port:;
+		getSelector: #port;
+		target: RfPlayer;
+		parent: #rfPlayer.
+		
 ]
 
 { #category : #accessing }

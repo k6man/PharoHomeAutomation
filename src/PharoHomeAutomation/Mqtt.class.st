@@ -20,10 +20,16 @@ Mqtt class >> ip: anObject [
 ]
 
 { #category : #accessing }
-Mqtt class >> mqttSetting: aBuilder [
+Mqtt class >> open [ 
+		"open a client on host from Mqtt setting"
+    ^self openOnHostName: (self ip) keepAlive: 300
+]
+
+{ #category : #accessing }
+Mqtt class >> systemSettings: aBuilder [
 	<systemsettings>
-		(aBuilder group: #mqtt)
-		label: 'mqtt';
+		(aBuilder group: #Mqtt)
+		label: 'Mqtt';
 		description: 'All settings concerned Mqtt'.
 		
 	(aBuilder setting: #ip) 
@@ -32,12 +38,6 @@ Mqtt class >> mqttSetting: aBuilder [
 		setSelector: #ip:;
 		getSelector: #ip;
 		target: Mqtt;
-		parent: #mqtt.
+		parent: #Mqtt.
 		
-]
-
-{ #category : #accessing }
-Mqtt class >> open [ 
-		"open a client on host from Mqtt setting"
-    ^self openOnHostName: (self ip) keepAlive: 300
 ]

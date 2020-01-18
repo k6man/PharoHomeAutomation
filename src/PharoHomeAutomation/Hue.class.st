@@ -41,30 +41,6 @@ Class {
 }
 
 { #category : #accessing }
-Hue class >> hueBridgeSetting: aBuilder [
-	<systemsettings>
-		(aBuilder group: #hueBridge)
-		label: 'Hue Bridge';
-		description: 'All settings concerned Hue Bridge'.
-		
-	(aBuilder setting: #ip) 
-		label: 'Hue Bridge ip';
-		description: 'Ip of your Hue Bridge';
-		setSelector: #ip:;
-		getSelector: #ip;
-		target: Hue;
-		parent: #hueBridge.
-		
-	(aBuilder setting: #key) 
-		label: 'Hue Bridge key';
-		description: 'key of your Hue Bridge';
-		setSelector: #key:;
-		getSelector: #key;
-		target: Hue;
-		parent: #hueBridge.
-]
-
-{ #category : #accessing }
 Hue class >> ip [
 	^ ip ifNil: [ip := 'localhost']
 
@@ -83,6 +59,30 @@ Hue class >> key [
 { #category : #accessing }
 Hue class >> key: anObject [
 	key := anObject
+]
+
+{ #category : #accessing }
+Hue class >> systemSettings: aBuilder [
+	<systemsettings>
+	(aBuilder group: #hueBridge)
+		label: 'Hue Bridge';
+		description: 'All settings concerned Hue Bridge'.
+		
+	(aBuilder setting: #ip) 
+		label: 'Hue Bridge ip';
+		description: 'Ip of your Hue Bridge';
+		setSelector: #ip:;
+		getSelector: #ip;
+		target: Hue;
+		parent: #hueBridge.
+		
+	(aBuilder setting: #key) 
+		label: 'Hue Bridge key';
+		description: 'key of your Hue Bridge';
+		setSelector: #key:;
+		getSelector: #key;
+		target: Hue;
+		parent: #hueBridge.
 ]
 
 { #category : #accessing }

@@ -50,6 +50,16 @@ PharoHomeAutomation class >> launch [
 	^self new
 ]
 
+{ #category : #accessing }
+PharoHomeAutomation class >> systemSettings: aBuilder [
+	<systemsettings>
+		(aBuilder group: #PharoHomeAutomation)
+		label: 'Pharo Home Automation';
+		description: 'All settings concerned Pharo Home Automation'.
+
+		
+]
+
 { #category : #initialization }
 PharoHomeAutomation >> announcer [
 	HomeAnnoucer ifNil: [ HomeAnnoucer := Announcer new ].
