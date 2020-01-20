@@ -7,17 +7,17 @@ Class {
 { #category : #instructions }
 RfPlayerSocketPort >> call: aCmd [
 	"send cmd"
-	self send: aCmd.
+	self send: aCmd ; send: Character cr.
 	"wait the end of the respond with cr"
-	^self upToAll: (Character cr asString).
+	^self upTo: (Character cr).
 ]
 
 { #category : #instructions }
 RfPlayerSocketPort >> callOptim: aCmd [
 	"send cmd"
-	self send: aCmd.
+	self send: aCmd; send: Character cr.
 	"wait the end of the respond with cr"
-	^self upToAll: (Character cr asString).
+	^self upTo: (Character cr).
 ]
 
 { #category : #instructions }
