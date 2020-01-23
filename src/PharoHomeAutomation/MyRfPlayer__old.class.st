@@ -25,49 +25,28 @@ Internal Representation and Key Implementation Points.
     Implementation Points
 "
 Class {
-	#name : #MyRfPlayer,
+	#name : #'MyRfPlayer__old',
 	#superclass : #RfPlayer,
 	#category : #PharoHomeAutomation
 }
 
 { #category : #API }
-MyRfPlayer >> AssocGate [
-<script: 'MyRfPlayer new AssocGate'>
-	self somfyRts: true.
-	^self send: 'ASSOC A2 RTS QUALIFIER 0'.
-]
-
-{ #category : #API }
-MyRfPlayer >> AssocPortal [
-<script: 'MyRfPlayer new AssocPortal'>
+MyRfPlayer__old >> AssocPortal [
+<script: 'MyRfPlayer__old new AssocPortal'>
 	self somfyRts: true.
 	^self send: 'ASSOC A1 RTS QUALIFIER 1'.
 ]
 
 { #category : #API }
-MyRfPlayer >> closeGate [
-<script: 'MyRfPlayer new closeGate'>
-	self somfyRts: true.
-	^self send: 'OFF A2 RTS QUALIFIER 0'.
-]
-
-{ #category : #API }
-MyRfPlayer >> closePortal [
-<script: 'MyRfPlayer new closePortal'>
+MyRfPlayer__old >> closePortal [
+<script: 'MyRfPlayer__old new closePortal'>
 	self somfyRts: true.
 	^self send: 'OFF A1 RTS QUALIFIER 1'.
 ]
 
 { #category : #API }
-MyRfPlayer >> openGate [
-<script: 'MyRfPlayer new openGate'>
-	self somfyRts: true.
-	^self send: 'ON A2 RTS QUALIFIER 0'.
-]
-
-{ #category : #API }
-MyRfPlayer >> openPortal [
-<script: 'MyRfPlayer new openPortal'>
+MyRfPlayer__old >> openPortal [
+<script: 'MyRfPlayer__old new openPortal'>
 	self somfyRts: true.
 	^self send: 'ON A1 RTS QUALIFIER 1'.
 ]

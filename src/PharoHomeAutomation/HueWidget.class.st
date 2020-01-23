@@ -68,9 +68,9 @@ HueWidget >> buttonSalonOn [
 { #category : #initialization }
 HueWidget >> initializePresenter [
 	buttonSalonOn
-		action: [ MyHue new onSalon ].
+		action: [ MyHue__old new onSalon ].
 	buttonSalonOff
-		action: [ MyHue new offSalon ].
+		action: [ MyHue__old new offSalon ].
 ]
 
 { #category : #initialization }

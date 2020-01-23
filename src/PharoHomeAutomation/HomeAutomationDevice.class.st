@@ -3,7 +3,7 @@ Class {
 	#superclass : #Object,
 	#instVars : [
 		'name',
-		'location',
+		'room',
 		'interface'
 	],
 	#category : #PharoHomeAutomation
@@ -20,21 +20,21 @@ HomeAutomationDevice >> interface: anObject [
 ]
 
 { #category : #accessing }
-HomeAutomationDevice >> location [
-	^ location
-]
-
-{ #category : #accessing }
-HomeAutomationDevice >> location: anObject [
-	location := anObject
-]
-
-{ #category : #accessing }
 HomeAutomationDevice >> name [
 	^ name
 ]
 
 { #category : #accessing }
-HomeAutomationDevice >> name: anObject [
-	name := anObject
+HomeAutomationDevice >> name: aString [
+	name := aString
+]
+
+{ #category : #accessing }
+HomeAutomationDevice >> room [
+	^ room
+]
+
+{ #category : #accessing }
+HomeAutomationDevice >> room: aString [
+	room := aString
 ]

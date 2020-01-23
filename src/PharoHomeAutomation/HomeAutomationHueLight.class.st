@@ -1,5 +1,5 @@
 Class {
-	#name : #HomeAutomationHueGroup,
+	#name : #HomeAutomationHueLight,
 	#superclass : #HomeAutomationDevice,
 	#traits : 'HomeAutomationDeviceLight',
 	#classTraits : 'HomeAutomationDeviceLight classTrait',
@@ -10,33 +10,33 @@ Class {
 }
 
 { #category : #'instance creation' }
-HomeAutomationHueGroup class >> newWithId: aId [
+HomeAutomationHueLight class >> newWithId: aId [
 	"comment stating purpose of message"
 	^self new id: aId ; yourself.
 
 ]
 
 { #category : #accessing }
-HomeAutomationHueGroup >> brightness: aLevel [
+HomeAutomationHueLight >> brightness: aLevel [
 	Hue new group: id state: aLevel.
 ]
 
 { #category : #accessing }
-HomeAutomationHueGroup >> id [
+HomeAutomationHueLight >> id [
 	^ id
 ]
 
 { #category : #accessing }
-HomeAutomationHueGroup >> id: anObject [
+HomeAutomationHueLight >> id: anObject [
 	id := anObject
 ]
 
 { #category : #accessing }
-HomeAutomationHueGroup >> off [
-	Hue new group: id state: false.
+HomeAutomationHueLight >> off [
+	Hue new light: id state: false.
 ]
 
 { #category : #accessing }
-HomeAutomationHueGroup >> on [
-	Hue new group: id state: true.
+HomeAutomationHueLight >> on [
+	Hue new light: id state: true.
 ]

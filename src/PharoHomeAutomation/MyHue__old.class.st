@@ -27,13 +27,13 @@ Internal Representation and Key Implementation Points.
     Implementation Points
 "
 Class {
-	#name : #MyHue,
+	#name : #'MyHue__old',
 	#superclass : #Hue,
 	#category : #PharoHomeAutomation
 }
 
 { #category : #accessing }
-MyHue >> cuisine [
+MyHue__old >> cuisine [
 <script: 'MyHue new cuisine inspect'>
 | url |
 url := ('https://',Hue ip,'/api/',Hue key,'/groups/6') asUrl.
@@ -41,7 +41,7 @@ url := ('https://',Hue ip,'/api/',Hue key,'/groups/6') asUrl.
 ]
 
 { #category : #accessing }
-MyHue >> cuisine: state [
+MyHue__old >> cuisine: state [
 "
 MyHue new cuisine: 255
 MyHue new cuisine: true
@@ -51,31 +51,31 @@ MyHue new cuisine: false
 ]
 
 { #category : #accessing }
-MyHue >> offCuisine [
+MyHue__old >> offCuisine [
 <script: 'MyHue new offCuisine'>
 self group: '6' state: false.
 ]
 
 { #category : #accessing }
-MyHue >> offSalon [
+MyHue__old >> offSalon [
 <script: 'MyHue new offSalon'>
 self group: '5' state: false.
 ]
 
 { #category : #accessing }
-MyHue >> onCuisine [
+MyHue__old >> onCuisine [
 <script: 'MyHue new onCuisine'>
 self group: '6' state: true.
 ]
 
 { #category : #accessing }
-MyHue >> onSalon [
+MyHue__old >> onSalon [
 <script: 'MyHue new onSalon'>
 self group: '5' state: true.
 ]
 
 { #category : #accessing }
-MyHue >> salon [
+MyHue__old >> salon [
 <script: 'MyHue new salon inspect'>
 | url |
 url := ('https://',Hue ip,'/api/',Hue key,'/groups/5') asUrl.
@@ -83,7 +83,7 @@ url := ('https://',Hue ip,'/api/',Hue key,'/groups/5') asUrl.
 ]
 
 { #category : #accessing }
-MyHue >> salon: state [
+MyHue__old >> salon: state [
 "
 MyHue new salon: 255
 MyHue new salon: true
