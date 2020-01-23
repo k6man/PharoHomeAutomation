@@ -57,6 +57,7 @@ MQTTClient new
 				HomeAutomationZwaveAnnoucement fromSTONJSON: ( STONJSON fromString: message message asString )
 			)."
 			"message inspect."
+			
 			Transcript cr.
 			Transcript show: message topic;cr.
 			Transcript show: message message asString;cr.

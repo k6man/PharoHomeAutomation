@@ -6,9 +6,17 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-Topic >> isBootStep [
+Topic >> isRoom: aRoom [
 "compare two topic node"
-^(self matchTopic: '+/ldb/boot_step/#').
+^(self matchTopic: 'zwave/',aRoom,'/#').
+
+ 
+]
+
+{ #category : #'as yet unclassified' }
+Topic >> isZwave [
+"compare two topic node"
+^(self matchTopic: 'zwave/#').
 
  
 ]
