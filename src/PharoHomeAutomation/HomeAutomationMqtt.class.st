@@ -2,7 +2,8 @@ Class {
 	#name : #HomeAutomationMqtt,
 	#superclass : #MQTTClient,
 	#instVars : [
-		'topicDictionnary'
+		'topicDictionnary',
+		'process'
 	],
 	#classInstVars : [
 		'ip',
@@ -39,6 +40,12 @@ HomeAutomationMqtt class >> systemSettings: aBuilder [
 		
 ]
 
+{ #category : #accessing }
+HomeAutomationMqtt class >> terminate [
+	self allInstances do: [ :mqtt | mqtt terminate].
+
+]
+
 { #category : #initialization }
 HomeAutomationMqtt >> booleanValueFromTopic: aTopicString [ 
 	"return the payload of the 'aTopicString'"
@@ -57,7 +64,7 @@ HomeAutomationMqtt >> initialize [
 	"Process allInstancesDo: [ :process | (process name = self className) ifTrue: process terminate  ]."
 	"MQTTClientInterface  allInstances do: [ :e | e stop ]."
 	" Create new process "
-    [  
+    process:= [  
 		 self host: HomeAutomationMqtt ip;
        open;
        subscribeToTopic: 'zwave/#';
@@ -73,6 +80,12 @@ HomeAutomationMqtt >> initialize [
 HomeAutomationMqtt >> numberValueFromTopic: aTopicString [ 
 	"retunr the payload of the 'aTopicString'"
 	^(topicDictionnary at: aTopicString ifAbsent: [0]) asNumber.
+]
+
+{ #category : #'initialize-release' }
+HomeAutomationMqtt >> terminate [
+	"comment stating purpose of message"
+	^process terminate.
 ]
 
 { #category : #initialization }

@@ -76,7 +76,8 @@ PharoHomeAutomation >> initialize [
 <script: 'PharoHomeAutomation launch'>
 	""
 	Smalltalk at: #WorldHomeAutomation put: self.
-		
+
+	HomeAutomationMqtt terminate.
 	mqtt := HomeAutomationMqtt new.
 
 ]
