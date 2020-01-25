@@ -1,11 +1,6 @@
 Class {
 	#name : #MyHome,
 	#superclass : #PharoHomeAutomation,
-	#instVars : [
-		'mqtt',
-		'hue',
-		'rfplayer'
-	],
 	#category : #PharoHomeAutomation
 }
 
@@ -26,13 +21,11 @@ MyHome >> initialize [
 		
 		 #Portail->(HomeAutomationSomfyRTSPortal newWithId: 'A1').
     	 
-	    #Portail->(FibaroMotionSensor newNamed: 'pir' inRoom: 'salon' ).
-	    #Portail->(FibaroMotionSensor newNamed: 'pir' inRoom: 'cuisine' ).
-	    #Portail->(FibaroMotionSensor newNamed: 'pir' inRoom: 'couloir' ).		
+	    #CapteurSalon->(FibaroMotionSensor newNamed: 'pir' inRoom: 'salon' ).
+	    #CapteurCuisine->(FibaroMotionSensor newNamed: 'pir' inRoom: 'cuisine' ).
+	    #CapteurCouloir->(FibaroMotionSensor newNamed: 'pir' inRoom: 'couloir' ).		
 	 }.
-	
-	"MQTTClientInterface  allInstances do: [ :e | e stop ].
-	mqtt := Mqtt open."
+
 
 	
 

@@ -35,10 +35,9 @@ Class {
 	#name : #PharoHomeAutomation,
 	#superclass : #Object,
 	#instVars : [
-		'devices'
-	],
-	#classVars : [
-		'HomeAnnoucer'
+		'devices',
+		'annoucer',
+		'mqtt'
 	],
 	#category : #PharoHomeAutomation
 }
@@ -62,9 +61,14 @@ PharoHomeAutomation class >> systemSettings: aBuilder [
 
 { #category : #initialization }
 PharoHomeAutomation >> announcer [
-	HomeAnnoucer ifNil: [ HomeAnnoucer := Announcer new ].
-	^ HomeAnnoucer
+	annoucer ifNil: [ annoucer := Announcer new ].
+	^ annoucer
 
+]
+
+{ #category : #accessing }
+PharoHomeAutomation >> devices [
+	^ devices
 ]
 
 { #category : #initialization }
@@ -72,5 +76,13 @@ PharoHomeAutomation >> initialize [
 <script: 'PharoHomeAutomation launch'>
 	""
 	Smalltalk at: #WorldHomeAutomation put: self.
+		
+	mqtt := HomeAutomationMqtt new.
+
+]
+
+{ #category : #initialization }
+PharoHomeAutomation >> mqtt [
+	^ mqtt.
 
 ]
