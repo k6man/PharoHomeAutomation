@@ -23,7 +23,9 @@ MyHome >> initialize [
     	 
 	    #CapteurSalon->(FibaroMotionSensor newNamed: 'pir' inRoom: 'salon' ).
 	    #CapteurCuisine->(FibaroMotionSensor newNamed: 'pir' inRoom: 'cuisine' ).
-	    #CapteurCouloir->(FibaroMotionSensor newNamed: 'pir' inRoom: 'couloir' ).		
+	    #CapteurCouloir->(FibaroMotionSensor newNamed: 'pir' inRoom: 'couloir' ).
+	
+		 #Telecommande->(NodonSoftRemote newNamed: 'telecommande' inRoom: 'salon' ).
 	 }.
 
 
