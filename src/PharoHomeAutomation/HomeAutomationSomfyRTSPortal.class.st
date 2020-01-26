@@ -10,9 +10,9 @@ Class {
 }
 
 { #category : #'instance creation' }
-HomeAutomationSomfyRTSPortal class >> newWithId: aId [
+HomeAutomationSomfyRTSPortal class >> newWithId: aId named: devicename inRoom: deviceroom [
 	"comment stating purpose of message"
-	^self new id: aId ; yourself.
+	^(self new id: aId ; name: devicename ; room: deviceroom ; yourself).
 
 ]
 

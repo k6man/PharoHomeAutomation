@@ -79,7 +79,7 @@ HomeAutomationMqtt >> initialize [
 { #category : #initialization }
 HomeAutomationMqtt >> numberValueFromTopic: aTopicString [ 
 	"retunr the payload of the 'aTopicString'"
-	^(topicDictionnary at: aTopicString ifAbsent: [0]) asNumber.
+	^(topicDictionnary at: aTopicString ifAbsent: [0]) asString asNumber.
 ]
 
 { #category : #'initialize-release' }

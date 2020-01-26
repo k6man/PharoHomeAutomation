@@ -66,6 +66,12 @@ PharoHomeAutomation >> announcer [
 ]
 
 { #category : #accessing }
+PharoHomeAutomation >> deviceNamed: deviceName inRoom: roomName [
+	^(devices detect: [ :item |
+	 item value name = deviceName and:  item value room = roomName]) value.
+]
+
+{ #category : #accessing }
 PharoHomeAutomation >> devices [
 	^ devices
 ]
