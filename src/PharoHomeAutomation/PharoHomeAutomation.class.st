@@ -36,8 +36,8 @@ Class {
 	#superclass : #Object,
 	#instVars : [
 		'devices',
-		'annoucer',
-		'mqtt'
+		'mqtt',
+		'announcer'
 	],
 	#category : #PharoHomeAutomation
 }
@@ -61,8 +61,7 @@ PharoHomeAutomation class >> systemSettings: aBuilder [
 
 { #category : #initialization }
 PharoHomeAutomation >> announcer [
-	annoucer ifNil: [ annoucer := Announcer new ].
-	^ annoucer
+	^ announcer
 
 ]
 
@@ -75,10 +74,17 @@ PharoHomeAutomation >> devices [
 PharoHomeAutomation >> initialize [ 
 <script: 'PharoHomeAutomation launch'>
 	""
-	Smalltalk at: #WorldHomeAutomation put: self.
-
+	devices:= Dictionary new.
+	announcer := Announcer new.
+	announcer when: HomeAutomationAnnoucement send: #runScripts to: self.    
+	
 	HomeAutomationMqtt terminate.
 	mqtt := HomeAutomationMqtt new.
+	
+	Smalltalk at: #WorldHomeAutomation put: self.
+
+
+
 
 ]
 
@@ -86,4 +92,13 @@ PharoHomeAutomation >> initialize [
 PharoHomeAutomation >> mqtt [
 	^ mqtt.
 
+]
+
+{ #category : #'as yet unclassified' }
+PharoHomeAutomation >> runScripts [
+	"Call all message class with pragma <HomeAutomationScriptToRun:true>"
+((PragmaCollector filter: [:prg | 
+		prg selector = #'HomeAutomationScriptToRun:' 
+		and: [ (prg argumentAt: 1)  ] ]
+) reset collected) do: [ :pragma | pragma methodClass executeMethod: pragma method].
 ]

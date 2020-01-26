@@ -4,12 +4,20 @@ Class {
 	#category : #PharoHomeAutomation
 }
 
+{ #category : #'as yet unclassified' }
+MyHome class >> scriptLumiere [
+<HomeAutomationScriptToRun: true>
+	self flag: #TODO.
+	Transcript crShow: 'run script lumiere'
+]
+
 { #category : #initialization }
-MyHome >> initialize [ 
+MyHome >> initialize [
+	<script: 'MyHome launch'> 
 	super initialize.
 	
 	"comment stating purpose of message"
-	devices := Dictionary newFrom: {
+	devices addAll: {
 		 #LumiereSalon->(HomeAutomationHueGroup newWithId: 5).
 		 #LumiereCuisine->(HomeAutomationHueGroup newWithId: 6).
 		 #LumiereChambreSarah->(HomeAutomationHueGroup newWithId: 2).

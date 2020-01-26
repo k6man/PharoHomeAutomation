@@ -6,11 +6,11 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-ZwaveTopic >> roomName [
-^ ('/' split: self) at: 2.
+ZwaveTopic >> deviceName [
+^ ('/' split: self) at: 3.
 ]
 
 { #category : #'as yet unclassified' }
-ZwaveTopic >> sensorName [
-^ ('/' split: self) at: 3.
+ZwaveTopic >> roomName [
+^ ('/' split: self) at: 2.
 ]
