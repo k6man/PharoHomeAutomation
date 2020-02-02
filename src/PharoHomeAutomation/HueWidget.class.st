@@ -77,7 +77,7 @@ HueWidget >> initializePresenter [
 HueWidget >> initializeWidgets [
 <script: 'HueWidget new openWithSpec.'>
 	"widget instantiation and configuration"
-	hue := Hue new.
+	hue := HueControler new.
 	self
 		title: 'Home';
 		extent: 400 @ 400.

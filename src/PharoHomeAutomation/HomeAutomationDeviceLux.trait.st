@@ -8,3 +8,8 @@ HomeAutomationDeviceLux >> lux [
 	"comment stating purpose of message"
 	self explicitRequirement.
 ]
+
+{ #category : #accessing }
+HomeAutomationDeviceLux >> renderContentOn: html [
+	self flag: #TODO.
+]

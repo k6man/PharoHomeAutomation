@@ -28,7 +28,7 @@ Internal Representation and Key Implementation Points.
 "
 Class {
 	#name : #'MyHue__old',
-	#superclass : #Hue,
+	#superclass : #HueControler,
 	#category : #PharoHomeAutomation
 }
 
@@ -36,7 +36,7 @@ Class {
 MyHue__old >> cuisine [
 <script: 'MyHue new cuisine inspect'>
 | url |
-url := ('https://',Hue ip,'/api/',Hue key,'/groups/6') asUrl.
+url := ('https://',HueControler ip,'/api/',HueControler key,'/groups/6') asUrl.
 ^ STONJSON fromString: (ZnEasy get: url) entity contents.
 ]
 
@@ -78,7 +78,7 @@ self group: '5' state: true.
 MyHue__old >> salon [
 <script: 'MyHue new salon inspect'>
 | url |
-url := ('https://',Hue ip,'/api/',Hue key,'/groups/5') asUrl.
+url := ('https://',HueControler ip,'/api/',HueControler key,'/groups/5') asUrl.
 ^ STONJSON fromString: (ZnEasy get: url) entity contents.
 ]
 

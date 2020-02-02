@@ -1,5 +1,5 @@
 Class {
-	#name : #RfPlayer,
+	#name : #RfPlayerControler,
 	#superclass : #Object,
 	#instVars : [
 		'returnFormat',
@@ -14,37 +14,37 @@ Class {
 }
 
 { #category : #accessing }
-RfPlayer class >> ip [
+RfPlayerControler class >> ip [
 	^ ip ifNil: [ip := '']
 ]
 
 { #category : #accessing }
-RfPlayer class >> ip: anObject [
+RfPlayerControler class >> ip: anObject [
 	ip := anObject
 ]
 
 { #category : #'open/close' }
-RfPlayer class >> port [
+RfPlayerControler class >> port [
 	^ port ifNil: [port := '2003']
 ]
 
 { #category : #'open/close' }
-RfPlayer class >> port: anObject [
+RfPlayerControler class >> port: anObject [
 	port := anObject
 ]
 
 { #category : #accessing }
-RfPlayer class >> serialport [
+RfPlayerControler class >> serialport [
 	^ serialport ifNil: [serialport := 'COM3']
 ]
 
 { #category : #accessing }
-RfPlayer class >> serialport: anObject [
+RfPlayerControler class >> serialport: anObject [
 	serialport := anObject
 ]
 
 { #category : #'open/close' }
-RfPlayer class >> systemSettings: aBuilder [
+RfPlayerControler class >> systemSettings: aBuilder [
 	<systemsettings>
 	(aBuilder group: #rfPlayer)
 		label: 'RFplayer';
@@ -54,26 +54,26 @@ RfPlayer class >> systemSettings: aBuilder [
 		description: 'Serial Port of your RFplayer';
 		setSelector: #serialport:;
 		getSelector: #serialport;
-		target: RfPlayer;
+		target: RfPlayerControler;
 		parent: #rfPlayer.
 	(aBuilder setting: #ip) 
 		label: 'RFplayer ip adress';
 		description: 'Ip adress of your RFplayer';
 		setSelector: #ip:;
 		getSelector: #ip;
-		target: RfPlayer;
+		target: RfPlayerControler;
 		parent: #rfPlayer.
 	(aBuilder setting: #port) 
 		label: 'RFplayer tcp port';
 		description: 'Tcp Port of your RFplayer';
 		setSelector: #port:;
 		getSelector: #port;
-		target: RfPlayer;
+		target: RfPlayerControler;
 		parent: #rfPlayer.		
 ]
 
 { #category : #accessing }
-RfPlayer >> call: aCmd [
+RfPlayerControler >> call: aCmd [
 	"call cmd"
 	|serialPort return|
 	serialPort := self openPort.
@@ -83,7 +83,7 @@ RfPlayer >> call: aCmd [
 ]
 
 { #category : #initialization }
-RfPlayer >> initialize [ 
+RfPlayerControler >> initialize [ 
 	"comment stating purpose of message"
 	"serialport := RfPlayerSerialPort new."
 	returnFormat := 'JSON'. "Could be 'JSON' 'XML' or '' for simple string"
@@ -105,9 +105,9 @@ serialport
 ]
 
 { #category : #accessing }
-RfPlayer >> openPort [
-^RfPlayer ip isEmpty ifFalse: [
-	RfPlayerSocketPort openConnectionToHostNamed: RfPlayer ip port: RfPlayer port asNumber.
+RfPlayerControler >> openPort [
+^RfPlayerControler ip isEmpty ifFalse: [
+	RfPlayerSocketPort openConnectionToHostNamed: RfPlayerControler ip port: RfPlayerControler port asNumber.
 	 ] 
  ifTrue: [
 	RfPlayerSerialPort new 
@@ -117,20 +117,20 @@ RfPlayer >> openPort [
         parityType: 0;
 		  inputFlowControlType: 2;
 		  outputFlowControlType: 2;
-        openPort: RfPlayer serialport;
+        openPort: RfPlayerControler serialport;
 		yourself.
 	 ] 
 ]
 
 { #category : #accessing }
-RfPlayer >> send: aCmd [
+RfPlayerControler >> send: aCmd [
 	"send cmd"
 	self openPort send: 'ZIA++1234 ',aCmd ; close.
 
 ]
 
 { #category : #accessing }
-RfPlayer >> somfyRts: aStatus [
+RfPlayerControler >> somfyRts: aStatus [
 	^aStatus
 	ifTrue: [ 
 		self send: 'FREQ L 433420'
@@ -142,7 +142,7 @@ RfPlayer >> somfyRts: aStatus [
 ]
 
 { #category : #accessing }
-RfPlayer >> status [
+RfPlayerControler >> status [
 <script: 'RfPlayer new status inspect'>
 	^ (self call: 'STATUS SYSTEM ',returnFormat) withoutPrefix: returnPrefix.
 ]

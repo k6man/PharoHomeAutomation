@@ -31,7 +31,7 @@ Internal Representation and Key Implementation Points.
     Implementation Points
 "
 Class {
-	#name : #Hue,
+	#name : #HueControler,
 	#superclass : #Object,
 	#classInstVars : [
 		'ip',
@@ -41,28 +41,28 @@ Class {
 }
 
 { #category : #accessing }
-Hue class >> ip [
+HueControler class >> ip [
 	^ ip ifNil: [ip := 'localhost']
 
 ]
 
 { #category : #accessing }
-Hue class >> ip: anObject [
+HueControler class >> ip: anObject [
 	ip := anObject
 ]
 
 { #category : #accessing }
-Hue class >> key [
+HueControler class >> key [
 	^ key ifNil: [key := 'xxxxxxxxx']
 ]
 
 { #category : #accessing }
-Hue class >> key: anObject [
+HueControler class >> key: anObject [
 	key := anObject
 ]
 
 { #category : #accessing }
-Hue class >> systemSettings: aBuilder [
+HueControler class >> systemSettings: aBuilder [
 	<systemsettings>
 	(aBuilder group: #hueBridge)
 		label: 'Hue Bridge';
@@ -73,7 +73,7 @@ Hue class >> systemSettings: aBuilder [
 		description: 'Ip of your Hue Bridge';
 		setSelector: #ip:;
 		getSelector: #ip;
-		target: Hue;
+		target: HueControler;
 		parent: #hueBridge.
 		
 	(aBuilder setting: #key) 
@@ -81,14 +81,14 @@ Hue class >> systemSettings: aBuilder [
 		description: 'key of your Hue Bridge';
 		setSelector: #key:;
 		getSelector: #key;
-		target: Hue;
+		target: HueControler;
 		parent: #hueBridge.
 ]
 
 { #category : #accessing }
-Hue >> group: group state: state [
+HueControler >> group: group state: state [
 | url |
-url := ('https://',Hue ip,'/api/',Hue key,'/groups/',group asString,'/action') asUrl.
+url := ('https://',HueControler ip,'/api/',HueControler key,'/groups/',group asString,'/action') asUrl.
 
 ^ ZnEasy put: url data: (state isNumber
 	ifTrue: [ (ZnEntity json:'{"bri":',state asString,'}') ]
@@ -96,15 +96,15 @@ url := ('https://',Hue ip,'/api/',Hue key,'/groups/',group asString,'/action') a
 ]
 
 { #category : #accessing }
-Hue >> groups [
+HueControler >> groups [
 <script: 'Hue new groups inspect'>
 | url |
-url := ('https://',Hue ip,'/api/',Hue key,'/groups') asUrl.
+url := ('https://',HueControler ip,'/api/',HueControler key,'/groups') asUrl.
 ^ STONJSON fromString: (ZnEasy get: url) entity contents.
 ]
 
 { #category : #accessing }
-Hue >> gtInspectorHueIn: composite [
+HueControler >> gtInspectorHueIn: composite [
 	<gtInspectorPresentationOrder: -10>
 	self flag: #TODO.
 	"comment stating purpose of message"
@@ -114,15 +114,15 @@ Hue >> gtInspectorHueIn: composite [
 ]
 
 { #category : #accessing }
-Hue >> idOfGroupNamed: aName [
+HueControler >> idOfGroupNamed: aName [
 	self flag: #TODO.
  ^self groups
 ]
 
 { #category : #accessing }
-Hue >> light: light state: state [
+HueControler >> light: light state: state [
 | url |
-url := ('https://',Hue ip,'/api/',Hue key,'/lights/',light asString,'/state') asUrl.
+url := ('https://',HueControler ip,'/api/',HueControler key,'/lights/',light asString,'/state') asUrl.
 
 ^ ZnEasy put: url data: (state isNumber
 	ifTrue: [ (ZnEntity json:'{"bri":',state asString,'}') ]
@@ -130,9 +130,9 @@ url := ('https://',Hue ip,'/api/',Hue key,'/lights/',light asString,'/state') as
 ]
 
 { #category : #accessing }
-Hue >> lights [
+HueControler >> lights [
 <script: 'Hue new lights inspect'>
 | url |
-url := ('https://',Hue ip,'/api/',Hue key,'/lights') asUrl.
+url := ('https://',HueControler ip,'/api/',HueControler key,'/lights') asUrl.
 ^ STONJSON fromString: (ZnEasy get: url) entity contents.
 ]

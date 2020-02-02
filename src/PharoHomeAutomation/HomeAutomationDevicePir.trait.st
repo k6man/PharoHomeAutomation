@@ -8,3 +8,8 @@ HomeAutomationDevicePir >> move [
 	"comment stating purpose of message"
 	self explicitRequirement.
 ]
+
+{ #category : #accessing }
+HomeAutomationDevicePir >> renderContentOn: html [
+	self flag: #TODO.
+]

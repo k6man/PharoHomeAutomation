@@ -26,7 +26,7 @@ Internal Representation and Key Implementation Points.
 "
 Class {
 	#name : #'MyRfPlayer__old',
-	#superclass : #RfPlayer,
+	#superclass : #RfPlayerControler,
 	#category : #PharoHomeAutomation
 }
 

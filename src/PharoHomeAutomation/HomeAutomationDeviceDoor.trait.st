@@ -15,3 +15,8 @@ HomeAutomationDeviceDoor >> open [
 	"comment stating purpose of message"
 	self explicitRequirement.
 ]
+
+{ #category : #API }
+HomeAutomationDeviceDoor >> renderContentOn: html [
+	self flag: #TODO.
+]

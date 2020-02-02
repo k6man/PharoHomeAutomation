@@ -18,7 +18,7 @@ HomeAutomationHueLight class >> newWithId: aId named: devicename inRoom: devicer
 
 { #category : #accessing }
 HomeAutomationHueLight >> brightness: aLevel [
-	Hue new group: id state: aLevel.
+	HueControler new group: id state: aLevel.
 ]
 
 { #category : #accessing }
@@ -33,10 +33,10 @@ HomeAutomationHueLight >> id: anObject [
 
 { #category : #accessing }
 HomeAutomationHueLight >> off [
-	Hue new light: id state: false.
+	HueControler new light: id state: false.
 ]
 
 { #category : #accessing }
 HomeAutomationHueLight >> on [
-	Hue new light: id state: true.
+	HueControler new light: id state: true.
 ]
