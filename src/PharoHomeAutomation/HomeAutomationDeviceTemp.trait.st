@@ -5,6 +5,7 @@ Trait {
 
 { #category : #accessing }
 HomeAutomationDeviceTemp >> renderContentOn: html [
+<renderContentOn: true>
 	self flag: #TODO.
 ]
 

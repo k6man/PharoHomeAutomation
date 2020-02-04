@@ -24,5 +24,6 @@ HomeAutomationDeviceLight >> on [
 
 { #category : #API }
 HomeAutomationDeviceLight >> renderContentOn: html [
+<renderContentOn: true>
 	self flag: #TODO.
 ]

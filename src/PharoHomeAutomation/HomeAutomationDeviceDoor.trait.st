@@ -18,5 +18,6 @@ HomeAutomationDeviceDoor >> open [
 
 { #category : #API }
 HomeAutomationDeviceDoor >> renderContentOn: html [
+<renderContentOn: true>
 	self flag: #TODO.
 ]

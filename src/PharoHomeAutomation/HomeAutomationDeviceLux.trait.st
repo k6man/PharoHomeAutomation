@@ -11,5 +11,6 @@ HomeAutomationDeviceLux >> lux [
 
 { #category : #accessing }
 HomeAutomationDeviceLux >> renderContentOn: html [
+<renderContentOn: true>
 	self flag: #TODO.
 ]

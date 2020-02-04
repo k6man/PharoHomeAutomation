@@ -11,5 +11,6 @@ HomeAutomationDevicePir >> move [
 
 { #category : #accessing }
 HomeAutomationDevicePir >> renderContentOn: html [
+<renderContentOn: true>
 	self flag: #TODO.
 ]
