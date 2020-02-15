@@ -1,6 +1,8 @@
 Class {
 	#name : #Cam,
-	#superclass : #Object,
+	#superclass : #HomeAutomationDevice,
+	#traits : 'HomeAutomationDeviceCam',
+	#classTraits : 'HomeAutomationDeviceCam classTrait',
 	#instVars : [
 		'ip',
 		'passwd',

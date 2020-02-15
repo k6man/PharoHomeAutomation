@@ -38,6 +38,9 @@ MyHome >> initialize [
 		 #LumiereEntree->(HomeAutomationHueGroup newWithId: 4 named: 'lumiere' inRoom:  'entree').
 		 #LumiereTerrasse->(HomeAutomationHueGroup newWithId: 3 named: 'lumiere' inRoom: 'terrasse').
 		 #LumierePortail->(HomeAutomationHueGroup newWithId: 1 named: 'lumiere' inRoom: 'portail').
+		
+		"il faut rajouter les parametres des camera C1 dans les settings"
+		"#CameraSalon->((WebCamC1 ip: '192.168.1.4' login: '' passwd: '' ) name: 'camera' ; room: 'salon')."
 	 }.
 
 	notifiers addAll: {
