@@ -37,6 +37,7 @@ Class {
 	#instVars : [
 		'devices',
 		'notifiers',
+		'timer',
 		'mqtt',
 		'announcer'
 	],
@@ -85,13 +86,14 @@ PharoHomeAutomation >> initialize [
 	notifiers := Dictionary new.
 	announcer := Announcer new.
 	announcer when: HomeAutomationAnnoucement send: #runScripts to: self.    
-	
+
+	HomeAutomationTimer terminate.
+	timer := HomeAutomationTimer new.
+		
 	HomeAutomationMqtt terminate.
 	mqtt := HomeAutomationMqtt new.
-	
+
 	Smalltalk at: #WorldHomeAutomation put: self.
-
-
 
 
 ]
