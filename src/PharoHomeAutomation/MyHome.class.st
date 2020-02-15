@@ -40,7 +40,9 @@ MyHome >> initialize [
 		 #LumierePortail->(HomeAutomationHueGroup newWithId: 1 named: 'lumiere' inRoom: 'portail').
 	 }.
 
-
+	notifiers addAll: {
+		#ifft->(IfftControler new).
+	}.
 	
 
 ]

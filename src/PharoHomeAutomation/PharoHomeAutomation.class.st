@@ -36,6 +36,7 @@ Class {
 	#superclass : #Object,
 	#instVars : [
 		'devices',
+		'notifiers',
 		'mqtt',
 		'announcer'
 	],
@@ -80,7 +81,8 @@ PharoHomeAutomation >> devices [
 PharoHomeAutomation >> initialize [ 
 <script: 'PharoHomeAutomation launch'>
 	""
-	devices:= Dictionary new.
+	devices := Dictionary new.
+	notifiers := Dictionary new.
 	announcer := Announcer new.
 	announcer when: HomeAutomationAnnoucement send: #runScripts to: self.    
 	
@@ -98,6 +100,11 @@ PharoHomeAutomation >> initialize [
 PharoHomeAutomation >> mqtt [
 	^ mqtt.
 
+]
+
+{ #category : #accessing }
+PharoHomeAutomation >> notify: aString [
+	notifiers do: [ :n | n value notify: aString].
 ]
 
 { #category : #'as yet unclassified' }

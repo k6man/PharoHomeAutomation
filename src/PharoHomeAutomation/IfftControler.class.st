@@ -1,6 +1,8 @@
 Class {
 	#name : #IfftControler,
 	#superclass : #Object,
+	#traits : 'HomeAutomationNotify',
+	#classTraits : 'HomeAutomationNotify classTrait',
 	#classInstVars : [
 		'key',
 		'notify_event'
@@ -49,4 +51,12 @@ IfftControler class >> systemSettings: aBuilder [
 		getSelector: #notify_event;
 		target: IfftControler;
 		parent: #ifft.
+]
+
+{ #category : #'as yet unclassified' }
+IfftControler >> notify: aString [
+| url |
+url := ('https://maker.ifttt.com/trigger/',IfftControler notify_event ,'/with/key/',IfftControler key) asUrl.
+
+^ ZnEasy post: url data: (ZnEntity json:'{"value1" : "',aString,'"}'). 
 ]
