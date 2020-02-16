@@ -49,7 +49,7 @@ currentIp := WorldHomeAutomation externalIp.
 	externalIp :=  currentIp.
 	WorldHomeAutomation notify: 'Home external IP has changed: ',externalIp. 
 	 ].
-"Transcript crShow: 'run scriptExternalIp: ',currentIp. "
+Transcript crShow: 'run scriptExternalIp: ',currentIp. 
 
 ]
 
@@ -63,6 +63,6 @@ MyHome >> scriptLumiere [
 	moveSensor := WorldHomeAutomation deviceNamed: 'pir' inRoom: 'salon'.
 	light := WorldHomeAutomation deviceNamed: 'lumiere' inRoom: 'salon'.
 	(moveSensor move and: ((moveSensor lux) < 60)) ifTrue: [ light on ] ifFalse: [ light off ].
-	"Transcript crShow: 'run scriptLumiere'."
+	Transcript crShow: 'run scriptLumiere'.
 
 ]
