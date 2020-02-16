@@ -78,6 +78,12 @@ PharoHomeAutomation >> devices [
 	^ devices
 ]
 
+{ #category : #'as yet unclassified' }
+PharoHomeAutomation >> externalIp [
+	"Ip seen from internet"
+^ (ZnEasy get: 'https://ipecho.net/plain' asUrl) contents. 
+]
+
 { #category : #initialization }
 PharoHomeAutomation >> initialize [ 
 <script: 'PharoHomeAutomation launch'>
@@ -85,7 +91,7 @@ PharoHomeAutomation >> initialize [
 	devices := Dictionary new.
 	notifiers := Dictionary new.
 	announcer := Announcer new.
-	announcer when: HomeAutomationAnnoucement send: #runScripts to: self.    
+	announcer when: HomeAutomationAnnoucement send: #runScriptsFor: to: self.    
 
 	HomeAutomationTimer terminate.
 	timer := HomeAutomationTimer new.
@@ -110,10 +116,13 @@ PharoHomeAutomation >> notify: aString [
 ]
 
 { #category : #'as yet unclassified' }
-PharoHomeAutomation >> runScripts [
+PharoHomeAutomation >> runScriptsFor: anAnnouncement [
 	"Call all message class with pragma <HomeAutomationScriptToRun:true>"
 ((PragmaCollector filter: [:prg | 
-		prg selector = #'HomeAutomationScriptToRun:' 
-		and: [ (prg argumentAt: 1)  ] ]
+		prg selector = #'homeAutomationScriptToRunWhen:' 
+		and: [ 
+			(prg argumentAt: 1) = anAnnouncement className asSymbol
+			]
+	 ]
 ) reset collected) do: [ :pragma | pragma methodClass executeMethod: pragma method].
 ]
