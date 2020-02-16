@@ -124,5 +124,5 @@ PharoHomeAutomation >> runScriptsFor: anAnnouncement [
 			(prg argumentAt: 1) = anAnnouncement className asSymbol
 			]
 	 ]
-) reset collected) do: [ :pragma | pragma methodClass executeMethod: pragma method].
+) reset collected) do: [ :pragma | pragma methodClass allInstancesDo: [ :object | object executeMethod: pragma method] ].
 ]

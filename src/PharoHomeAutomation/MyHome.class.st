@@ -1,30 +1,11 @@
 Class {
 	#name : #MyHome,
 	#superclass : #PharoHomeAutomation,
+	#instVars : [
+		'externalIp'
+	],
 	#category : #PharoHomeAutomation
 }
-
-{ #category : #'as yet unclassified' }
-MyHome class >> scriptExternalIp [
-<homeAutomationScriptToRunWhen: #HomeAutomationTimeMinuteAnnoucement>
-"WorldHomeAutomation externalIp"
-Transcript crShow: 'run scriptExternalIp: ',WorldHomeAutomation externalIp . 
-
-]
-
-{ #category : #'as yet unclassified' }
-MyHome class >> scriptLumiere [
-<homeAutomationScriptToRunWhen: #HomeAutomationDeviceAnnoucement>
-| moveSensor light |
-	moveSensor := WorldHomeAutomation deviceNamed: 'pir' inRoom: 'cuisine'.
-	light := WorldHomeAutomation deviceNamed: 'lumiere' inRoom: 'cuisine'.
-	(moveSensor move and: ((moveSensor lux) < 60)) ifTrue: [ light on ] ifFalse: [ light off ].
-	moveSensor := WorldHomeAutomation deviceNamed: 'pir' inRoom: 'salon'.
-	light := WorldHomeAutomation deviceNamed: 'lumiere' inRoom: 'salon'.
-	(moveSensor move and: ((moveSensor lux) < 60)) ifTrue: [ light on ] ifFalse: [ light off ].
-	Transcript crShow: 'run scriptLumiere'.
-
-]
 
 { #category : #initialization }
 MyHome >> initialize [
@@ -55,5 +36,33 @@ MyHome >> initialize [
 		#ifft->(IfftControler new).
 	}.
 	
+	externalIp := ''.
+
+]
+
+{ #category : #'as yet unclassified' }
+MyHome >> scriptExternalIp [
+<homeAutomationScriptToRunWhen: #HomeAutomationTimeMinuteAnnoucement>
+| currentIp |
+currentIp := WorldHomeAutomation externalIp.
+(currentIp = externalIp) ifFalse: [  
+	externalIp :=  currentIp.
+	WorldHomeAutomation notify: 'Home external IP has changed: ',externalIp. 
+	 ].
+"Transcript crShow: 'run scriptExternalIp: ',currentIp. "
+
+]
+
+{ #category : #'as yet unclassified' }
+MyHome >> scriptLumiere [
+<homeAutomationScriptToRunWhen: #HomeAutomationDeviceAnnoucement>
+| moveSensor light |
+	moveSensor := WorldHomeAutomation deviceNamed: 'pir' inRoom: 'cuisine'.
+	light := WorldHomeAutomation deviceNamed: 'lumiere' inRoom: 'cuisine'.
+	(moveSensor move and: ((moveSensor lux) < 60)) ifTrue: [ light on ] ifFalse: [ light off ].
+	moveSensor := WorldHomeAutomation deviceNamed: 'pir' inRoom: 'salon'.
+	light := WorldHomeAutomation deviceNamed: 'lumiere' inRoom: 'salon'.
+	(moveSensor move and: ((moveSensor lux) < 60)) ifTrue: [ light on ] ifFalse: [ light off ].
+	"Transcript crShow: 'run scriptLumiere'."
 
 ]
