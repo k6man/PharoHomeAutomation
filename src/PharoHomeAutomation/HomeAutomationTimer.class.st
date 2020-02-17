@@ -21,7 +21,7 @@ HomeAutomationTimer >> initialize [
 	" Create new process "
     process:= [ [
 			(Duration minutes: 1) wait.
-			WorldHomeAutomation announcer announce: HomeAutomationTimeMinuteAnnoucement.
+			WorldHomeAutomation announcer announce: HomeAutomationTimeMinuteAnnoucement new.
 	 ] repeat ] forkNamed: self className.
 ]
 

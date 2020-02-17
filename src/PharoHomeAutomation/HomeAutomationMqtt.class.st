@@ -71,7 +71,7 @@ HomeAutomationMqtt >> initialize [
        runWith: [ :message |		
 				"HomeAutomationZwaveAnnoucement fromSTONJSON: ( STONJSON fromString: message message asString )"
 			topicDictionnary at: message topic put: message message.
-			WorldHomeAutomation announcer announce: HomeAutomationDeviceAnnoucement
+			WorldHomeAutomation announcer announce: HomeAutomationDeviceAnnoucement new
 		 ]
 	 ] forkNamed: self className.
 ]

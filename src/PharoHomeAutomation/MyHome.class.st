@@ -41,7 +41,7 @@ MyHome >> initialize [
 ]
 
 { #category : #'as yet unclassified' }
-MyHome >> scriptExternalIp [
+MyHome >> scriptExternalIp: anAnnouncement [
 <homeAutomationScriptToRunWhen: #HomeAutomationTimeMinuteAnnoucement>
 | currentIp |
 currentIp := WorldHomeAutomation externalIp.
@@ -54,7 +54,7 @@ Transcript crShow: 'run scriptExternalIp: ',currentIp.
 ]
 
 { #category : #'as yet unclassified' }
-MyHome >> scriptLumiere [
+MyHome >> scriptLumiere: anAnnouncement [
 <homeAutomationScriptToRunWhen: #HomeAutomationDeviceAnnoucement>
 | moveSensor light |
 	moveSensor := WorldHomeAutomation deviceNamed: 'pir' inRoom: 'cuisine'.
