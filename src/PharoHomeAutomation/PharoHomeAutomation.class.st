@@ -125,6 +125,9 @@ PharoHomeAutomation >> runScriptsFor: anAnnouncement [
 			(prg argumentAt: 1) = anAnnouncement className asSymbol
 			]
 	 ]
-) reset collected) do: [ :pragma | pragma methodClass allInstancesDo: [ :object |
+) reset collected) do: [ :pragma | 
+	"Transcript crShow: 'Found script to run: ',pragma method name."
+	pragma methodClass allInstancesDo: [ :object |
+		"Transcript crShow: 'Found obj to run script : ',object asString."
 		 object withArgs: #( anAnnouncement ) executeMethod: pragma method] ].
 ]
