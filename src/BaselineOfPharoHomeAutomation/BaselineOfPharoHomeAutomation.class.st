@@ -18,7 +18,7 @@ BaselineOfPharoHomeAutomation >> baselineOf: spec [
 								
 			spec package: 'PharoHomeAutomation'. 
 			spec package: 'PharoHomeAutomation-Tests' with: [ spec requires: #('PharoHomeAutomation' ) ]. 				
-			spec group: 'default' with: #(#'MQTT-Core' #'MQTT-Client' #'MQTT-Tests' 
+			spec group: 'default' with: #(#'MQTT-Core' #'MQTT-Client' #'MQTT-Tests' #'Seaside3'
 			                              #'PharoHomeAutomation' #'PharoHomeAutomation-Tests').
 			]
 ]
