@@ -91,7 +91,7 @@ PharoHomeAutomation >> initialize [
 	devices := Dictionary new.
 	notifiers := Dictionary new.
 	announcer := Announcer new.
-	announcer when: HomeAutomationAnnoucement send: #runScriptsFor: to: self.    
+	announcer weak subscribe: HomeAutomationAnnoucement send: #runScriptsFor: to: self.    
 
 	HomeAutomationTimer terminate.
 	timer := HomeAutomationTimer new.
@@ -99,8 +99,9 @@ PharoHomeAutomation >> initialize [
 	HomeAutomationMqtt terminate.
 	mqtt := HomeAutomationMqtt new.
 
-	Smalltalk at: #WorldHomeAutomation put: self.
-
+	WorldHomeAutomation ifNil: [ Smalltalk at: #WorldHomeAutomation put: self. ]
+	ifNotNil: [ WorldHomeAutomation becomeForward: self. 	]
+	
 
 ]
 

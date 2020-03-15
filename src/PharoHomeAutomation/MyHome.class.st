@@ -59,7 +59,7 @@ MyHome >> scriptLumiere: anAnnouncement [
 | moveSensor light |
 	moveSensor := WorldHomeAutomation deviceNamed: 'pir' inRoom: 'cuisine'.
 	light := WorldHomeAutomation deviceNamed: 'lumiere' inRoom: 'cuisine'.
-	(moveSensor move and: ((moveSensor lux) < 60)) ifTrue: [ light on ] ifFalse: [ light off ].
+	(moveSensor move and: ((moveSensor lux) < 40)) ifTrue: [ light on ] ifFalse: [ light off ].
 	moveSensor := WorldHomeAutomation deviceNamed: 'pir' inRoom: 'salon'.
 	light := WorldHomeAutomation deviceNamed: 'lumiere' inRoom: 'salon'.
 	(moveSensor move and: ((moveSensor lux) < 60)) ifTrue: [ light on ] ifFalse: [ light off ].
