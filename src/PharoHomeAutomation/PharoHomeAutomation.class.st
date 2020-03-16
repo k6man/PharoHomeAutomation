@@ -1,4 +1,10 @@
 "
+Load by:
+Metacello new
+  baseline: 'PharoHomeAutomation';
+  repository: 'github://k6man/PharoHomeAutomation';
+load.
+
 Home Automation  Application:
 PharoHomeAutomation new.
 
