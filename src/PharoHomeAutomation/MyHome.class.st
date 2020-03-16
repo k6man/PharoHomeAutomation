@@ -47,9 +47,10 @@ MyHome >> scriptExternalIp: anAnnouncement [
 currentIp := WorldHomeAutomation externalIp.
 (currentIp = externalIp) ifFalse: [  
 	externalIp :=  currentIp.
-	WorldHomeAutomation notify: 'Home external IP has changed: ',externalIp. 
+	WorldHomeAutomation notify: 'Home external IP has changed: ',externalIp.
+	Transcript crShow: 'run scriptExternalIp: ','Home external IP has changed: ',externalIp. 
 	 ].
-Transcript crShow: 'run scriptExternalIp: ',currentIp. 
+ 
 
 ]
 
