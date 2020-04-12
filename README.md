@@ -1,37 +1,26 @@
-## Welcome to GitHub Pages
+## PharoHomeAutomation
 
-You can use the [editor on GitHub](https://github.com/k6man/PharoHomeAutomation/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Pharo Package to create Home Automation System
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### How to start:
 
-### Markdown
+1 - load in pharo 7 or phaor 8 image the last version:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+```smalltalk
+Metacello new
+  baseline: 'PharoHomeAutomation';
+  repository: 'github://k6man/PharoHomeAutomation';
+load.
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+2 - update classe 'MyHome' with your home devices.
 
-### Jekyll Themes
+3 - start with:
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/k6man/PharoHomeAutomation/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```
+MyHome launch.
+```
 
-### Support or Contact
+For the web UI got to http://localhost:8080
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
