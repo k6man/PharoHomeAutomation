@@ -94,6 +94,6 @@ MyHome >> scriptLumiere: anAnnouncement [
 	moveSensor := WorldHomeAutomation deviceNamed: 'pir' inRoom: 'salon'.
 	light := WorldHomeAutomation deviceNamed: 'lumiere' inRoom: 'salon'.
 	(moveSensor move and: ((moveSensor lux) < 40)) ifTrue: [ light on ] ifFalse: [ light off ].
-	Transcript crShow: 'run scriptLumiere ',(moveSensor lux asString),' lux => state: ',((moveSensor move and: ((moveSensor lux) < 60)) asString).
+	Transcript crShow: 'run scriptLumiere ', moveSensor asString,' ',(moveSensor lux asString),' lux => state: ',((moveSensor move and: ((moveSensor lux) < 60)) asString).
 
 ]
