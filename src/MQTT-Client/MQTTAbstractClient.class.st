@@ -107,13 +107,15 @@ MQTTAbstractClient >> keepalive: seconds [
 { #category : #'input/output' }
 MQTTAbstractClient >> log: anObject [
 	| line |
-	self debug ifFalse: [ ^ self ].
-	line := String streamContents: [ :out |
-		DateAndTime now printOn: out.
-		out << ' [ ' << self clientId << ' ]'.
-		out << ' - '.
-		out << anObject value ].
-	self crLog: line
+	self debug
+		ifFalse: [ ^ self ].
+	line := String
+		streamContents: [ :out | 
+			DateAndTime now printOn: out.
+			out << ' [ ' << self clientId << ' ]'.
+			out << ' - '.
+			out << anObject value ].
+	self crTrace: line
 ]
 
 { #category : #accessing }

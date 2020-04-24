@@ -39,10 +39,11 @@ HomeAutomationDevice >> printOn: aStream [
 	aStream
 		nextPutAll: (title first isVowel ifTrue: ['an '] ifFalse: ['a ']);
 		nextPutAll: title ;
-		nextPutAll: 'named ';
+		nextPutAll: ' named ''';
 		nextPutAll: self name;
-		nextPutAll: ' in room ';
-		nextPutAll: self room
+		nextPutAll: ''' in room ''';
+		nextPutAll: self room;
+		nextPutAll: ''''
 ]
 
 { #category : #accessing }

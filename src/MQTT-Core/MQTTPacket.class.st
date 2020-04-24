@@ -18,7 +18,7 @@ MIT License.
 Class {
 	#name : #MQTTPacket,
 	#superclass : #Object,
-	#category : 'MQTT-Core'
+	#category : #'MQTT-Core'
 }
 
 { #category : #accessing }
@@ -211,10 +211,9 @@ MQTTPacket >> writeBytes: bytes on: binaryStream [
 
 { #category : #writing }
 MQTTPacket >> writeInt16: integer on: binaryStream [
-	binaryStream 
-		nextPut: (integer digitAt: 2); 
-		nextPut: (integer digitAt: 1)
-
+	binaryStream
+		nextPut: (integer byteAt: 2);
+		nextPut: (integer byteAt: 1)
 ]
 
 { #category : #writing }

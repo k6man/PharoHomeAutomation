@@ -91,24 +91,24 @@ PharoHomeAutomation >> externalIp [
 ]
 
 { #category : #initialization }
-PharoHomeAutomation >> initialize [ 
-<script: 'PharoHomeAutomation launch'>
+PharoHomeAutomation >> initialize [
 	""
+
+	<script: 'PharoHomeAutomation launch'>
 	devices := Dictionary new.
 	notifiers := Dictionary new.
 	announcer := Announcer new.
-	announcer weak subscribe: HomeAutomationAnnoucement send: #runScriptsFor: to: self.    
-
+	announcer weak
+		when: HomeAutomationAnnoucement
+		send: #runScriptsFor:
+		to: self.
 	HomeAutomationTimer terminate.
 	timer := HomeAutomationTimer new.
-		
 	HomeAutomationMqtt terminate.
 	mqtt := HomeAutomationMqtt new.
-
-	WorldHomeAutomation ifNil: [ Smalltalk at: #WorldHomeAutomation put: self. ]
-	ifNotNil: [ WorldHomeAutomation becomeForward: self. 	]
-	
-
+	WorldHomeAutomation
+		ifNil: [ Smalltalk at: #WorldHomeAutomation put: self ]
+		ifNotNil: [ WorldHomeAutomation becomeForward: self ]
 ]
 
 { #category : #initialization }
@@ -125,7 +125,7 @@ PharoHomeAutomation >> notify: aString [
 
 { #category : #'as yet unclassified' }
 PharoHomeAutomation >> runScriptsFor: anAnnouncement [
-	"Call all message class with pragma <HomeAutomationScriptToRun:true>"
+	"Call all message class with pragma <homeAutomationScriptToRunWhen: anAnnouncement className asSymbol>"
 ((PragmaCollector filter: [:prg | 
 		prg selector = #'homeAutomationScriptToRunWhen:' 
 		and: [ 
