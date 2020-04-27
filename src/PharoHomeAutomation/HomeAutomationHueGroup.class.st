@@ -4,7 +4,8 @@ Class {
 	#traits : 'HomeAutomationDeviceLight',
 	#classTraits : 'HomeAutomationDeviceLight classTrait',
 	#instVars : [
-		'id'
+		'id',
+		'state'
 	],
 	#category : #PharoHomeAutomation
 }
@@ -34,9 +35,23 @@ HomeAutomationHueGroup >> id: anObject [
 { #category : #accessing }
 HomeAutomationHueGroup >> off [
 	HueControler new group: id state: false.
+	state := false.
 ]
 
 { #category : #accessing }
 HomeAutomationHueGroup >> on [
 	HueControler new group: id state: true.
+	state := true.
+]
+
+{ #category : #accessing }
+HomeAutomationHueGroup >> printOn: aStream [
+	super printOn: aStream.
+	aStream 
+	nextPutAll: ' stat: '; nextPutAll: self state asString
+]
+
+{ #category : #accessing }
+HomeAutomationHueGroup >> state [
+	^ state
 ]

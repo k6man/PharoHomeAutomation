@@ -19,6 +19,15 @@ FibaroMotionSensor >> move [
 ]
 
 { #category : #accessing }
+FibaroMotionSensor >> printOn: aStream [
+	super printOn: aStream.
+	aStream 
+	nextPutAll: ' lux: '; nextPutAll: self lux asString;
+	nextPutAll: ' move: '; nextPutAll: self move asString;
+	nextPutAll: ' temp: '; nextPutAll: self temp asString
+]
+
+{ #category : #accessing }
 FibaroMotionSensor >> temp [
 	"comment stating purpose of message"
 	^WorldHomeAutomation mqtt numberValueFromTopic: 'zwave/',room,'/',name,'/49/1/1'.

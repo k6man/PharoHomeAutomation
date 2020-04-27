@@ -85,15 +85,29 @@ currentIp := WorldHomeAutomation externalIp.
 ]
 
 { #category : #'as yet unclassified' }
-MyHome >> scriptLumiere: anAnnouncement [
+MyHome >> scriptLumiereCuisine: anAnnouncement [
 <homeAutomationScriptToRunWhen: #HomeAutomationDeviceAnnoucement>
 | moveSensor light |
 	moveSensor := WorldHomeAutomation deviceNamed: 'pir' inRoom: 'cuisine'.
 	light := WorldHomeAutomation deviceNamed: 'lumiere' inRoom: 'cuisine'.
-	(moveSensor move and: ((moveSensor lux) < 40)) ifTrue: [ light on ] ifFalse: [ light off ].
+	(moveSensor move and: ((moveSensor lux) < 70)) ifTrue: [ light on ] ifFalse: [ light off ].
+
+	self trace:  moveSensor;
+		  trace: ' => ';
+		  traceCr: light.
+
+]
+
+{ #category : #'as yet unclassified' }
+MyHome >> scriptLumiereSalon: anAnnouncement [
+<homeAutomationScriptToRunWhen: #HomeAutomationDeviceAnnoucement>
+| moveSensor light |
 	moveSensor := WorldHomeAutomation deviceNamed: 'pir' inRoom: 'salon'.
 	light := WorldHomeAutomation deviceNamed: 'lumiere' inRoom: 'salon'.
-	(moveSensor move and: ((moveSensor lux) < 40)) ifTrue: [ light on ] ifFalse: [ light off ].
-	Transcript crShow: 'run scriptLumiere ', moveSensor asString,' ',(moveSensor lux asString),' lux => state: ',((moveSensor move and: ((moveSensor lux) < 60)) asString).
+	(moveSensor move and: ((moveSensor lux) < 45)) ifTrue: [ light on ] ifFalse: [ light off ].
+	
+	self trace:  moveSensor;
+		  trace: ' => ';
+		  traceCr: light.
 
 ]

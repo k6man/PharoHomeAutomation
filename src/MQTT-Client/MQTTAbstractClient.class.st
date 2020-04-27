@@ -62,7 +62,7 @@ MQTTAbstractClient >> clientId: string [
 
 { #category : #accessing }
 MQTTAbstractClient >> debug [
-	^ true
+	^ false
 ]
 
 { #category : #'initialize-release' }
