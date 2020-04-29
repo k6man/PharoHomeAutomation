@@ -76,7 +76,8 @@ PharoHomeAutomation >> announcer [
 { #category : #accessing }
 PharoHomeAutomation >> deviceNamed: deviceName inRoom: roomName [
 	^(devices detect: [ :item |
-	 item value name = deviceName and:  item value room = roomName]) value.
+	 item value name = deviceName and:  item value room = roomName] ifNone: [ ^nil]) value.
+
 ]
 
 { #category : #accessing }
@@ -136,5 +137,5 @@ PharoHomeAutomation >> runScriptsFor: anAnnouncement [
 	"Transcript crShow: 'Found script to run: ',pragma method name."
 	pragma methodClass allInstancesDo: [ :object |
 		"Transcript crShow: 'Found obj to run script : ',object asString."
-		 object withArgs: #( anAnnouncement ) executeMethod: pragma method] ].
+		 object withArgs: { anAnnouncement } executeMethod: pragma method] ].
 ]

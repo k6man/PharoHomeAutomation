@@ -68,10 +68,13 @@ HomeAutomationMqtt >> initialize [
 		 self host: HomeAutomationMqtt ip;
        open;
        subscribeToTopic: 'zwave/#';
-       runWith: [ :message |		
+       runWith: [ :message |
+			|topic device |
+				topicDictionnary at: message topic put: message message.
 				"HomeAutomationZwaveAnnoucement fromSTONJSON: ( STONJSON fromString: message message asString )"
-			topicDictionnary at: message topic put: message message.
-			WorldHomeAutomation announcer announce: HomeAutomationDeviceAnnoucement new
+				topic := message topic asZwaveTopic.
+				device := WorldHomeAutomation deviceNamed: topic deviceName inRoom: topic roomName.
+			WorldHomeAutomation announcer announce: (HomeAutomationDeviceAnnoucement new device: device) .
 		 ]
 	 ] forkNamed: self className.
 ]
