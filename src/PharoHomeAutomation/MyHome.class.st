@@ -92,7 +92,8 @@ MyHome >> scriptLumiere: anAnnouncement [
 	(moveSensor name = 'pir') ifTrue: [ 
 		(WorldHomeAutomation deviceNamed: 'lumiere' inRoom: moveSensor room) ifNotNil: [ :light |
 			(moveSensor move and: ((moveSensor lux) < 70)) ifTrue: [ light on ] ifFalse: [ light off ].
-			self trace:  moveSensor;
+			self trace: DateAndTime now;
+				  trace:  moveSensor;
 				  trace: ' => ';
 				  traceCr: light.
 			]
