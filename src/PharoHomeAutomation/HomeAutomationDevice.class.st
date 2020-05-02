@@ -44,6 +44,12 @@ HomeAutomationDevice >> printOn: aStream [
 ]
 
 { #category : #accessing }
+HomeAutomationDevice >> renderContentOn: html [
+	html paragraph: self asString.
+
+]
+
+{ #category : #accessing }
 HomeAutomationDevice >> room [
 	^ room
 ]

@@ -28,6 +28,14 @@ FibaroMotionSensor >> printOn: aStream [
 ]
 
 { #category : #accessing }
+FibaroMotionSensor >> renderContentOn: html [ 
+	"self traitConflict"
+<renderContentOn: true>
+	html paragraph: self asString.
+	self flag: #TODO.
+]
+
+{ #category : #accessing }
 FibaroMotionSensor >> temp [
 	"comment stating purpose of message"
 	^WorldHomeAutomation mqtt numberValueFromTopic: 'zwave/',room,'/',name,'/49/1/1'.

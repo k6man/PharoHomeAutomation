@@ -33,14 +33,18 @@ HomeAutomationWebUi >> renderContentOn: html [
 			with: 'Dynamic Web Development with Seaside'.
 		html text: '.' ].
 	   html anchor
-      onClick: ( "html javascript
-         alert: 'Nothing to configure right now.'."
+  "    onClick: ( html javascript
+         alert: 'Nothing to configure right now.'.
 			Transcript crShow: 'click Configure'
-		);
+		);"
+		callback: [ Transcript crShow: 'click Configure' ] ;
       script: (html jQuery this button
          text: false;
          primaryIcon: 'ui-icon-gear');
       with: 'Configure'.
-	"WorldHomeAutomation devices valuesDo: [ :item | item value renderContentOn: html]."
+
+		WorldHomeAutomation devices valuesDo: [ :item | item value renderContentOn: html].
+	
+
 
 ]
