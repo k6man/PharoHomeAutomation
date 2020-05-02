@@ -25,6 +25,16 @@ HomeAutomationDeviceLight >> on [
 { #category : #API }
 HomeAutomationDeviceLight >> renderContentOn: html [
 <renderContentOn: true>
-	html paragraph: self asString.
+	html paragraph: 'Lumière ', self room,'.'.
 	self flag: #TODO.
+	 html anchor
+		callback: [ self on ] ;
+      script: (html jQuery this button
+         text: true;
+         primaryIcon: 'ui-icon-caret-1-n').
+	 html anchor
+		callback: [ self off ] ;
+      script: (html jQuery this button
+         text: true;
+         primaryIcon: 'ui-icon-caret-1-s').
 ]
