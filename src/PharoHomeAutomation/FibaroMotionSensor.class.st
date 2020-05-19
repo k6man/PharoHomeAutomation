@@ -1,8 +1,6 @@
 Class {
 	#name : #FibaroMotionSensor,
 	#superclass : #HomeAutomationZwaveDevice,
-	#traits : 'HomeAutomationDevicePir + HomeAutomationDeviceLux + HomeAutomationDeviceTemp',
-	#classTraits : 'HomeAutomationDevicePir classTrait + HomeAutomationDeviceLux classTrait + HomeAutomationDeviceTemp classTrait',
 	#category : #PharoHomeAutomation
 }
 
@@ -32,6 +30,9 @@ FibaroMotionSensor >> renderContentOn: html [
 	"self traitConflict"
 <renderContentOn: true>
 	html paragraph: self asString.
+	"self renderContentOnPir: html;
+		renderContentOnLux: html;
+		renderContentOnTemp: html."
 	self flag: #TODO.
 ]
 
