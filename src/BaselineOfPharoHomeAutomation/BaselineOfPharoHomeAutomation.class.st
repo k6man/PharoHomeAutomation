@@ -16,7 +16,12 @@ BaselineOfPharoHomeAutomation >> baselineOf: spec [
 			"spec baseline:'Seaside3' with: [ spec repository: 'github://SeasideSt/Seaside:v3.3.4/repository' ]."
 			spec baseline: 'MaterialDesignLite' with: [ spec repository: 'github://DuneSt/MaterialDesignLite:v2.2.1/src' ].					
 			spec package: 'PharoHomeAutomation'with: [ spec requires: #('MQTT-Core' 'MQTT-Client' ) ].
-			spec package: 'PharoHomeAutomation-Tests' with: [ spec requires: #('PharoHomeAutomation' ) ]. 				
+			spec package: 'PharoHomeAutomation-Core' with: [ spec requires: #('PharoHomeAutomation' ) ].
+   		   spec package: 'PharoHomeAutomation-Cam' with: [ spec requires: #('PharoHomeAutomation-Core' ) ].
+			spec package: 'PharoHomeAutomation-Device' with: [ spec requires: #('PharoHomeAutomation-Core' ) ].
+   		   spec package: 'PharoHomeAutomation-Notify' with: [ spec requires: #('PharoHomeAutomation-Core' ) ].
+   		   spec package: 'PharoHomeAutomation-Web' with: [ spec requires: #('PharoHomeAutomation-Core' ) ].
+			spec package: 'PharoHomeAutomation-Tests' with: [ spec requires: #('PharoHomeAutomation-Core' ) ]. 				
 			spec group: 'default' with: #(#'MQTT-Core' #'MQTT-Client' #'MQTT-Tests' #'Seaside3'
 			                              #'PharoHomeAutomation' #'PharoHomeAutomation-Tests').
 			]
