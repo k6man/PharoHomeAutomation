@@ -1,7 +1,7 @@
 Class {
 	#name : #RfPlayerSerialPort,
 	#superclass : #SerialPort,
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Core'
 }
 
 { #category : #instructions }

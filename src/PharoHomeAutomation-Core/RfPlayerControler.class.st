@@ -10,7 +10,7 @@ Class {
 		'ip',
 		'port'
 	],
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Core'
 }
 
 { #category : #accessing }
@@ -143,6 +143,6 @@ RfPlayerControler >> somfyRts: aStatus [
 
 { #category : #accessing }
 RfPlayerControler >> status [
-<script: 'RfPlayer new status inspect'>
+<script: 'RfPlayerControler new status inspect'>
 	^ (self call: 'STATUS SYSTEM ',returnFormat) withoutPrefix: returnPrefix.
 ]

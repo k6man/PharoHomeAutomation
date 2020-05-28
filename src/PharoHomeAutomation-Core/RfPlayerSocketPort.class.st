@@ -1,7 +1,7 @@
 Class {
 	#name : #RfPlayerSocketPort,
 	#superclass : #SocketStream,
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Core'
 }
 
 { #category : #instructions }

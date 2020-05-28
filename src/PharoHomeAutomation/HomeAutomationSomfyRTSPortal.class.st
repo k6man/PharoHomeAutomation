@@ -18,7 +18,7 @@ HomeAutomationSomfyRTSPortal class >> newWithId: aId named: devicename inRoom: d
 
 { #category : #API }
 HomeAutomationSomfyRTSPortal >> close [
-<script: '(HomeAutomationSomfyRTSPortal newWithid: ''A1'') close'>
+<script: '(HomeAutomationSomfyRTSPortal newWithId: ''A1'' named: ''portail'' inRoom: ''jardin'' ) close'>
 	"comment stating purpose of message"
 	RfPlayerControler new somfyRts: true ;
 	send: 'OFF ',id,' RTS QUALIFIER 1'.
@@ -37,7 +37,7 @@ HomeAutomationSomfyRTSPortal >> id: anObject [
 
 { #category : #API }
 HomeAutomationSomfyRTSPortal >> open [
-<script: '(HomeAutomationSomfyRTSPortal newWithid: ''A1'') open'>
+<script: '(HomeAutomationSomfyRTSPortal newWithId: ''A1'' named: ''portail'' inRoom: ''jardin'' ) open'>
 	"comment stating purpose of message"
 	RfPlayerControler new somfyRts: true ;
 	send: 'ON ',id,' RTS QUALIFIER 1'.

@@ -8,7 +8,7 @@ Class {
 		'passwd',
 		'login'
 	],
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Cam'
 }
 
 { #category : #accessing }
