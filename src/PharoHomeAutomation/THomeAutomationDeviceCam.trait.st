@@ -6,7 +6,7 @@ Trait {
 { #category : #API }
 THomeAutomationDeviceCam >> renderContentOn: html [
 <renderContentOn: true>
-	html image form: (self snapshot seasideMimeDocument).
+	html image form: (self snapshot scaledToSize: 640 @ 480) .
 
 ]
 
