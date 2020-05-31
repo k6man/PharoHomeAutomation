@@ -1,29 +1,29 @@
 Trait {
-	#name : #HomeAutomationDeviceLight,
+	#name : #THomeAutomationDeviceLight,
 	#category : #PharoHomeAutomation
 }
 
 { #category : #API }
-HomeAutomationDeviceLight >> brightness: pourcent [ 
+THomeAutomationDeviceLight >> brightness: pourcent [ 
 	"comment stating purpose of message"
 	self explicitRequirement.
 ]
 
 { #category : #API }
-HomeAutomationDeviceLight >> off [
+THomeAutomationDeviceLight >> off [
 	"comment stating purpose of message"
 	self explicitRequirement.
 
 ]
 
 { #category : #API }
-HomeAutomationDeviceLight >> on [
+THomeAutomationDeviceLight >> on [
 	"comment stating purpose of message"
 	self explicitRequirement.
 ]
 
 { #category : #API }
-HomeAutomationDeviceLight >> renderContentOn: html [
+THomeAutomationDeviceLight >> renderContentOn: html [
 <renderContentOn: true>
 	html paragraph: 'Lumière ', self room,'.'.
 	self flag: #TODO.

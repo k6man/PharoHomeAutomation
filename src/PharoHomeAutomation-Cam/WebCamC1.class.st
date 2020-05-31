@@ -25,7 +25,7 @@ Internal Representation and Key Implementation Points.
 Class {
 	#name : #WebCamC1,
 	#superclass : #WebCam,
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Cam'
 }
 
 { #category : #initialize }

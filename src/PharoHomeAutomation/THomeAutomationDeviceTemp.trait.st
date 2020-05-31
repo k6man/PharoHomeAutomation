@@ -1,17 +1,17 @@
 Trait {
-	#name : #HomeAutomationDeviceTemp,
+	#name : #THomeAutomationDeviceTemp,
 	#category : #PharoHomeAutomation
 }
 
 { #category : #accessing }
-HomeAutomationDeviceTemp >> renderContentOn: html [
+THomeAutomationDeviceTemp >> renderContentOn: html [
 <renderContentOn: true>
 	html paragraph: self asString.
 	self flag: #TODO.
 ]
 
 { #category : #accessing }
-HomeAutomationDeviceTemp >> temp [
+THomeAutomationDeviceTemp >> temp [
 	"comment stating purpose of message"
 	self explicitRequirement.
 ]

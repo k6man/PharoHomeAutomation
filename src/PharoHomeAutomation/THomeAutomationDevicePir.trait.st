@@ -1,16 +1,16 @@
 Trait {
-	#name : #HomeAutomationDevicePir,
+	#name : #THomeAutomationDevicePir,
 	#category : #PharoHomeAutomation
 }
 
 { #category : #accessing }
-HomeAutomationDevicePir >> move [
+THomeAutomationDevicePir >> move [
 	"comment stating purpose of message"
 	self explicitRequirement.
 ]
 
 { #category : #accessing }
-HomeAutomationDevicePir >> renderContentOn: html [
+THomeAutomationDevicePir >> renderContentOn: html [
 <renderContentOn: true>
 	html paragraph: self asString.
 	self flag: #TODO.

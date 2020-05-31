@@ -1,12 +1,12 @@
 Class {
 	#name : #HomeAutomationSomfyRTSPortal,
 	#superclass : #HomeAutomationDevice,
-	#traits : 'HomeAutomationDeviceDoor',
-	#classTraits : 'HomeAutomationDeviceDoor classTrait',
+	#traits : 'THomeAutomationDeviceDoor',
+	#classTraits : 'THomeAutomationDeviceDoor classTrait',
 	#instVars : [
 		'id'
 	],
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Device'
 }
 
 { #category : #'instance creation' }

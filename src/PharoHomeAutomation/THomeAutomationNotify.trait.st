@@ -1,10 +1,10 @@
 Trait {
-	#name : #HomeAutomationNotify,
+	#name : #THomeAutomationNotify,
 	#category : #PharoHomeAutomation
 }
 
 { #category : #'error handling' }
-HomeAutomationNotify >> notify: aString [
+THomeAutomationNotify >> notify: aString [
 	"comment stating purpose of message"
 	self explicitRequirement.
 ]

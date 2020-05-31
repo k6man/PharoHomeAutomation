@@ -1,13 +1,13 @@
 Class {
 	#name : #HomeAutomationHueLight,
 	#superclass : #HomeAutomationDevice,
-	#traits : 'HomeAutomationDeviceLight',
-	#classTraits : 'HomeAutomationDeviceLight classTrait',
+	#traits : 'THomeAutomationDeviceLight',
+	#classTraits : 'THomeAutomationDeviceLight classTrait',
 	#instVars : [
 		'id',
 		'state'
 	],
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Device'
 }
 
 { #category : #'instance creation' }

@@ -1,16 +1,16 @@
 Trait {
-	#name : #HomeAutomationDeviceLux,
+	#name : #THomeAutomationDeviceLux,
 	#category : #PharoHomeAutomation
 }
 
 { #category : #accessing }
-HomeAutomationDeviceLux >> lux [
+THomeAutomationDeviceLux >> lux [
 	"comment stating purpose of message"
 	self explicitRequirement.
 ]
 
 { #category : #accessing }
-HomeAutomationDeviceLux >> renderContentOn: html [
+THomeAutomationDeviceLux >> renderContentOn: html [
 <renderContentOn: true>
 	html paragraph: self asString.
 	self flag: #TODO.

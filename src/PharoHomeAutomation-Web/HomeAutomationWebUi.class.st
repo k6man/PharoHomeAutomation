@@ -1,7 +1,7 @@
 Class {
 	#name : #HomeAutomationWebUi,
 	#superclass : #MDLApplication,
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Web'
 }
 
 { #category : #'class initialization' }
@@ -22,6 +22,11 @@ HomeAutomationWebUi class >> register [
 		addLibrary: JQUiLightnessTheme;
 		addLibrary: WAWelcomeFiles;"
 		scriptGeneratorClass: JQScriptGenerator
+]
+
+{ #category : #rendering }
+HomeAutomationWebUi >> canBeRoot [
+	^ true
 ]
 
 { #category : #rendering }
@@ -71,7 +76,7 @@ HomeAutomationWebUi >> updateRoot: anHtmlRoot [
 		attributeAt: 'name' put: 'viewport';
 		content: 'width=device-width, initial-scale=1'.
 	self updateTabIconRoot: anHtmlRoot.
-	anHtmlRoot stylesheet url: (WAUrl absolute: 'https://storage.googleapis.com/code.getmdl.io/1.3.0/material.deep_purple-pink.min.css').
+	anHtmlRoot stylesheet url: (WAUrl absolute: 'https://code.getmdl.io/1.3.0/material.light_blue-blue.min.css').
 	anHtmlRoot javascript add: 'hljs.initHighlightingOnLoad();'
 ]
 

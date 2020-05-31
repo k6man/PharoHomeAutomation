@@ -1,23 +1,23 @@
 Trait {
-	#name : #HomeAutomationDeviceDoor,
+	#name : #THomeAutomationDeviceDoor,
 	#category : #PharoHomeAutomation
 }
 
 { #category : #API }
-HomeAutomationDeviceDoor >> close [
+THomeAutomationDeviceDoor >> close [
 	"comment stating purpose of message"
 	self explicitRequirement.
 
 ]
 
 { #category : #API }
-HomeAutomationDeviceDoor >> open [
+THomeAutomationDeviceDoor >> open [
 	"comment stating purpose of message"
 	self explicitRequirement.
 ]
 
 { #category : #API }
-HomeAutomationDeviceDoor >> renderContentOn: html [
+THomeAutomationDeviceDoor >> renderContentOn: html [
 <renderContentOn: true>
 	html paragraph: self asString.
 	self flag: #TODO.
