@@ -54,14 +54,28 @@ HomeAutomationWebUi >> renderContentOn: html [
          primaryIcon: 'ui-icon-gear');
       with: 'Configure'.
 
-	html
+	self renderRoomsOn: html.
+
+]
+
+{ #category : #rendering }
+HomeAutomationWebUi >> renderRoomsOn: html [
+| mdltw |
+mdltw := MDLTabWidget new.
+WorldHomeAutomation rooms do: [ :room | mdltw  addTabNamed: room content: [
+		(WorldHomeAutomation devicesInRoom:room) valuesDo: [ :device | device renderContentOn: html].
+		]
+	].
+html render: mdltw.
+"	html
 		render:
 			(MDLTabWidget new
 				addTabNamed: 'Tab 1' content: 'First tab';
 				addTabNamed: 'Tab 2' content: 'Second tab';
 				yourself).
 		WorldHomeAutomation devices valuesDo: [ :item | item value renderContentOn: html].
-	
+		
+	"
 
 
 ]

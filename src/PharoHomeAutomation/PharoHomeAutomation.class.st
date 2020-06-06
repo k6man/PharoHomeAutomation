@@ -82,11 +82,19 @@ PharoHomeAutomation >> deviceNamed: deviceName inRoom: roomName [
 
 { #category : #accessing }
 PharoHomeAutomation >> devices [
+<script: 'WorldHomeAutomation devices inspect'>
 	^ devices
+]
+
+{ #category : #accessing }
+PharoHomeAutomation >> devicesInRoom: roomName [
+	^devices select: [ :device | device room = roomName].
+
 ]
 
 { #category : #'as yet unclassified' }
 PharoHomeAutomation >> externalIp [
+<script: 'WorldHomeAutomation externalIp inspect'>
 	"Ip seen from internet"
 ^ (ZnEasy get: 'https://ipecho.net/plain' asUrl) contents. 
 ]
