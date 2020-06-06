@@ -124,6 +124,16 @@ PharoHomeAutomation >> notify: aString [
 	notifiers valuesDo: [ :n | n notify: aString].
 ]
 
+{ #category : #accessing }
+PharoHomeAutomation >> rooms [
+<script: 'WorldHomeAutomation rooms inspect'>
+	| rooms |
+	rooms := Set new.
+	devices valuesDo: [ :d |
+	  rooms add: d room].
+	^rooms
+]
+
 { #category : #'as yet unclassified' }
 PharoHomeAutomation >> runScriptsFor: anAnnouncement [
 	"Call all message class with pragma <homeAutomationScriptToRunWhen: anAnnouncement className asSymbol>"
