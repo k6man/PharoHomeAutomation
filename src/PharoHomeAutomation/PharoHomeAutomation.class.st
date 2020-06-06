@@ -76,7 +76,7 @@ PharoHomeAutomation >> announcer [
 { #category : #accessing }
 PharoHomeAutomation >> deviceNamed: deviceName inRoom: roomName [
 	^(devices detect: [ :item |
-	 item value name = deviceName and:  item value room = roomName] ifNone: [ ^nil]) value.
+	 item name = deviceName and:  item room = roomName] ifNone: [ ^nil]).
 
 ]
 
@@ -121,7 +121,7 @@ PharoHomeAutomation >> mqtt [
 { #category : #accessing }
 PharoHomeAutomation >> notify: aString [
 	Transcript crShow: 'notify: ',aString. 
-	notifiers do: [ :n | n value notify: aString].
+	notifiers valuesDo: [ :n | n notify: aString].
 ]
 
 { #category : #'as yet unclassified' }
