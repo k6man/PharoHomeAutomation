@@ -34,9 +34,12 @@ html mdlSwitchContainer
 		for: html nextId;
 		with: [ html mdlSwitch
 				"value: true;"
-				id: html lastId;
-				onTrue: [ self halt. self on ] onFalse: [ self off ].
-			html mdlSwitchLabel: 'On / Off' ].
+				onTrue: [ self halt. self on ] onFalse: [ self halt. self off ];
+				id: html lastId.
+				"callback: [ :v | v ifTrue: [ self halt. self on ] ifFalse: [ self halt. self false ] ] "
+				 
+				html mdlSwitchLabel: 'On / Off'.
+				].
 	
 	 "html anchor
 		callback: [ self on ] ;
@@ -47,5 +50,5 @@ html mdlSwitchContainer
 		callback: [ self off ] ;
       script: (html jQuery this button
          text: true;
-         primaryIcon: 'ui-icon-caret-1-s')."
+         primary Unknown input at end ->Icon: 'ui-icon-caret-1-s')." 
 ]
