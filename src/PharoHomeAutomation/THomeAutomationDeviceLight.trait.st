@@ -27,7 +27,17 @@ THomeAutomationDeviceLight >> renderContentOn: html [
 <renderContentOn: true>
 	html paragraph: 'Lumière ', self room,'.'.
 	self flag: #TODO.
-	
+
+html mdlAnchorButton
+		callback: [ self on ];
+		raised;
+		rippleEffect;
+		with: 'On'.
+html mdlAnchorButton
+		callback: [ self off ];
+		raised;
+		rippleEffect;
+		with: 'Off'.
 html mdlSwitchContainer
 		rippleEffect;
 		style: 'width: 150px;';
@@ -36,8 +46,6 @@ html mdlSwitchContainer
 				"value: true;"
 				onTrue: [ self halt. self on ] onFalse: [ self halt. self off ];
 				id: html lastId.
-				"callback: [ :v | v ifTrue: [ self halt. self on ] ifFalse: [ self halt. self false ] ] "
-				 
 				html mdlSwitchLabel: 'On / Off'.
 				].
 	
