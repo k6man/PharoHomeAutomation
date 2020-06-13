@@ -25,27 +25,27 @@ Internal Representation and Key Implementation Points.
     Implementation Points
 "
 Class {
-	#name : #'MyRfPlayer__old',
+	#name : #MyPortail,
 	#superclass : #RfPlayerControler,
 	#category : #'PharoHomeAutomation-Core'
 }
 
 { #category : #API }
-MyRfPlayer__old >> AssocPortal [
+MyPortail >> AssocPortal [
 <script: 'MyRfPlayer__old new AssocPortal'>
 	self somfyRts: true.
 	^self send: 'ASSOC A1 RTS QUALIFIER 1'.
 ]
 
 { #category : #API }
-MyRfPlayer__old >> closePortal [
+MyPortail >> closePortal [
 <script: 'MyRfPlayer__old new closePortal'>
 	self somfyRts: true.
 	^self send: 'OFF A1 RTS QUALIFIER 1'.
 ]
 
 { #category : #API }
-MyRfPlayer__old >> openPortal [
+MyPortail >> openPortal [
 <script: 'MyRfPlayer__old new openPortal'>
 	self somfyRts: true.
 	^self send: 'ON A1 RTS QUALIFIER 1'.
