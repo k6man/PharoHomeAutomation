@@ -19,6 +19,18 @@ THomeAutomationDeviceDoor >> open [
 { #category : #API }
 THomeAutomationDeviceDoor >> renderContentOn: html [
 <renderContentOn: true>
-	html paragraph: self asString.
-	self flag: #TODO.
+	html paragraph: 'Porte ', self room,'.'.
+
+html mdlAnchorButton
+		callback: [ self open ];
+		raised;
+		rippleEffect;
+		with: 'Ouverture'.
+html mdlAnchorButton
+		callback: [ self close ];
+		raised;
+		rippleEffect;
+		with: 'Fermeture'.
+
+	
 ]
