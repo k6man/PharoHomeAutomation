@@ -48,7 +48,11 @@ html mdlSwitchContainer
 				id: html lastId.
 				html mdlSwitchLabel: 'On / Off'.
 				].
-	
+	html mdlSlider  
+		min: 0;
+		max: 100;
+		value: 75 ;
+		callback: [ :value | value crLog . self brightness: value. self halt  ].
 	 "html anchor
 		callback: [ self on ] ;
       script: (html jQuery this button
@@ -58,5 +62,5 @@ html mdlSwitchContainer
 		callback: [ self off ] ;
       script: (html jQuery this button
          text: true;
-         primary Unknown input at end ->Icon: 'ui-icon-caret-1-s')." 
+         primary Unknown input at end ->Icon: 'ui-icon-caret-1-s')."  
 ]
