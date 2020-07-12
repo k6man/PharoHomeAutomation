@@ -128,7 +128,7 @@ PharoHomeAutomation >> mqtt [
 
 { #category : #accessing }
 PharoHomeAutomation >> notify: aString [
-	Transcript crShow: 'notify: ',aString. 
+	('notify: ',aString) traceCr. 
 	notifiers valuesDo: [ :n | n notify: aString].
 ]
 
