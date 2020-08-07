@@ -2,7 +2,7 @@ Class {
 	#name : #ZwaveTopic,
 	#superclass : #Topic,
 	#type : #bytes,
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Core'
 }
 
 { #category : #'as yet unclassified' }

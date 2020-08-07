@@ -1,7 +1,7 @@
 Class {
 	#name : #NodonSoftRemote,
 	#superclass : #HomeAutomationZwaveDevice,
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Device'
 }
 
 { #category : #'as yet unclassified' }

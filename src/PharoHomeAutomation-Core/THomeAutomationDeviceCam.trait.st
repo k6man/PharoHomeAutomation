@@ -1,6 +1,6 @@
 Trait {
 	#name : #THomeAutomationDeviceCam,
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Core'
 }
 
 { #category : #API }

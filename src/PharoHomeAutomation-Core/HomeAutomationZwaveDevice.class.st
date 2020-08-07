@@ -1,7 +1,7 @@
 Class {
 	#name : #HomeAutomationZwaveDevice,
 	#superclass : #HomeAutomationDevice,
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Core'
 }
 
 { #category : #'instance creation' }

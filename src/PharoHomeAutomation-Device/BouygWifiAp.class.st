@@ -32,7 +32,7 @@ Internal Representation and Key Implementation Points.
 Class {
 	#name : #BouygWifiAp,
 	#superclass : #WifiAp,
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Device'
 }
 
 { #category : #initialize }

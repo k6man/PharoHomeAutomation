@@ -2,7 +2,7 @@ Class {
 	#name : #Topic,
 	#superclass : #ByteString,
 	#type : #bytes,
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Core'
 }
 
 { #category : #'as yet unclassified' }

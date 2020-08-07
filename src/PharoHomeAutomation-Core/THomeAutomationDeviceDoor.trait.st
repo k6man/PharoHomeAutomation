@@ -1,6 +1,6 @@
 Trait {
 	#name : #THomeAutomationDeviceDoor,
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Core'
 }
 
 { #category : #API }

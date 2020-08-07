@@ -31,7 +31,7 @@ Class {
 		'ip',
 		'passwd'
 	],
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Device'
 }
 
 { #category : #'as yet unclassified' }

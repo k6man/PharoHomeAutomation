@@ -29,7 +29,7 @@ Internal Representation and Key Implementation Points.
 Class {
 	#name : #'MyHue__old',
 	#superclass : #HueControler,
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Core'
 }
 
 { #category : #accessing }

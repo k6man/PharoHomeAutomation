@@ -37,7 +37,7 @@ Class {
 		'ip',
 		'key'
 	],
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Core'
 }
 
 { #category : #accessing }

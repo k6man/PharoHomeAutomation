@@ -37,7 +37,7 @@ Class {
 		'buttonSalonOn',
 		'buttonSalonOff'
 	],
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Device'
 }
 
 { #category : #specs }

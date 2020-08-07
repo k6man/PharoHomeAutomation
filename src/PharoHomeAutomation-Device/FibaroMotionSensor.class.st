@@ -1,7 +1,7 @@
 Class {
 	#name : #FibaroMotionSensor,
 	#superclass : #HomeAutomationZwaveDevice,
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Device'
 }
 
 { #category : #accessing }

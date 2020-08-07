@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'device'
 	],
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Core'
 }
 
 { #category : #accessing }

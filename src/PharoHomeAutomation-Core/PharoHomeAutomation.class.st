@@ -47,7 +47,7 @@ Class {
 		'mqtt',
 		'announcer'
 	],
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Core'
 }
 
 { #category : #accessing }

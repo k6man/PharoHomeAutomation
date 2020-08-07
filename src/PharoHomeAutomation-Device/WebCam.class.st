@@ -1,7 +1,7 @@
 Class {
 	#name : #WebCam,
 	#superclass : #Cam,
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Device'
 }
 
 { #category : #'as yet unclassified' }

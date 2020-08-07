@@ -1,5 +1,5 @@
 Class {
 	#name : #HomeAutomationTimeMinuteAnnoucement,
 	#superclass : #HomeAutomationTimeAnnoucement,
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Core'
 }

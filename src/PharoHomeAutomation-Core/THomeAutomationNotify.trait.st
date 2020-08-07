@@ -1,6 +1,6 @@
 Trait {
 	#name : #THomeAutomationNotify,
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Core'
 }
 
 { #category : #'error handling' }

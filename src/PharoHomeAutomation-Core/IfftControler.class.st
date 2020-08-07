@@ -7,7 +7,7 @@ Class {
 		'key',
 		'notify_event'
 	],
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Core'
 }
 
 { #category : #accessing }

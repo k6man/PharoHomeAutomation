@@ -1,6 +1,6 @@
 Trait {
 	#name : #THomeAutomationDevicePir,
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Core'
 }
 
 { #category : #accessing }
