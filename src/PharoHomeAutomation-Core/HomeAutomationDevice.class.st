@@ -6,7 +6,7 @@ Class {
 		'room',
 		'interface'
 	],
-	#category : #PharoHomeAutomation
+	#category : #'PharoHomeAutomation-Core'
 }
 
 { #category : #accessing }
