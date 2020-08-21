@@ -44,7 +44,7 @@ HomeAutomationWebUi >> renderContentOn: html [
 			url: 'http://book.seaside.st/book/fundamentals/rendering-components';
 			with: 'Dynamic Web Development with Seaside'.
 		html text: '.' ]."
-	   html anchor
+"	   html anchor
       onClick: ( html javascript
          alert: 'Nothing to configure right now.'
 		);
@@ -53,7 +53,7 @@ HomeAutomationWebUi >> renderContentOn: html [
          text: false;
          primaryIcon: 'ui-icon-gear');
       with: 'Configure'.
-
+"
 	self renderRoomsOn: html.
 
 ]
@@ -91,7 +91,7 @@ HomeAutomationWebUi >> style [
 HomeAutomationWebUi >> updateRoot: anHtmlRoot [
 	super updateRoot: anHtmlRoot.
 	anHtmlRoot beHtml5.
-	anHtmlRoot title: 'Demo - Material Design Lite for Seaside'.
+	anHtmlRoot title: 'Home Automation'.
 	anHtmlRoot meta
 		attributeAt: 'name' put: 'viewport';
 		content: 'width=device-width, initial-scale=1'.
