@@ -36,6 +36,16 @@ WebCamC1 class >> ip: aIp login: aLogin passwd: aPasswd [
 ]
 
 { #category : #accessing }
+WebCamC1 >> gtInspectorWebCamC1In: composite [
+	<gtInspectorPresentationOrder: 90>  
+	"composite wantsAutomaticRefresh: true."
+	^ composite morph 
+		title: 'Morph';
+		
+		display: [ self snapshot asMorph ]
+]
+
+{ #category : #accessing }
 WebCamC1 >> snapshot [
 	"get a snapshot image"
 
