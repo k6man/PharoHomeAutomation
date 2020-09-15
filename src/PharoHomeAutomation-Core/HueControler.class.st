@@ -97,7 +97,7 @@ url := ('https://',HueControler ip,'/api/',HueControler key,'/groups/',group asS
 
 { #category : #accessing }
 HueControler >> groups [
-<script: 'Hue new groups inspect'>
+<script: 'HueControler new groups inspect'>
 | url |
 url := ('https://',HueControler ip,'/api/',HueControler key,'/groups') asUrl.
 ^ STONJSON fromString: (ZnEasy get: url) entity contents.
