@@ -6,22 +6,22 @@ Class {
 
 { #category : #'as yet unclassified' }
 NodonSoftRemote >> ifIsMinusButton: aBlock [ 
-	^ (self value = self isMinusButton) ifTrue: [ aBlock value].
+	^ self isMinusButton ifTrue: [ aBlock value].
 ]
 
 { #category : #'as yet unclassified' }
 NodonSoftRemote >> ifIsPlusButton: aBlock [ 
-	^ (self value = self isPlusButton) ifTrue: [ aBlock value].
+	^ self isPlusButton ifTrue: [ aBlock value].
 ]
 
 { #category : #'as yet unclassified' }
 NodonSoftRemote >> ifIsRoundAddButton: aBlock [ 
-	^ (self value = self isRoundAddButton) ifTrue: [ aBlock value].
+	^ self isRoundAddButton ifTrue: [ aBlock value].
 ]
 
 { #category : #'as yet unclassified' }
 NodonSoftRemote >> ifIsRoundMinusButton: aBlock [ 
-	^ (self value = self isRoundMinusButton) ifTrue: [ aBlock value].
+	^ self isRoundMinusButton ifTrue: [ aBlock value].
 ]
 
 { #category : #'as yet unclassified' }
