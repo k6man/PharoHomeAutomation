@@ -5,7 +5,7 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-NodonSoftRemote >> minusButton [
+NodonSoftRemote >> isMinusButton [
 	"comment stating purpose of message"
 "
 10 appuie:12 relache:11  roundAddButton
@@ -17,7 +17,7 @@ NodonSoftRemote >> minusButton [
 ]
 
 { #category : #'as yet unclassified' }
-NodonSoftRemote >> plusButton [
+NodonSoftRemote >> isPlusButton [
 	"comment stating purpose of message"
 "
 10 appuie:12 relache:11  roundAddButton
@@ -29,7 +29,7 @@ NodonSoftRemote >> plusButton [
 ]
 
 { #category : #'as yet unclassified' }
-NodonSoftRemote >> roundAddButton [
+NodonSoftRemote >> isRoundAddButton [
 	"comment stating purpose of message"
 "
 10 appuie:12 relache:11  roundAddButton
@@ -41,7 +41,7 @@ NodonSoftRemote >> roundAddButton [
 ]
 
 { #category : #'as yet unclassified' }
-NodonSoftRemote >> roundMinusButton [
+NodonSoftRemote >> isRoundMinusButton [
 	"comment stating purpose of message"
 "
 10 appuie:12 relache:11  roundAddButton
