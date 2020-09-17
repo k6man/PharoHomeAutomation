@@ -5,6 +5,26 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
+NodonSoftRemote >> ifIsMinusButton: aBlock [ 
+	^ (self value = self isMinusButton) ifTrue: [ aBlock value].
+]
+
+{ #category : #'as yet unclassified' }
+NodonSoftRemote >> ifIsPlusButton: aBlock [ 
+	^ (self value = self isPlusButton) ifTrue: [ aBlock value].
+]
+
+{ #category : #'as yet unclassified' }
+NodonSoftRemote >> ifIsRoundAddButton: aBlock [ 
+	^ (self value = self isRoundAddButton) ifTrue: [ aBlock value].
+]
+
+{ #category : #'as yet unclassified' }
+NodonSoftRemote >> ifIsRoundMinusButton: aBlock [ 
+	^ (self value = self isRoundMinusButton) ifTrue: [ aBlock value].
+]
+
+{ #category : #'as yet unclassified' }
 NodonSoftRemote >> isMinusButton [
 	"comment stating purpose of message"
 "
@@ -61,5 +81,5 @@ NodonSoftRemote >> value [
 30 appuie:32 relache:31  roundMinusButton
 40 appuie:42 relache:41  minusButton
 "
-	^WorldHomeAutomation mqtt numberValueFromTopic: 'zwave/',room,'/',name,'/scene/event'.
+	^WorldHomeAutomation mqtt numberValueFromTopic: 'zwave/',room,'/',name,'/43/1/0'	.
 ]

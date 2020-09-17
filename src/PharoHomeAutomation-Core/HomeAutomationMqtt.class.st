@@ -74,6 +74,7 @@ HomeAutomationMqtt >> initialize [
 				"HomeAutomationZwaveAnnoucement fromSTONJSON: ( STONJSON fromString: message message asString )"
 				topic := message topic asZwaveTopic.
 				device := WorldHomeAutomation deviceNamed: topic deviceName inRoom: topic roomName.
+				self traceCr: message topic.
 			WorldHomeAutomation announcer announce: (HomeAutomationDeviceAnnoucement new device: device) .
 		 ]
 	 ] forkNamed: self className.
