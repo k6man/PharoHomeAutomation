@@ -45,7 +45,8 @@ Class {
 		'notifiers',
 		'timer',
 		'mqtt',
-		'announcer'
+		'announcer',
+		'scripts'
 	],
 	#category : #'PharoHomeAutomation-Core'
 }
@@ -105,6 +106,7 @@ PharoHomeAutomation >> initialize [
 
 	<script: 'PharoHomeAutomation launch'>
 	devices := Dictionary new.
+	scripts := Dictionary new.
 	notifiers := Dictionary new.
 	announcer := Announcer new.
 	announcer weak
@@ -156,4 +158,7 @@ PharoHomeAutomation >> runScriptsFor: anAnnouncement [
 	pragma methodClass allInstancesDo: [ :object |
 		"Transcript crShow: 'Found obj to run script : ',object asString."
 		 object withArgs: { anAnnouncement } executeMethod: pragma method] ].
+
+	"Call all script object"
+	scripts do: [ :s| s run: anAnnouncement ].
 ]

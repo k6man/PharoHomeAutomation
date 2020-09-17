@@ -20,6 +20,7 @@ BaselineOfPharoHomeAutomation >> baselineOf: spec [
 			spec package: 'PharoHomeAutomation-Core' with: [ spec requires: #('PharoHomeAutomation' ) ].
    		   spec package: 'PharoHomeAutomation-Cam' with: [ spec requires: #('PharoHomeAutomation-Core' ) ].
 			spec package: 'PharoHomeAutomation-Device' with: [ spec requires: #('PharoHomeAutomation-Core' ) ].
+			spec package: 'PharoHomeAutomation-Script' with: [ spec requires: #('PharoHomeAutomation-Core' ) ].
    		   spec package: 'PharoHomeAutomation-Notify' with: [ spec requires: #('PharoHomeAutomation-Core' ) ].
    		   spec package: 'PharoHomeAutomation-Web' with: [ spec requires: #('PharoHomeAutomation-Core' 'MaterialDesignLite') ].
    		   spec package: 'PharoHomeAutomation-UI' with: [ spec requires: #('PharoHomeAutomation-Core' ) ].
@@ -29,6 +30,7 @@ BaselineOfPharoHomeAutomation >> baselineOf: spec [
 													#'PharoHomeAutomation-Core'
 													#'PharoHomeAutomation-Cam'
 													#'PharoHomeAutomation-Device'
+													#'PharoHomeAutomation-Script'
 													#'PharoHomeAutomation-Notify'
 													#'PharoHomeAutomation-Web'
 				 #'PharoHomeAutomation-Tests').
