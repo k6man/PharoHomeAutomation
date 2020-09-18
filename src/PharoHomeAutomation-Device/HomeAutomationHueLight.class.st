@@ -19,7 +19,7 @@ HomeAutomationHueLight class >> newWithId: aId named: devicename inRoom: devicer
 
 { #category : #accessing }
 HomeAutomationHueLight >> brightness: aLevel [
-	HueControler new group: id state: aLevel.
+	HueControler new group: id state: ((aLevel * 255 / 100) truncated) .
 ]
 
 { #category : #accessing }
