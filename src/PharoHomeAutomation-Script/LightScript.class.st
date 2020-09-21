@@ -35,7 +35,7 @@ LightScript >> brightness [
 		| b |
 				b := 0.
 				Time midnight  < Time now ifTrue: [ b:= 1].
-				'07:00:00 pm' asTime < Time now ifTrue: [ b:= 100].
+				'07:00:00 am' asTime < Time now ifTrue: [ b:= 100].
 				'21:30:00 pm' asTime < Time now ifTrue: [ b:= 70].
 				'22:30:00 pm' asTime < Time now ifTrue: [ b:= 1].
 				^b
