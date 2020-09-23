@@ -35,7 +35,29 @@ LightScript >> brightness [
 		| b |
 				b := 0.
 				Time midnight  < Time now ifTrue: [ b:= 1].
-				'07:00:00 am' asTime < Time now ifTrue: [ b:= 100].
+				'06:00:00 am' asTime < Time now ifTrue: [ b:= 75].
+				'08:00:00 am' asTime < Time now ifTrue: [ b:= 100].
+				'21:30:00 pm' asTime < Time now ifTrue: [ b:= 70].
+				'22:30:00 pm' asTime < Time now ifTrue: [ b:= 1].
+				^b
+]
+
+{ #category : #accessing }
+LightScript >> brightnessInRoom: aRoom [
+" return brightness according to time "
+				(aRoom = 'salon' or: aRoom = 'cuisine') ifTrue: [ ^ self brightness ].
+				(aRoom = 'couloir') ifTrue: [ ^ self couloirBrightness ].
+				^ 100.
+]
+
+{ #category : #accessing }
+LightScript >> couloirBrightness [
+" return brightness according to time "
+		| b |
+				b := 0.
+				Time midnight  < Time now ifTrue: [ b:= 1].
+				'07:30:00 am' asTime < Time now ifTrue: [ b:= 75].
+				'08:00:00 am' asTime < Time now ifTrue: [ b:= 100].
 				'21:30:00 pm' asTime < Time now ifTrue: [ b:= 70].
 				'22:30:00 pm' asTime < Time now ifTrue: [ b:= 1].
 				^b
@@ -48,7 +70,7 @@ LightScript >> run: anAnnouncement [
 	(moveSensor name = 'pir') ifTrue: [ 
 		(WorldHomeAutomation deviceNamed: 'lumiere' inRoom: moveSensor room) ifNotNil: [ :light |
 			(moveSensor move and: ((moveSensor lux) < 60)) ifTrue: [ 
-				light brightness: self brightness  ; on.
+				light brightness: (self brightnessInRoom: moveSensor room)  ; on.
 				 ] ifFalse: [ light off ].
 			
 			self trace: DateAndTime now;
