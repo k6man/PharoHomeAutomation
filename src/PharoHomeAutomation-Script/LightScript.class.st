@@ -38,7 +38,7 @@ LightScript >> brightness [
 				'06:00:00 am' asTime < Time now ifTrue: [ b:= 75].
 				'08:00:00 am' asTime < Time now ifTrue: [ b:= 100].
 				'21:30:00 pm' asTime < Time now ifTrue: [ b:= 70].
-				'22:30:00 pm' asTime < Time now ifTrue: [ b:= 1].
+				'22:30:00 pm' asTime < Time now ifTrue: [ b:= 40].
 				^b
 ]
 
@@ -56,8 +56,8 @@ LightScript >> couloirBrightness [
 		| b |
 				b := 0.
 				Time midnight  < Time now ifTrue: [ b:= 1].
-				'07:30:00 am' asTime < Time now ifTrue: [ b:= 75].
-				'08:00:00 am' asTime < Time now ifTrue: [ b:= 100].
+				'07:00:00 am' asTime < Time now ifTrue: [ b:= 15].
+				'09:00:00 am' asTime < Time now ifTrue: [ b:= 100].
 				'21:30:00 pm' asTime < Time now ifTrue: [ b:= 70].
 				'22:30:00 pm' asTime < Time now ifTrue: [ b:= 1].
 				^b

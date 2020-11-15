@@ -42,6 +42,10 @@ WebCamC1 >> gtInspectorWebCamC1In: composite [
 	^ composite morph 
 		title: 'Morph';
 		display: [ self snapshot ]
+	"	wantsAutomaticRefresh: true;
+      when: GLMPresentationRefreshRequest do: [ self snapshot ]. 	"	
+	
+
 ]
 
 { #category : #accessing }
