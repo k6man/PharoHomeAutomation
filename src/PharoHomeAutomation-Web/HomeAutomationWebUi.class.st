@@ -60,13 +60,19 @@ HomeAutomationWebUi >> renderContentOn: html [
 
 { #category : #rendering }
 HomeAutomationWebUi >> renderRoomsOn: html [
-| mdltw |
+"| mdltw |
 mdltw := MDLTabWidget new.
 WorldHomeAutomation rooms do: [ :room | mdltw  addTabNamed: room content: [
 		(WorldHomeAutomation devicesInRoom:room) valuesDo: [ :device | device renderContentOn: html].
 		]
 	].
 html render: mdltw.
+"
+WorldHomeAutomation rooms do: [ :room | 
+	(WorldHomeAutomation devicesInRoom:room) valuesDo: [ :device | device renderContentOn: html].
+		].
+
+
 "	html
 		render:
 			(MDLTabWidget new

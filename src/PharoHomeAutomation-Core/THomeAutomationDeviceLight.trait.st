@@ -48,11 +48,11 @@ html mdlSwitchContainer
 				id: html lastId.
 				html mdlSwitchLabel: 'On / Off'.
 				].
-	html mdlSlider  
+	"html mdlSlider  
 		min: 0;
 		max: 100;
 		value: 75 ;
-		callback: [ :value | value crLog . self brightness: value. self halt  ].
+		callback: [ :value | value crLog . self brightness: value. self halt  ]."
 	 "html anchor
 		callback: [ self on ] ;
       script: (html jQuery this button
