@@ -30,7 +30,8 @@ HomeAutomationWebUi >> canBeRoot [
 ]
 
 { #category : #rendering }
-HomeAutomationWebUi >> initialize [ 
+HomeAutomationWebUi >> initialize [
+	super initialize. 
 	self primaryColor: MDLColor indigo secondaryColor: MDLColor pink.
 ]
 
