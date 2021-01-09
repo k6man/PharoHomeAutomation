@@ -20,6 +20,11 @@ HomeAutomationDevice >> interface: anObject [
 ]
 
 { #category : #accessing }
+HomeAutomationDevice >> isMqttDevice [
+	^false.
+]
+
+{ #category : #accessing }
 HomeAutomationDevice >> name [
 	^ name
 ]

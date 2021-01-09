@@ -1,6 +1,6 @@
 Class {
 	#name : #HomeAutomationZwaveDevice,
-	#superclass : #HomeAutomationDevice,
+	#superclass : #HomeAutomationMqttDevice,
 	#category : #'PharoHomeAutomation-Core'
 }
 
@@ -8,4 +8,9 @@ Class {
 HomeAutomationZwaveDevice class >> newNamed: aStringName inRoom: aStringRoom [
 	"comment stating purpose of message"
 	^self new name: aStringName; room: aStringRoom; yourself.
+]
+
+{ #category : #accessing }
+HomeAutomationZwaveDevice >> rootTopic [
+	^ 'zwave/',self room,'/',self name,'/#'
 ]

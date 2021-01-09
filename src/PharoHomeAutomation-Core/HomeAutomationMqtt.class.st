@@ -68,21 +68,37 @@ HomeAutomationMqtt >> initialize [
 		 self host: HomeAutomationMqtt ip;
        open;
        subscribeToTopic: 'zwave/#';
+       subscribeToTopic: 'zigbee2mqtt/#';
        runWith: [ :message |
-			|topic device |
 				topicDictionnary at: message topic put: message message.
 				"HomeAutomationZwaveAnnoucement fromSTONJSON: ( STONJSON fromString: message message asString )"
-				topic := message topic asZwaveTopic.
-				device := WorldHomeAutomation deviceNamed: topic deviceName inRoom: topic roomName.
+				 "message topic asTopic isZigbee ifTrue: [ 
+					topic := message topic asZigBeeTopic.
+					device := WorldHomeAutomation deviceNamed: topic deviceName inRoom: topic roomName.
+
+					WorldHomeAutomation announcer announce: (HomeAutomationDeviceAnnoucement new device: device) .
+					].
+				 message topic asTopic isZwave ifTrue: [ 
+					topic := message topic asZigBeeTopic.
+									 ] ."
+
 				self traceCr: message topic.
-			WorldHomeAutomation announcer announce: (HomeAutomationDeviceAnnoucement new device: device) .
+				(WorldHomeAutomation devices select: [ :device | (device isMqttDevice) and: [device matchingTopic: message topic] ]) do: [ :device | 
+					WorldHomeAutomation announcer announce: (HomeAutomationDeviceAnnoucement new device: device) .
+					].
 		 ]
 	 ] forkNamed: self className.
 ]
 
 { #category : #initialization }
+HomeAutomationMqtt >> jsonValueFromTopic: aTopicString [ 
+	"return the JSON payload of the 'aTopicString'"
+	^STONJSON fromString:(topicDictionnary at: aTopicString) asString.
+]
+
+{ #category : #initialization }
 HomeAutomationMqtt >> numberValueFromTopic: aTopicString [ 
-	"retunr the payload of the 'aTopicString'"
+	"return the payload of the 'aTopicString' asNumber"
 	^(topicDictionnary at: aTopicString ifAbsent: [0]) asString asNumber.
 ]
 
@@ -94,6 +110,6 @@ HomeAutomationMqtt >> terminate [
 
 { #category : #initialization }
 HomeAutomationMqtt >> valueFromTopic: aTopicString [ 
-	"retunr the payload of the 'aTopicString'"
+	"return the payload of the 'aTopicString'"
 	^topicDictionnary at: aTopicString.
 ]

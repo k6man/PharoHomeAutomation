@@ -6,23 +6,15 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-Topic >> isRoom: aRoom [
+Topic >> matchTopicNode: aTopicNodeString [
 "compare two topic node"
-^(self matchTopic: 'zwave/',aRoom,'/#').
-
- 
+^ aTopicNodeString = '+' or: [
+            aTopicNodeString = '#' or: aTopicNodeString = self           
+            ].
 ]
 
 { #category : #'as yet unclassified' }
-Topic >> isZwave [
-"compare two topic node"
-^(self matchTopic: 'zwave/#').
-
- 
-]
-
-{ #category : #'as yet unclassified' }
-Topic >> matchTopic: aTopicString [
+Topic >> matchingTopic: aTopicString [
 "compare two topic"
 |raw_split aTopicString_split|
 ^ (self matchTopicNode: aTopicString) or: [
@@ -33,12 +25,4 @@ Topic >> matchTopic: aTopicString [
             ].
  ^true.
 ].
-]
-
-{ #category : #'as yet unclassified' }
-Topic >> matchTopicNode: aTopicNodeString [
-"compare two topic node"
-^ aTopicNodeString = '+' or: [
-            aTopicNodeString = '#' or: aTopicNodeString = self           
-            ].
 ]
