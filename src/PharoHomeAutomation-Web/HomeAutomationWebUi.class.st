@@ -70,7 +70,10 @@ WorldHomeAutomation rooms do: [ :room | mdltw  addTabNamed: room content: [
 html render: mdltw.
 "
 WorldHomeAutomation rooms do: [ :room | 
-	(WorldHomeAutomation devicesInRoom:room) valuesDo: [ :device | device renderContentOn: html].
+	(WorldHomeAutomation devicesInRoom:room) valuesDo: [ :device | 
+		[ device renderContentOn: html ] on: Error do: [ "TODO" ] 
+		
+		].
 		].
 
 

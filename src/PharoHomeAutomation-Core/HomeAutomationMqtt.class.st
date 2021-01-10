@@ -93,7 +93,7 @@ HomeAutomationMqtt >> initialize [
 { #category : #initialization }
 HomeAutomationMqtt >> jsonValueFromTopic: aTopicString [ 
 	"return the JSON payload of the 'aTopicString'"
-	^STONJSON fromString:(topicDictionnary at: aTopicString) asString.
+	^STONJSON fromString:(topicDictionnary at: aTopicString  ifAbsent: [nil]) asString.
 ]
 
 { #category : #initialization }
