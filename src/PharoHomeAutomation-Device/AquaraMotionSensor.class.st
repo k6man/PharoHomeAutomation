@@ -1,6 +1,8 @@
 Class {
 	#name : #AquaraMotionSensor,
 	#superclass : #HomeAutomationZigbeeDevice,
+	#traits : 'THomeAutomationDevicePir + THomeAutomationDeviceLux',
+	#classTraits : 'THomeAutomationDevicePir classTrait + THomeAutomationDeviceLux classTrait',
 	#category : #'PharoHomeAutomation-Device'
 }
 

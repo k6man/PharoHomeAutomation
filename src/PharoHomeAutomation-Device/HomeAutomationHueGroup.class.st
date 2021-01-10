@@ -1,6 +1,8 @@
 Class {
 	#name : #HomeAutomationHueGroup,
 	#superclass : #HomeAutomationMqttDevice,
+	#traits : 'THomeAutomationDeviceLight',
+	#classTraits : 'THomeAutomationDeviceLight classTrait',
 	#instVars : [
 		'id',
 		'state'

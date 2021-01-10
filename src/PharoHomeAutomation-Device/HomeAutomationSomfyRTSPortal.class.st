@@ -1,6 +1,8 @@
 Class {
 	#name : #HomeAutomationSomfyRTSPortal,
 	#superclass : #HomeAutomationMqttDevice,
+	#traits : 'THomeAutomationDeviceDoor',
+	#classTraits : 'THomeAutomationDeviceDoor classTrait',
 	#instVars : [
 		'id'
 	],

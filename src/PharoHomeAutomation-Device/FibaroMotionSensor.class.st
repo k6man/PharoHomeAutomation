@@ -1,6 +1,8 @@
 Class {
 	#name : #FibaroMotionSensor,
 	#superclass : #HomeAutomationZwaveDevice,
+	#traits : 'THomeAutomationDevicePir + THomeAutomationDeviceLux + THomeAutomationDeviceTemp',
+	#classTraits : 'THomeAutomationDevicePir classTrait + THomeAutomationDeviceLux classTrait + THomeAutomationDeviceTemp classTrait',
 	#category : #'PharoHomeAutomation-Device'
 }
 

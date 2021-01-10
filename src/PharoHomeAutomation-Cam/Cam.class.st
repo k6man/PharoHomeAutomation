@@ -1,6 +1,8 @@
 Class {
 	#name : #Cam,
 	#superclass : #HomeAutomationMqttDevice,
+	#traits : 'THomeAutomationDeviceCam',
+	#classTraits : 'THomeAutomationDeviceCam classTrait',
 	#instVars : [
 		'ip',
 		'passwd',
