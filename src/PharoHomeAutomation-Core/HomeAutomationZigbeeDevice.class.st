@@ -24,6 +24,11 @@ HomeAutomationZigbeeDevice >> id: anObject [
 ]
 
 { #category : #accessing }
+HomeAutomationZigbeeDevice >> json [
+	^WorldHomeAutomation mqtt jsonValueFromTopic: self rootTopic.
+]
+
+{ #category : #accessing }
 HomeAutomationZigbeeDevice >> rootTopic [
 	^ 'zigbee2mqtt/',self id.
 ]

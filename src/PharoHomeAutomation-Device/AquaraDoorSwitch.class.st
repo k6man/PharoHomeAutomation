@@ -22,11 +22,6 @@ AquaraDoorSwitch >> isOpened [
 ]
 
 { #category : #accessing }
-AquaraDoorSwitch >> json [
-	^WorldHomeAutomation mqtt jsonValueFromTopic: self rootTopic.
-]
-
-{ #category : #accessing }
 AquaraDoorSwitch >> lux [
 		^self json at: 'illuminance_lux'.
 ]

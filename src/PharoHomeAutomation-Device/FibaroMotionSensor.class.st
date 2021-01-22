@@ -1,8 +1,8 @@
 Class {
 	#name : #FibaroMotionSensor,
 	#superclass : #HomeAutomationZwaveDevice,
-	#traits : 'THomeAutomationDevicePir + THomeAutomationDeviceLux + THomeAutomationDeviceTemp',
-	#classTraits : 'THomeAutomationDevicePir classTrait + THomeAutomationDeviceLux classTrait + THomeAutomationDeviceTemp classTrait',
+	#traits : 'THomeAutomationDevicePir + THomeAutomationDeviceLux + THomeAutomationDeviceTemperature',
+	#classTraits : 'THomeAutomationDevicePir classTrait + THomeAutomationDeviceLux classTrait + THomeAutomationDeviceTemperature classTrait',
 	#category : #'PharoHomeAutomation-Device'
 }
 
@@ -24,7 +24,7 @@ FibaroMotionSensor >> printOn: aStream [
 	aStream 
 	nextPutAll: ' lux: '; nextPutAll: self lux asString;
 	nextPutAll: ' move: '; nextPutAll: self move asString;
-	nextPutAll: ' temp: '; nextPutAll: self temp asString
+	nextPutAll: ' temp: '; nextPutAll: self temperature asString
 ]
 
 { #category : #accessing }
@@ -39,7 +39,7 @@ FibaroMotionSensor >> renderContentOn: html [
 ]
 
 { #category : #accessing }
-FibaroMotionSensor >> temp [
+FibaroMotionSensor >> temperature [
 	"comment stating purpose of message"
 	^WorldHomeAutomation mqtt numberValueFromTopic: 'zwave/',room,'/',name,'/49/1/1'.
 ]

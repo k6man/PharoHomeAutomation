@@ -12,11 +12,6 @@ AquaraMotionSensor >> battery [
 ]
 
 { #category : #accessing }
-AquaraMotionSensor >> json [
-	^WorldHomeAutomation mqtt jsonValueFromTopic: self rootTopic.
-]
-
-{ #category : #accessing }
 AquaraMotionSensor >> lux [
 		^self json at: 'illuminance_lux'.
 ]
