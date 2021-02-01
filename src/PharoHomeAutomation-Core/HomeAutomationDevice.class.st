@@ -60,6 +60,11 @@ HomeAutomationDevice >> isHumidity: aBlock [
 ]
 
 { #category : #accessing }
+HomeAutomationDevice >> isInRoom: aString [
+	^(room = aString)
+]
+
+{ #category : #accessing }
 HomeAutomationDevice >> isLight [
 	^ false.
 ]
@@ -87,6 +92,11 @@ HomeAutomationDevice >> isMqttDevice [
 { #category : #accessing }
 HomeAutomationDevice >> isMqttDevice: aBlock [
 	^ self isMqttDevice  ifTrue: [ aBlock value: self ].
+]
+
+{ #category : #accessing }
+HomeAutomationDevice >> isName: aString [
+	^(name = aString)
 ]
 
 { #category : #accessing }
