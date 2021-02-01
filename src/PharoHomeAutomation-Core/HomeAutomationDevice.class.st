@@ -26,7 +26,7 @@ HomeAutomationDevice >> isCam [
 
 { #category : #accessing }
 HomeAutomationDevice >> isCam: aBlock [
-	^ self isCam ifTrue: [ aBlock value: self ].
+	self isCam ifTrue: [ aBlock value: self ].
 ]
 
 { #category : #accessing }
@@ -36,7 +36,7 @@ HomeAutomationDevice >> isDoor [
 
 { #category : #accessing }
 HomeAutomationDevice >> isDoor: aBlock [
-	^ self isDoor ifTrue: [ aBlock value: self ].
+	self isDoor ifTrue: [ aBlock value: self ].
 ]
 
 { #category : #accessing }
@@ -46,7 +46,7 @@ HomeAutomationDevice >> isDoorSwitch [
 
 { #category : #accessing }
 HomeAutomationDevice >> isDoorSwitch: aBlock [
-	^ self isDoorSwitch ifTrue: [ aBlock value: self ].
+	self isDoorSwitch ifTrue: [ aBlock value: self ].
 ]
 
 { #category : #accessing }
@@ -56,7 +56,7 @@ HomeAutomationDevice >> isHumidity [
 
 { #category : #accessing }
 HomeAutomationDevice >> isHumidity: aBlock [
-	^ self isHumidity ifTrue: [ aBlock value: self ].
+	self isHumidity ifTrue: [ aBlock value: self ].
 ]
 
 { #category : #accessing }
@@ -71,7 +71,7 @@ HomeAutomationDevice >> isLight [
 
 { #category : #accessing }
 HomeAutomationDevice >> isLight: aBlock [
-	^ self isLight ifTrue: [ aBlock value: self ].
+	self isLight ifTrue: [ aBlock value: self ].
 ]
 
 { #category : #accessing }
@@ -81,7 +81,7 @@ HomeAutomationDevice >> isLux [
 
 { #category : #accessing }
 HomeAutomationDevice >> isLux: aBlock [
-	^ self isLux ifTrue: [ aBlock value: self ].
+	self isLux ifTrue: [ aBlock value: self ].
 ]
 
 { #category : #accessing }
@@ -91,7 +91,7 @@ HomeAutomationDevice >> isMqttDevice [
 
 { #category : #accessing }
 HomeAutomationDevice >> isMqttDevice: aBlock [
-	^ self isMqttDevice  ifTrue: [ aBlock value: self ].
+	self isMqttDevice  ifTrue: [ aBlock value: self ].
 ]
 
 { #category : #accessing }
@@ -106,7 +106,7 @@ HomeAutomationDevice >> isNotify [
 
 { #category : #accessing }
 HomeAutomationDevice >> isNotify: aBlock [
-	^ self isNotify ifTrue: [ aBlock value: self ].
+	self isNotify ifTrue: [ aBlock value: self ].
 ]
 
 { #category : #accessing }
@@ -116,7 +116,7 @@ HomeAutomationDevice >> isPir [
 
 { #category : #accessing }
 HomeAutomationDevice >> isPir: aBlock [
-	^ self isPir ifTrue: [ aBlock value: self ].
+	self isPir ifTrue: [ aBlock value: self ].
 ]
 
 { #category : #accessing }
@@ -126,7 +126,7 @@ HomeAutomationDevice >> isPressure [
 
 { #category : #accessing }
 HomeAutomationDevice >> isPressure: aBlock [
-	^ self isPressure  ifTrue: [ aBlock value: self ].
+	self isPressure  ifTrue: [ aBlock value: self ].
 ]
 
 { #category : #accessing }
@@ -136,7 +136,7 @@ HomeAutomationDevice >> isTemperature [
 
 { #category : #accessing }
 HomeAutomationDevice >> isTemperature: aBlock [
-	^ self isTemperature  ifTrue: [ aBlock value: self ].
+	self isTemperature  ifTrue: [ aBlock value: self ].
 ]
 
 { #category : #accessing }

@@ -16,3 +16,13 @@ HomeAutomationDeviceAnnoucement >> device [
 HomeAutomationDeviceAnnoucement >> device: anObject [
 	device := anObject
 ]
+
+{ #category : #accessing }
+HomeAutomationDeviceAnnoucement >> isDeviceAnnoucement [
+	^true.
+]
+
+{ #category : #accessing }
+HomeAutomationDeviceAnnoucement >> isDeviceAnnoucement: aBlock [
+	^self device ifNotNil: [ :dev |aBlock value: dev ].
+]

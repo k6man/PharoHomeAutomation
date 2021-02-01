@@ -65,20 +65,18 @@ LightScript >> couloirBrightness [
 
 { #category : #running }
 LightScript >> run: anAnnouncement [
-(anAnnouncement className = #HomeAutomationDeviceAnnoucement) ifTrue: [ 
-	(anAnnouncement device) ifNotNil: [ :moveSensor |
-	moveSensor isPir: [ :pirDevice |
+anAnnouncement isDeviceAnnoucement: [ :sensor |
+	sensor isPir: [ :pirDevice |
 		(WorldHomeAutomation deviceNamed: 'lumiere' inRoom: pirDevice room) ifNotNil: [ :light |
-			(pirDevice move and: ((moveSensor lux) < 60)) ifTrue: [ 
+			(pirDevice move and: ((sensor lux) < 60)) ifTrue: [ 
 				light brightness: (self brightnessInRoom: pirDevice room)  ; on.
 				 ] ifFalse: [ light off ].
 			
 			self trace: DateAndTime now;
-				  trace:  moveSensor;
+				  trace:  sensor;
 				  trace: ' => ';
 				  traceCr: light.
 			]
 	]
-]
 ]
 ]
