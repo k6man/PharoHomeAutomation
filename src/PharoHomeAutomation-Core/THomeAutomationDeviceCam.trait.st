@@ -4,6 +4,12 @@ Trait {
 }
 
 { #category : #API }
+THomeAutomationDeviceCam >> isCam [
+ ^true.
+
+]
+
+{ #category : #API }
 THomeAutomationDeviceCam >> renderContentOn: html [
 <renderContentOn: true>
 	html image form: (self snapshot scaledToSize: 320 @ 240) .

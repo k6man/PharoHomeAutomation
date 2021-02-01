@@ -10,6 +10,11 @@ THomeAutomationDeviceDoorSwitch >> isClosed [
 ]
 
 { #category : #accessing }
+THomeAutomationDeviceDoorSwitch >> isDoorSwitch [ 
+ ^true.
+]
+
+{ #category : #accessing }
 THomeAutomationDeviceDoorSwitch >> isOpened [
 	"comment stating purpose of message"
 	self explicitRequirement.

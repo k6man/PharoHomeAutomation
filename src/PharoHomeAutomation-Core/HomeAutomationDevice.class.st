@@ -20,8 +20,58 @@ HomeAutomationDevice >> interface: anObject [
 ]
 
 { #category : #accessing }
+HomeAutomationDevice >> isCam [
+	^ false.
+]
+
+{ #category : #accessing }
+HomeAutomationDevice >> isDoor [
+	^ false.
+]
+
+{ #category : #accessing }
+HomeAutomationDevice >> isDoorSwitch [
+	^ false.
+]
+
+{ #category : #accessing }
+HomeAutomationDevice >> isHumidity [
+	^ false.
+]
+
+{ #category : #accessing }
+HomeAutomationDevice >> isLight [
+	^ false.
+]
+
+{ #category : #accessing }
+HomeAutomationDevice >> isLux [
+	^ false.
+]
+
+{ #category : #accessing }
 HomeAutomationDevice >> isMqttDevice [
 	^false.
+]
+
+{ #category : #accessing }
+HomeAutomationDevice >> isNotify [
+	^ false.
+]
+
+{ #category : #accessing }
+HomeAutomationDevice >> isPir [
+	^ false.
+]
+
+{ #category : #accessing }
+HomeAutomationDevice >> isPressure [
+	^ false.
+]
+
+{ #category : #accessing }
+HomeAutomationDevice >> isTemperature [
+	^ false.
 ]
 
 { #category : #accessing }

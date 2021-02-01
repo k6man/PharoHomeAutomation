@@ -10,6 +10,11 @@ THomeAutomationDeviceLight >> brightness: pourcent [
 ]
 
 { #category : #API }
+THomeAutomationDeviceLight >> isLight [ 
+ ^true.
+]
+
+{ #category : #API }
 THomeAutomationDeviceLight >> off [
 	"comment stating purpose of message"
 	self explicitRequirement.

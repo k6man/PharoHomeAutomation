@@ -4,6 +4,11 @@ Trait {
 }
 
 { #category : #accessing }
+THomeAutomationDeviceTemperature >> isTemperature [ 
+ ^true.
+]
+
+{ #category : #accessing }
 THomeAutomationDeviceTemperature >> renderContentOn: html [
 <renderContentOn: true>
 	html paragraph: self asString.

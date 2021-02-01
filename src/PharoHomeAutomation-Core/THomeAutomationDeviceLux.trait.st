@@ -4,6 +4,11 @@ Trait {
 }
 
 { #category : #accessing }
+THomeAutomationDeviceLux >> isLux [
+ ^true.
+]
+
+{ #category : #accessing }
 THomeAutomationDeviceLux >> lux [
 	"comment stating purpose of message"
 	self explicitRequirement.

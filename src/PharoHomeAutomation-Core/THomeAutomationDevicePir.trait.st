@@ -4,6 +4,11 @@ Trait {
 }
 
 { #category : #accessing }
+THomeAutomationDevicePir >> isPir [
+ ^true.
+]
+
+{ #category : #accessing }
 THomeAutomationDevicePir >> move [
 	"comment stating purpose of message"
 	self explicitRequirement.

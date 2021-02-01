@@ -4,6 +4,11 @@ Trait {
 }
 
 { #category : #accessing }
+THomeAutomationDevicePressure >> isPressure [ 
+ ^true.
+]
+
+{ #category : #accessing }
 THomeAutomationDevicePressure >> pressure [
 	"comment stating purpose of message"
 	self explicitRequirement.

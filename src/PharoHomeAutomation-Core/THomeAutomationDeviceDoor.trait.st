@@ -11,6 +11,11 @@ THomeAutomationDeviceDoor >> close [
 ]
 
 { #category : #API }
+THomeAutomationDeviceDoor >> isDoor [
+ ^true.
+]
+
+{ #category : #API }
 THomeAutomationDeviceDoor >> open [
 	"comment stating purpose of message"
 	self explicitRequirement.
