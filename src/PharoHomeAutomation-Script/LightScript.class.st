@@ -67,13 +67,13 @@ LightScript >> couloirBrightness [
 LightScript >> run: anAnnouncement [
 anAnnouncement isDeviceAnnoucement: [ :sensor |
 	sensor isPir: [ :pirDevice |
-		((WorldHomeAutomation devicesInRoom:'salon') select: [:d| d isLight]) do: [ :light |
+		((WorldHomeAutomation devicesInRoom: sensor room) select: [:d| d isLight]) do: [ :light |
 			(pirDevice move and: ((sensor lux) < 60)) ifTrue: [ 
 				light brightness: (self brightnessInRoom: pirDevice room)  ; on.
 				 ] ifFalse: [ light off ].
 			
 			self trace: DateAndTime now;
-				  trace:  sensor;
+				  traceCr:  sensor;
 				  trace: ' => ';
 				  traceCr: light.
 			]
