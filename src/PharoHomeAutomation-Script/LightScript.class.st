@@ -68,10 +68,22 @@ LightScript >> run: anAnnouncement [
 anAnnouncement isDeviceAnnoucement: [ :sensor |
 	sensor isPir: [ :pirDevice |
 		((WorldHomeAutomation devicesInRoom: sensor room) select: [:d| d isLight]) do: [ :light |
-			(pirDevice move and: ((sensor lux) < 60)) ifTrue: [ 
-				light brightness: (self brightnessInRoom: pirDevice room)  ; on.
-				 ] ifFalse: [ light off ].
 			
+			" 2 cases: "
+			"- there is a lux sensor in room:"
+			((WorldHomeAutomation devicesInRoom: sensor room) select: [:d| d isLux]) do: [  :luxSensor |
+			
+				(pirDevice move and: ((luxSensor lux) < 60)) ifTrue: [ 
+					light brightness: (self brightnessInRoom: pirDevice room)  ; on.
+				 	] ifFalse: [ light off ].
+			].
+		
+			"- there no lux sensor in room:"
+			(pirDevice move) ifTrue: [ 
+				light brightness: (self brightnessInRoom: pirDevice room)  ; on.
+				] ifFalse: [ light off ].			
+			
+			"Trace:"
 			self trace: DateAndTime now;
 				  traceCr:  sensor;
 				  trace: ' => ';
