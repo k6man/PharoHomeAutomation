@@ -61,20 +61,21 @@ HomeAutomationWebUi >> renderContentOn: html [
 
 { #category : #rendering }
 HomeAutomationWebUi >> renderRoomsOn: html [
-"| mdltw |
+| mdltw |
 mdltw := MDLTabWidget new.
 WorldHomeAutomation rooms do: [ :room | mdltw  addTabNamed: room content: [
-		(WorldHomeAutomation devicesInRoom:room) valuesDo: [ :device | device renderContentOn: html].
-		]
-	].
+		(WorldHomeAutomation devicesInRoom:room) valuesDo: [ :device | 
+			[ device renderContentOn: html ] on: Error do: [ 'TODO' ]
+		].
+	]
+].
 html render: mdltw.
-"
-WorldHomeAutomation rooms do: [ :room | 
+
+"WorldHomeAutomation rooms do: [ :room | 
 	(WorldHomeAutomation devicesInRoom:room) valuesDo: [ :device | 
-		[ device renderContentOn: html ] on: Error do: [ "TODO" ] 
-		
-		].
-		].
+		[ device renderContentOn: html ] on: Error do: [ 'TODO' ]
+	].
+]."
 
 
 "	html
@@ -91,7 +92,7 @@ WorldHomeAutomation rooms do: [ :room |
 ]
 
 { #category : #rendering }
-HomeAutomationWebUi >> style [
+HomeAutomationWebUi >> style_deprecated [
 	^ '.mdl-pagination__current{
         box-shadow: inset 0px -4px 0px 0px #E91E63 !important;
     }'
@@ -102,12 +103,12 @@ HomeAutomationWebUi >> updateRoot: anHtmlRoot [
 	super updateRoot: anHtmlRoot.
 	anHtmlRoot beHtml5.
 	anHtmlRoot title: 'Home Automation'.
-	anHtmlRoot meta
+"	anHtmlRoot meta
 		attributeAt: 'name' put: 'viewport';
 		content: 'width=device-width, initial-scale=1'.
 	self updateTabIconRoot: anHtmlRoot.
 	anHtmlRoot stylesheet url: (WAUrl absolute: 'https://code.getmdl.io/1.3.0/material.light_blue-blue.min.css').
-	anHtmlRoot javascript add: 'hljs.initHighlightingOnLoad();'
+	anHtmlRoot javascript add: 'hljs.initHighlightingOnLoad();'"
 ]
 
 { #category : #rendering }
