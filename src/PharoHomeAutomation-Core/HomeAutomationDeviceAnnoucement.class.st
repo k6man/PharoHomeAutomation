@@ -24,5 +24,5 @@ HomeAutomationDeviceAnnoucement >> isDeviceAnnoucement [
 
 { #category : #accessing }
 HomeAutomationDeviceAnnoucement >> isDeviceAnnoucement: aBlock [
-	^self device ifNotNil: [ :dev |aBlock value: dev ].
+	^device ifNotNil: [ :dev |aBlock value: dev ].
 ]

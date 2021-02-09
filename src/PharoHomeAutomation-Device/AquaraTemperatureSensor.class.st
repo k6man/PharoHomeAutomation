@@ -8,17 +8,17 @@ Class {
 
 { #category : #accessing }
 AquaraTemperatureSensor >> battery [
-	^self json at:'battery'.
+	^self json at:'battery' ifAbsent: [nil].
 ]
 
 { #category : #accessing }
 AquaraTemperatureSensor >> humidity [
-		^self json at: 'humidity'.
+		^self json at: 'humidity' ifAbsent: [nil].
 ]
 
 { #category : #accessing }
 AquaraTemperatureSensor >> pressure [
-		^self json at: 'pressure'.
+		^self json at: 'pressure' ifAbsent: [nil].
 ]
 
 { #category : #accessing }
@@ -44,5 +44,5 @@ AquaraTemperatureSensor >> renderContentOn: html [
 
 { #category : #accessing }
 AquaraTemperatureSensor >> temperature [
-		^self json at: 'temperature'.
+		^self json at: 'temperature' ifAbsent: [nil].
 ]

@@ -8,17 +8,17 @@ Class {
 
 { #category : #accessing }
 AquaraMotionSensor >> battery [
-	^self json at:'battery'.
+	^self json at:'battery' ifAbsent: [nil].
 ]
 
 { #category : #accessing }
 AquaraMotionSensor >> lux [
-		^self json at: 'illuminance_lux'.
+		^self json at: 'illuminance_lux' ifAbsent: [nil].
 ]
 
 { #category : #accessing }
 AquaraMotionSensor >> move [
-	^self json at:'occupancy'.
+	^self json at:'occupancy' ifAbsent: [nil].
 
 ]
 
