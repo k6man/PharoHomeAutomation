@@ -71,17 +71,19 @@ anAnnouncement isDeviceAnnoucement: [ :sensor |
 			
 			" 2 cases: "
 			"- there is a lux sensor in room:"
-			((WorldHomeAutomation devicesInRoom: sensor room) select: [:d| d isLux]) do: [  :luxSensor |
-			
+			((WorldHomeAutomation devicesInRoom: sensor room) select: [:d| d isLux]) ifEmpty: [ 
+			  "- there no lux sensor in room:"
+						(pirDevice move) ifTrue: [ 
+						light brightness: (self brightnessInRoom: pirDevice room)  ; on.
+						] ifFalse: [ light off ].		
+			]
+			ifNotEmpty: [  :devices | devices	 do: [  :luxSensor |
 				(pirDevice move and: ((luxSensor lux) < 60)) ifTrue: [ 
 					light brightness: (self brightnessInRoom: pirDevice room)  ; on.
 				 	] ifFalse: [ light off ].
+				]
 			].
-		
-			"- there no lux sensor in room:"
-			(pirDevice move) ifTrue: [ 
-				light brightness: (self brightnessInRoom: pirDevice room)  ; on.
-				] ifFalse: [ light off ].			
+	
 			
 			"Trace:"
 			self trace: DateAndTime now;
