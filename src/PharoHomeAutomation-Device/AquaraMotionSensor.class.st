@@ -35,6 +35,7 @@ AquaraMotionSensor >> printOn: aStream [
 AquaraMotionSensor >> renderContentOn: html [ 
 	"self traitConflict"
 <renderContentOn: true>
+	super renderContentOn: html.
 	html paragraph: self asString.
 	"self renderContentOnPir: html;
 		renderContentOnLux: html;

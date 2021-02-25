@@ -165,8 +165,8 @@ HomeAutomationDevice >> printOn: aStream [
 
 { #category : #accessing }
 HomeAutomationDevice >> renderContentOn: html [
-	html paragraph: self asString.
-
+	"html paragraph: self asString."
+	html strong: self name,' in ',self room.
 ]
 
 { #category : #accessing }
