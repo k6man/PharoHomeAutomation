@@ -12,8 +12,7 @@ THomeAutomationDeviceHumidity >> humidity [
 { #category : #accessing }
 THomeAutomationDeviceHumidity >> humidityRenderContentOn: html [
 <renderContentOn: true>
-	html paragraph: self asString.
-	self flag: #TODO.
+	html paragraph: self humidity,'%'.
 ]
 
 { #category : #accessing }

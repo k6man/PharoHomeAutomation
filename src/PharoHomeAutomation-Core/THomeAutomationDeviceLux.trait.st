@@ -17,6 +17,5 @@ THomeAutomationDeviceLux >> lux [
 { #category : #accessing }
 THomeAutomationDeviceLux >> luxRenderContentOn: html [
 <renderContentOn: true>
-	html paragraph: self asString.
-	self flag: #TODO.
+	html paragraph: self lux,' lux'.
 ]

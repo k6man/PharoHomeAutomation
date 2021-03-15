@@ -4,7 +4,7 @@ Trait {
 }
 
 { #category : #API }
-THomeAutomationDeviceCam >> cameraRenderContentOn: html [
+THomeAutomationDeviceCam >> camRenderContentOn: html [
 <renderContentOn: true>
 	html image form: (self snapshot scaledToSize: 320 @ 240) .
 

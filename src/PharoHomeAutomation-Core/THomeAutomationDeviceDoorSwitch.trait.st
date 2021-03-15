@@ -6,8 +6,11 @@ Trait {
 { #category : #accessing }
 THomeAutomationDeviceDoorSwitch >> doorSwitchRenderContentOn: html [
 <renderContentOn: true>
-	html paragraph: self asString.
-	self flag: #TODO.
+		html paragraph: [ :h | 
+		h strong: 'porte:'.
+			(self move) ifTrue: [ html mdlIconBadge dataBadge: '!'; overlap; 	with: 'account_box'. ]
+				 ifFalse: [ html mdlIconBadge with: 'account_box'. ]
+		 ].
 ]
 
 { #category : #accessing }

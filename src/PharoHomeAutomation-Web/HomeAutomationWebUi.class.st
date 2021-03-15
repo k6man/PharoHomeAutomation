@@ -56,6 +56,8 @@ HomeAutomationWebUi >> renderContentOn: html [
       with: 'Configure'.
 "
 
+
+"TODO: a restaurer ?
 	html mdlLayout
 		with: [ html mdlLayoutHeader
 				scroll;
@@ -71,13 +73,10 @@ HomeAutomationWebUi >> renderContentOn: html [
 									beCurrentIf: [ i = 1 ];
 									with: 'Link' ] ] ].
 			html
-				mdlLayoutContent: [ 
-					"html div
-						style: 'height: 600px;';
-						with: [  ]."
+				mdlLayoutContent: [" 
 					self renderRoomsOn: html.
-				 ] 
-		].
+				 "] 
+		]."
 	
 	
 
@@ -85,15 +84,17 @@ HomeAutomationWebUi >> renderContentOn: html [
 
 { #category : #rendering }
 HomeAutomationWebUi >> renderRoomsOn: html [
-| mdltw |
-mdltw := MDLTabWidget new.
-WorldHomeAutomation rooms do: [ :room | mdltw  addTabNamed: room content: [
+"| mdltw |
+mdltw := MDLTabWidget new."
+WorldHomeAutomation rooms do: [ :room | "mdltw  addTabNamed: room content: ["
+		html horizontalRule.
+		html heading: room.
 		(WorldHomeAutomation devicesInRoom:room) valuesDo: [ :device | 
 			[ device renderContentOn: html ] on: Error do: [ 'TODO' ]
 		].
 	]
-].
-html render: mdltw.
+"].
+html render: mdltw."
 
 "WorldHomeAutomation rooms do: [ :room | 
 	(WorldHomeAutomation devicesInRoom:room) valuesDo: [ :device | 

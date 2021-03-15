@@ -17,8 +17,7 @@ THomeAutomationDeviceLight >> isLight [
 { #category : #API }
 THomeAutomationDeviceLight >> lightRenderContentOn: html [
 <renderContentOn: true>
-	html paragraph: 'Lumière ', self room,'.'.
-	self flag: #TODO.
+html paragraph: 'Lumière:'.
 
 html mdlAnchorButton
 		callback: [ self on ];

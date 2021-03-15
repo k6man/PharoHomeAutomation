@@ -175,8 +175,8 @@ HomeAutomationDevice >> printOn: aStream [
 
 { #category : #accessing }
 HomeAutomationDevice >> renderContentOn: html [
-	html strong: self name,' in ',self room.
-	html paragraph: self asString. "TODO: to remove"
+	"html strong: self name,' in ',self room."
+	html paragraph: [ html strong: self asString. 
 	self isPir:  [ :d |  d pirRenderContentOn:  html ].
 	self isTemperature:  [ :d |  d temperatureRenderContentOn:  html ].
 	self isPressure:  [ :d |  d pressureRenderContentOn:  html ].
@@ -184,9 +184,10 @@ HomeAutomationDevice >> renderContentOn: html [
 	self isHumidity:  [ :d |  d humidityRenderContentOn:  html ].
 	self isLight:  [ :d |  d lightRenderContentOn:  html ].
 	self isDoorSwitch:  [ :d |  d doorSwitchRenderContentOn:  html ].
-	"self isDoor:  [ :d |  d doorRenderContentOn:  html ]."
-	"self isCam:  [ :d |  d camRenderContentOn:  html ]."
+	self isDoor:  [ :d |  d doorRenderContentOn:  html ].
+	self isCam:  [ :d |  d camRenderContentOn:  html ].
 	self isBattery: [ :d |  d batteryRenderContentOn: html ].
+	].
 ]
 
 { #category : #accessing }
