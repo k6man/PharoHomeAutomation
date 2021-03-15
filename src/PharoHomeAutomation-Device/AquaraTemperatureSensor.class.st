@@ -1,8 +1,8 @@
 Class {
 	#name : #AquaraTemperatureSensor,
 	#superclass : #HomeAutomationZigbeeDevice,
-	#traits : 'THomeAutomationDeviceTemperature + THomeAutomationDeviceHumidity + THomeAutomationDevicePressure',
-	#classTraits : 'THomeAutomationDeviceTemperature classTrait + THomeAutomationDeviceHumidity classTrait + THomeAutomationDevicePressure classTrait',
+	#traits : 'THomeAutomationDeviceTemperature + THomeAutomationDeviceHumidity + THomeAutomationDevicePressure + THomeAutomationDeviceBattery',
+	#classTraits : 'THomeAutomationDeviceTemperature classTrait + THomeAutomationDeviceHumidity classTrait + THomeAutomationDevicePressure classTrait + THomeAutomationDeviceBattery classTrait',
 	#category : #'PharoHomeAutomation-Device'
 }
 
@@ -29,17 +29,6 @@ AquaraTemperatureSensor >> printOn: aStream [
 	nextPutAll: ' humidity '; nextPutAll: self humidity  asString;
 	nextPutAll: ' pressure '; nextPutAll: self pressure asString;
 	nextPutAll: ' battery: '; nextPutAll: self battery asString
-]
-
-{ #category : #accessing }
-AquaraTemperatureSensor >> renderContentOn: html [ 
-	"self traitConflict"
-<renderContentOn: true>
-	html paragraph: self asString.
-	"self renderContentOnPir: html;
-		renderContentOnLux: html;
-		renderContentOnTemp: html."
-	self flag: #TODO.
 ]
 
 { #category : #accessing }

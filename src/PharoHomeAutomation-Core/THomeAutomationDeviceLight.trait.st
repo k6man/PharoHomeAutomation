@@ -15,20 +15,7 @@ THomeAutomationDeviceLight >> isLight [
 ]
 
 { #category : #API }
-THomeAutomationDeviceLight >> off [
-	"comment stating purpose of message"
-	self explicitRequirement.
-
-]
-
-{ #category : #API }
-THomeAutomationDeviceLight >> on [
-	"comment stating purpose of message"
-	self explicitRequirement.
-]
-
-{ #category : #API }
-THomeAutomationDeviceLight >> renderContentOn: html [
+THomeAutomationDeviceLight >> lightRenderContentOn: html [
 <renderContentOn: true>
 	html paragraph: 'Lumière ', self room,'.'.
 	self flag: #TODO.
@@ -68,4 +55,17 @@ html mdlSwitchContainer
       script: (html jQuery this button
          text: true;
          primary Unknown input at end ->Icon: 'ui-icon-caret-1-s')."  
+]
+
+{ #category : #API }
+THomeAutomationDeviceLight >> off [
+	"comment stating purpose of message"
+	self explicitRequirement.
+
+]
+
+{ #category : #API }
+THomeAutomationDeviceLight >> on [
+	"comment stating purpose of message"
+	self explicitRequirement.
 ]

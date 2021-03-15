@@ -15,8 +15,8 @@ THomeAutomationDevicePressure >> pressure [
 ]
 
 { #category : #accessing }
-THomeAutomationDevicePressure >> renderContentOn: html [
+THomeAutomationDevicePressure >> pressureRenderContentOn: html [
 <renderContentOn: true>
-	html paragraph: self asString.
-	self flag: #TODO.
+	html paragraph: self pressure,'P'.
+self tag: #TODO
 ]

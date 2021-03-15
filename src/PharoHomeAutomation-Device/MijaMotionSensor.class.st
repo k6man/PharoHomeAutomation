@@ -1,8 +1,8 @@
 Class {
 	#name : #MijaMotionSensor,
 	#superclass : #HomeAutomationZigbeeDevice,
-	#traits : 'THomeAutomationDevicePir',
-	#classTraits : 'THomeAutomationDevicePir classTrait',
+	#traits : 'THomeAutomationDevicePir + THomeAutomationDeviceBattery',
+	#classTraits : 'THomeAutomationDevicePir classTrait + THomeAutomationDeviceBattery classTrait',
 	#category : #'PharoHomeAutomation-Device'
 }
 
@@ -23,15 +23,4 @@ MijaMotionSensor >> printOn: aStream [
 	aStream 
 	nextPutAll: ' move: '; nextPutAll: self move asString;
 	nextPutAll: ' battery: '; nextPutAll: self battery asString
-]
-
-{ #category : #accessing }
-MijaMotionSensor >> renderContentOn: html [ 
-	"self traitConflict"
-<renderContentOn: true>
-	html paragraph: self asString.
-	"self renderContentOnPir: html;
-		renderContentOnLux: html;
-		renderContentOnTemp: html."
-	self flag: #TODO.
 ]

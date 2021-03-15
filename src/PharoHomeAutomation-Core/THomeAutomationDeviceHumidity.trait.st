@@ -10,13 +10,13 @@ THomeAutomationDeviceHumidity >> humidity [
 ]
 
 { #category : #accessing }
-THomeAutomationDeviceHumidity >> isHumidity [ 
- ^true.
-]
-
-{ #category : #accessing }
-THomeAutomationDeviceHumidity >> renderContentOn: html [
+THomeAutomationDeviceHumidity >> humidityRenderContentOn: html [
 <renderContentOn: true>
 	html paragraph: self asString.
 	self flag: #TODO.
+]
+
+{ #category : #accessing }
+THomeAutomationDeviceHumidity >> isHumidity [ 
+ ^true.
 ]

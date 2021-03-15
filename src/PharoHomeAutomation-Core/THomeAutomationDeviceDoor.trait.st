@@ -4,25 +4,7 @@ Trait {
 }
 
 { #category : #API }
-THomeAutomationDeviceDoor >> close [
-	"comment stating purpose of message"
-	self explicitRequirement.
-
-]
-
-{ #category : #API }
-THomeAutomationDeviceDoor >> isDoor [
- ^true.
-]
-
-{ #category : #API }
-THomeAutomationDeviceDoor >> open [
-	"comment stating purpose of message"
-	self explicitRequirement.
-]
-
-{ #category : #API }
-THomeAutomationDeviceDoor >> renderContentOn: html [
+THomeAutomationDeviceDoor >> DoorRenderContentOn: html [
 <renderContentOn: true>
 	html paragraph: 'Porte ', self room,'.'.
 
@@ -38,4 +20,22 @@ html mdlAnchorButton
 		with: 'Fermeture'.
 
 	
+]
+
+{ #category : #API }
+THomeAutomationDeviceDoor >> close [
+	"comment stating purpose of message"
+	self explicitRequirement.
+
+]
+
+{ #category : #API }
+THomeAutomationDeviceDoor >> isDoor [
+ ^true.
+]
+
+{ #category : #API }
+THomeAutomationDeviceDoor >> open [
+	"comment stating purpose of message"
+	self explicitRequirement.
 ]

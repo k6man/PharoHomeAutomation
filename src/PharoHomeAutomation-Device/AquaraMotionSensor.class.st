@@ -1,8 +1,8 @@
 Class {
 	#name : #AquaraMotionSensor,
 	#superclass : #HomeAutomationZigbeeDevice,
-	#traits : 'THomeAutomationDevicePir + THomeAutomationDeviceLux',
-	#classTraits : 'THomeAutomationDevicePir classTrait + THomeAutomationDeviceLux classTrait',
+	#traits : 'THomeAutomationDevicePir + THomeAutomationDeviceLux + THomeAutomationDeviceBattery',
+	#classTraits : 'THomeAutomationDevicePir classTrait + THomeAutomationDeviceLux classTrait + THomeAutomationDeviceBattery classTrait',
 	#category : #'PharoHomeAutomation-Device'
 }
 
@@ -29,16 +29,4 @@ AquaraMotionSensor >> printOn: aStream [
 	nextPutAll: ' lux: '; nextPutAll: self lux asString;
 	nextPutAll: ' move: '; nextPutAll: self move asString;
 	nextPutAll: ' battery: '; nextPutAll: self battery asString
-]
-
-{ #category : #accessing }
-AquaraMotionSensor >> renderContentOn: html [ 
-	"self traitConflict"
-<renderContentOn: true>
-	super renderContentOn: html.
-	html paragraph: self asString.
-	"self renderContentOnPir: html;
-		renderContentOnLux: html;
-		renderContentOnTemp: html."
-	self flag: #TODO.
 ]

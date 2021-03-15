@@ -55,13 +55,37 @@ HomeAutomationWebUi >> renderContentOn: html [
          primaryIcon: 'ui-icon-gear');
       with: 'Configure'.
 "
-	self renderRoomsOn: html.
+
+	html mdlLayout
+		with: [ html mdlLayoutHeader
+				scroll;
+				with: [ html
+						mdlLayoutHeaderRow: [ html mdlLayoutTitle: 'Home'.
+							html mdlLayoutSpacer.
+							html mdlNavigation: [ 1 to: 5 do: [ :i | html mdlNavigationLink: 'Link' ] ] ] ].
+			html
+				mdlLayoutDrawer: [ html mdlLayoutTitle: 'Home'.
+					html
+						mdlNavigation: [ 1 to: 5 do: [ :i | 
+								html mdlNavigationLink
+									beCurrentIf: [ i = 1 ];
+									with: 'Link' ] ] ].
+			html
+				mdlLayoutContent: [ 
+					"html div
+						style: 'height: 600px;';
+						with: [  ]."
+					self renderRoomsOn: html.
+				 ] 
+		].
+	
+	
 
 ]
 
 { #category : #rendering }
 HomeAutomationWebUi >> renderRoomsOn: html [
-"| mdltw |
+| mdltw |
 mdltw := MDLTabWidget new.
 WorldHomeAutomation rooms do: [ :room | mdltw  addTabNamed: room content: [
 		(WorldHomeAutomation devicesInRoom:room) valuesDo: [ :device | 
@@ -69,13 +93,13 @@ WorldHomeAutomation rooms do: [ :room | mdltw  addTabNamed: room content: [
 		].
 	]
 ].
-html render: mdltw."
+html render: mdltw.
 
-WorldHomeAutomation rooms do: [ :room | 
+"WorldHomeAutomation rooms do: [ :room | 
 	(WorldHomeAutomation devicesInRoom:room) valuesDo: [ :device | 
 		[ device renderContentOn: html ] on: Error do: [ 'TODO' ]
 	].
-].
+]."
 
 
 "	html

@@ -15,8 +15,13 @@ THomeAutomationDevicePir >> move [
 ]
 
 { #category : #accessing }
-THomeAutomationDevicePir >> renderContentOn: html [
+THomeAutomationDevicePir >> pirRenderContentOn: html [
 <renderContentOn: true>
-	html paragraph: self asString.
+	"html paragraph: self asString."
 	self flag: #TODO.
+		html paragraph: [ :h | 
+		h strong: self asString.
+			(self move) ifTrue: [ html mdlIconBadge dataBadge: '!'; overlap; 	with: 'account_box'. ]
+				 ifFalse: [ html mdlIconBadge with: 'account_box'. ]
+		 ].
 ]

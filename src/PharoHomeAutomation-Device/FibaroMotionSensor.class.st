@@ -1,8 +1,8 @@
 Class {
 	#name : #FibaroMotionSensor,
 	#superclass : #HomeAutomationZwaveDevice,
-	#traits : 'THomeAutomationDevicePir + THomeAutomationDeviceLux + THomeAutomationDeviceTemperature',
-	#classTraits : 'THomeAutomationDevicePir classTrait + THomeAutomationDeviceLux classTrait + THomeAutomationDeviceTemperature classTrait',
+	#traits : 'THomeAutomationDevicePir + THomeAutomationDeviceLux + THomeAutomationDeviceTemperature + THomeAutomationDeviceBattery',
+	#classTraits : 'THomeAutomationDevicePir classTrait + THomeAutomationDeviceLux classTrait + THomeAutomationDeviceTemperature classTrait + THomeAutomationDeviceBattery classTrait',
 	#category : #'PharoHomeAutomation-Device'
 }
 
@@ -25,17 +25,6 @@ FibaroMotionSensor >> printOn: aStream [
 	nextPutAll: ' lux: '; nextPutAll: self lux asString;
 	nextPutAll: ' move: '; nextPutAll: self move asString;
 	nextPutAll: ' temp: '; nextPutAll: self temperature asString
-]
-
-{ #category : #accessing }
-FibaroMotionSensor >> renderContentOn: html [ 
-	"self traitConflict"
-<renderContentOn: true>
-	html paragraph: self asString.
-	"self renderContentOnPir: html;
-		renderContentOnLux: html;
-		renderContentOnTemp: html."
-	self flag: #TODO.
 ]
 
 { #category : #accessing }

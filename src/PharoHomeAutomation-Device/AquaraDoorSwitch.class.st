@@ -1,8 +1,8 @@
 Class {
 	#name : #AquaraDoorSwitch,
 	#superclass : #HomeAutomationZigbeeDevice,
-	#traits : 'THomeAutomationDeviceDoorSwitch',
-	#classTraits : 'THomeAutomationDeviceDoorSwitch classTrait',
+	#traits : 'THomeAutomationDeviceDoorSwitch + THomeAutomationDeviceBattery',
+	#classTraits : 'THomeAutomationDeviceDoorSwitch classTrait + THomeAutomationDeviceBattery classTrait',
 	#category : #'PharoHomeAutomation-Device'
 }
 
@@ -38,15 +38,4 @@ AquaraDoorSwitch >> printOn: aStream [
 	aStream 
 	nextPutAll: ' opened: '; nextPutAll: self isOpened asString;
 	nextPutAll: ' battery: '; nextPutAll: self battery asString
-]
-
-{ #category : #accessing }
-AquaraDoorSwitch >> renderContentOn: html [ 
-	"self traitConflict"
-<renderContentOn: true>
-	html paragraph: self asString.
-	"self renderContentOnPir: html;
-		renderContentOnLux: html;
-		renderContentOnTemp: html."
-	self flag: #TODO.
 ]

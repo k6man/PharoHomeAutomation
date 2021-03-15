@@ -20,6 +20,16 @@ HomeAutomationDevice >> interface: anObject [
 ]
 
 { #category : #accessing }
+HomeAutomationDevice >> isBattery [
+	^ false.
+]
+
+{ #category : #accessing }
+HomeAutomationDevice >> isBattery: aBlock [
+	self isBattery ifTrue: [ aBlock value: self ].
+]
+
+{ #category : #accessing }
 HomeAutomationDevice >> isCam [
 	^ false.
 ]
@@ -165,8 +175,18 @@ HomeAutomationDevice >> printOn: aStream [
 
 { #category : #accessing }
 HomeAutomationDevice >> renderContentOn: html [
-	"html paragraph: self asString."
 	html strong: self name,' in ',self room.
+	html paragraph: self asString. "TODO: to remove"
+	self isPir:  [ :d |  d pirRenderContentOn:  html ].
+	self isTemperature:  [ :d |  d temperatureRenderContentOn:  html ].
+	self isPressure:  [ :d |  d pressureRenderContentOn:  html ].
+	self isLux:  [ :d |  d luxRenderContentOn:  html ].
+	self isHumidity:  [ :d |  d humidityRenderContentOn:  html ].
+	self isLight:  [ :d |  d lightRenderContentOn:  html ].
+	self isDoorSwitch:  [ :d |  d doorSwitchRenderContentOn:  html ].
+	"self isDoor:  [ :d |  d doorRenderContentOn:  html ]."
+	"self isCam:  [ :d |  d camRenderContentOn:  html ]."
+	self isBattery: [ :d |  d batteryRenderContentOn: html ].
 ]
 
 { #category : #accessing }

@@ -9,14 +9,13 @@ THomeAutomationDeviceTemperature >> isTemperature [
 ]
 
 { #category : #accessing }
-THomeAutomationDeviceTemperature >> renderContentOn: html [
-<renderContentOn: true>
-	html paragraph: self asString.
-	self flag: #TODO.
-]
-
-{ #category : #accessing }
 THomeAutomationDeviceTemperature >> temperature [
 	"comment stating purpose of message"
 	self explicitRequirement.
+]
+
+{ #category : #accessing }
+THomeAutomationDeviceTemperature >> temperatureRenderContentOn: html [
+<renderContentOn: true>
+	html paragraph: self temperature,'°C'.
 ]

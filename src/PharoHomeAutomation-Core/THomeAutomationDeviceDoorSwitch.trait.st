@@ -4,6 +4,13 @@ Trait {
 }
 
 { #category : #accessing }
+THomeAutomationDeviceDoorSwitch >> doorSwitchRenderContentOn: html [
+<renderContentOn: true>
+	html paragraph: self asString.
+	self flag: #TODO.
+]
+
+{ #category : #accessing }
 THomeAutomationDeviceDoorSwitch >> isClosed [ 
 	"comment stating purpose of message"
 	self explicitRequirement.
@@ -18,11 +25,4 @@ THomeAutomationDeviceDoorSwitch >> isDoorSwitch [
 THomeAutomationDeviceDoorSwitch >> isOpened [
 	"comment stating purpose of message"
 	self explicitRequirement.
-]
-
-{ #category : #accessing }
-THomeAutomationDeviceDoorSwitch >> renderContentOn: html [
-<renderContentOn: true>
-	html paragraph: self asString.
-	self flag: #TODO.
 ]
