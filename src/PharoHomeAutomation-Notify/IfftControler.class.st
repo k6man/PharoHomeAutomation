@@ -1,8 +1,8 @@
 Class {
 	#name : #IfftControler,
 	#superclass : #Object,
-	#traits : 'THomeAutomationNotify',
-	#classTraits : 'THomeAutomationNotify classTrait',
+	#traits : 'THomeAutomationDeviceNotify',
+	#classTraits : 'THomeAutomationDeviceNotify classTrait',
 	#classInstVars : [
 		'key',
 		'notify_event'

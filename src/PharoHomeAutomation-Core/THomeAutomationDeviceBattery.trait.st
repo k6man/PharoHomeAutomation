@@ -12,10 +12,10 @@ THomeAutomationDeviceBattery >> battery [
 { #category : #accessing }
 THomeAutomationDeviceBattery >> batteryRenderContentOn: html [
 <renderContentOn: true>
-	html paragraph: [ :h | 
-		(self battery > 50 ) ifTrue: [ html mdlIconBadge dataBadge: 'ok'; overlap; 	with: 'battery_std'. ]
+"	html paragraph: [ :h | "
+		(self battery > 50 ) ifTrue: [ html mdlIconBadge "dataBadge: 'ok'; overlap; 	"with: 'battery_std'. ]
 				 ifFalse: [ html mdlIconBadge dataBadge: self battery; overlap; with: 'battery_std'. ]
-		 ].
+		" ]."
 
 ]
 

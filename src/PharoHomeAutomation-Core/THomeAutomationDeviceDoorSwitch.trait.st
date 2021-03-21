@@ -8,8 +8,8 @@ THomeAutomationDeviceDoorSwitch >> doorSwitchRenderContentOn: html [
 <renderContentOn: true>
 		html paragraph: [ :h | 
 		h strong: 'porte:'.
-			(self move) ifTrue: [ html mdlIconBadge dataBadge: '!'; overlap; 	with: 'account_box'. ]
-				 ifFalse: [ html mdlIconBadge with: 'account_box'. ]
+			(self move) ifTrue: [ html mdlIconBadge dataBadge: '!'; overlap; 	with: 'sensor_door'. ]
+				 ifFalse: [ html mdlIconBadge with: 'sensor_door'. ]
 		 ].
 ]
 
