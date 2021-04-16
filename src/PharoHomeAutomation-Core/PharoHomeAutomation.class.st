@@ -146,18 +146,17 @@ PharoHomeAutomation >> rooms [
 
 { #category : #'as yet unclassified' }
 PharoHomeAutomation >> runScriptsFor: anAnnouncement [
-	"Call all message class with pragma <homeAutomationScriptToRunWhen: anAnnouncement className asSymbol>"
-((PragmaCollector filter: [:prg | 
+"plus utilisé: 
+Call all message class with pragma <homeAutomationScriptToRunWhen: anAnnouncement className asSymbol>"
+"((PragmaCollector filter: [:prg | 
 		prg selector = #'homeAutomationScriptToRunWhen:' 
 		and: [ 
 			(prg argumentAt: 1) = anAnnouncement className asSymbol
 			]
 	 ]
 ) reset collected) do: [ :pragma | 
-	"Transcript crShow: 'Found script to run: ',pragma method name."
 	pragma methodClass allInstancesDo: [ :object |
-		"Transcript crShow: 'Found obj to run script : ',object asString."
-		 object withArgs: { anAnnouncement } executeMethod: pragma method] ].
+	 object withArgs: { anAnnouncement } executeMethod: pragma method] ]."
 
 	"Call all script object"
 	scripts do: [ :s| s run: anAnnouncement ].

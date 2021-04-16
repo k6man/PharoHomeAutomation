@@ -11,5 +11,5 @@ HomeAutomationTimeAnnoucement >> isTimeAnnoucement [
 
 { #category : #testing }
 HomeAutomationTimeAnnoucement >> isTimeAnnoucement: aBlock [
-	^[ aBlock value: self  ].
+	^aBlock value: self.
 ]
