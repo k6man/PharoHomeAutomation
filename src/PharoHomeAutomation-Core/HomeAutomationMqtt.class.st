@@ -70,7 +70,11 @@ HomeAutomationMqtt >> initialize [
        subscribeToTopic: 'zwave/#';
        subscribeToTopic: 'zigbee2mqtt/#';
        runWith: [ :message |
-				topicDictionnary at: message topic put: message message.
+	
+				message message
+					ifNil: [ topicDictionnary removeKey: message topic ifAbsent: [  ]  ] 
+				   ifNotNil: [ topicDictionnary at: message topic put: message message. ]. 
+			
 				"HomeAutomationZwaveAnnoucement fromSTONJSON: ( STONJSON fromString: message message asString )"
 				 "message topic asTopic isZigbee ifTrue: [ 
 					topic := message topic asZigBeeTopic.

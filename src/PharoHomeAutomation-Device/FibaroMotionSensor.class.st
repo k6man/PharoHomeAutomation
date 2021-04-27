@@ -8,13 +8,13 @@ Class {
 
 { #category : #accessing }
 FibaroMotionSensor >> lux [
-	^WorldHomeAutomation mqtt numberValueFromTopic: 'zwave/',room,'/',name,'/49/1/3'.
+	^WorldHomeAutomation mqtt numberValueFromTopic: 'zwave/',room,'/',name,'/sensor_multilevel/endpoint_0/illuminance'.
 ]
 
 { #category : #accessing }
 FibaroMotionSensor >> move [
 	"comment stating purpose of message"
-	^WorldHomeAutomation mqtt booleanValueFromTopic: 'zwave/',room,'/',name,'/48/1/0'.
+	^WorldHomeAutomation mqtt booleanValueFromTopic: 'zwave/',room,'/',name,'/sensor_binary/endpoint_0/Any'.
 
 ]
 
@@ -30,5 +30,5 @@ FibaroMotionSensor >> printOn: aStream [
 { #category : #accessing }
 FibaroMotionSensor >> temperature [
 	"comment stating purpose of message"
-	^WorldHomeAutomation mqtt numberValueFromTopic: 'zwave/',room,'/',name,'/49/1/1'.
+	^WorldHomeAutomation mqtt numberValueFromTopic: 'zwave/',room,'/',name,'/sensor_multilevel/endpoint_0/Air_temperature'.
 ]
