@@ -8,7 +8,7 @@ Class {
 
 { #category : #accessing }
 FibaroMotionSensor >> lux [
-	^WorldHomeAutomation mqtt numberValueFromTopic: 'zwave/',room,'/',name,'/sensor_multilevel/endpoint_0/illuminance'.
+	^WorldHomeAutomation mqtt numberValueFromTopic: 'zwave/',room,'/',name,'/sensor_multilevel/endpoint_0/Illuminance'.
 ]
 
 { #category : #accessing }
