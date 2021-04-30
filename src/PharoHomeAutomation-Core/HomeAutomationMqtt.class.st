@@ -88,7 +88,7 @@ HomeAutomationMqtt >> initialize [
 
 				self traceCr: message topic.
 				(WorldHomeAutomation devices select: [ :device | (device isMqttDevice) and: [device matchingTopic: message topic] ]) do: [ :device | 
-					WorldHomeAutomation announcer announce: (HomeAutomationDeviceAnnoucement new device: device) .
+					[ WorldHomeAutomation announcer announce: (HomeAutomationDeviceAnnoucement new device: device)] schedule.
 					].
 		 ]
 	 ] forkNamed: self className.
