@@ -85,10 +85,11 @@ HomeAutomationMqtt >> initialize [
 				 message topic asTopic isZwave ifTrue: [ 
 					topic := message topic asZigBeeTopic.
 									 ] ."
-
-				self traceCr: message topic.
+				self trace: message topic.
+				self trace: ' - '.
+				self traceCr: message message.
 				(WorldHomeAutomation devices select: [ :device | (device isMqttDevice) and: [device matchingTopic: message topic] ]) do: [ :device | 
-					[ WorldHomeAutomation announcer announce: (HomeAutomationDeviceAnnoucement new device: device)] schedule.
+					"[" WorldHomeAutomation announcer announce: (HomeAutomationDeviceAnnoucement new device: device)"] schedule".
 					].
 		 ]
 	 ] forkNamed: self className.
