@@ -45,8 +45,9 @@ LightScript >> brightness [
 { #category : #accessing }
 LightScript >> brightnessInRoom: aRoom [
 " return brightness according to time "
-				(aRoom = 'salon' or: aRoom = 'cuisine') ifTrue: [ ^ self brightness ].
+				(aRoom = 'salon' or: aRoom = 'cuisine' ) ifTrue: [ ^ self brightness ].
 				(aRoom = 'couloir') ifTrue: [ ^ self couloirBrightness ].
+				(aRoom = 'salleDeBain') ifTrue: [ ^ self sdbBrightness ].
 				^ 100.
 ]
 
@@ -93,4 +94,17 @@ anAnnouncement isDeviceAnnoucement: [ :sensor |
 			]
 	]
 ]
+]
+
+{ #category : #accessing }
+LightScript >> sdbBrightness [
+" return brightness according to time "
+		| b |
+				b := 0.
+				Time midnight  < Time now ifTrue: [ b:= 1].
+	"			'07:00:00 am' asTime < Time now ifTrue: [ b:= 15].
+				'09:00:00 am' asTime < Time now ifTrue: [ b:= 100].
+				'21:30:00 pm' asTime < Time now ifTrue: [ b:= 70].
+				'23:59:00 pm' asTime < Time now ifTrue: [ b:= 1]."
+				^b
 ]
