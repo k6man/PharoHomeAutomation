@@ -131,7 +131,7 @@ url := ('https://',HueControler ip,'/api/',HueControler key,'/lights/',light asS
 
 { #category : #accessing }
 HueControler >> lights [
-<script: 'Hue new lights inspect'>
+<script: 'HueControler new lights inspect'>
 | url |
 url := ('https://',HueControler ip,'/api/',HueControler key,'/lights') asUrl.
 ^ STONJSON fromString: (ZnEasy get: url) entity contents.
